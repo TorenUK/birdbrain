@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Banner } from "./components";
+import { Navbar, Banner, Carousel } from "./components";
 import GlobalStyle from "./globalStyles";
 
 // other
@@ -13,6 +13,7 @@ function App() {
       <GlobalStyle />
       <Navbar />
       <Banner />
+      <Carousel />
     </Router>
   );
 }
