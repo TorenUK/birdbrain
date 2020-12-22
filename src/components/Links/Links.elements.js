@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
+import MenuIcon from "@material-ui/icons/Menu";
 
 export const LinksContainer = styled.div`
   position: -webkit-sticky;
@@ -36,4 +37,13 @@ export const LinksLi = styled(Link)`
   text-decoration: none;
   list-style: none;
   cursor: pointer;
+`;
+
+export const Burger = styled(MenuIcon)`
+  display: none !important;
+  cursor: pointer;
+
+  @media screen and (max-width: 1000px) {
+    display: block !important;
+  }
 `;

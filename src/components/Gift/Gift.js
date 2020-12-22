@@ -7,7 +7,7 @@ const Gift = () => {
   return (
     <GiftContainer>
       <GiftImage>image</GiftImage>
-      <GiftInteract>interact</GiftInteract>
+      <GiftInteract>quick view</GiftInteract>
     </GiftContainer>
   );
 };

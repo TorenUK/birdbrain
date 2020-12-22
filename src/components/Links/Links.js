@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 // components
-import { LinksContainer, LinksUl, LinksLi } from "./Links.elements";
+import { LinksContainer, LinksUl, LinksLi, Burger } from "./Links.elements";
 
 // other
 import { Link } from "react-router-dom";
@@ -18,6 +18,7 @@ const Links = () => {
         <LinksLi>Get In Touch</LinksLi>
         <LinksLi>Blog</LinksLi>
       </LinksUl>
+      <Burger />
     </LinksContainer>
   );
 };
