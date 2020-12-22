@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const BannerContainer = styled.div`
   width: 100%;
-  min-height: 600px;
-  height: 600px;
+  min-height: 500px;
+  height: 500px;
 
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ export const BannerSubtitle = styled.h2`
 `;
 
 export const BannerText = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #fff;
   line-height: 1.5rem;
 `;

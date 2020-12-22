@@ -12,6 +12,9 @@ import {
 
 // other
 import Logo from "../../assets/birdbrain-logo.jpg";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
 
 const Navbar = () => {
   return (
@@ -23,13 +26,15 @@ const Navbar = () => {
             BIRD BRAIN GIFTS
           </NavLogo>
           <NavLinks>
-            <NavLink>Home</NavLink>
-            <NavLink>Shop</NavLink>
-            <NavLink>About Us</NavLink>
-            <NavLink>FAQ's</NavLink>
-            <NavLink>Feedback</NavLink>
-            <NavLink>Get In Touch</NavLink>
-            <NavLink>Blog</NavLink>
+            <NavLink>
+              <InstagramIcon />
+            </NavLink>
+            <NavLink>
+              <FacebookIcon />
+            </NavLink>
+            <NavLink>
+              <MailOutlineIcon />
+            </NavLink>
           </NavLinks>
         </NavbarContainer>
       </Nav>

@@ -4,9 +4,9 @@ import { Container } from "../../globalStyles";
 import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
-  width: 100%;
+  width: 80%;
   height: 100px;
-  margin: 50px 0;
+  margin: 50px auto;
 
   display: flex;
 
@@ -27,7 +27,6 @@ export const NavbarContainer = styled(Container)`
 export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
-  justify-self: flex-start;
 
   font-size: 1.8rem;
   font-weight: 300;
@@ -43,16 +42,18 @@ export const NavIcon = styled.img`
 `;
 
 export const NavLinks = styled.div`
-  min-width: 500px;
+  min-width: 200px;
   height: 100%;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;
 
-export const NavLink = styled(Link)`
-  font-size: 1rem;
-  font-weight: 400;
-  text-decoration: none;
+export const NavLink = styled.a`
+  cursor: pointer;
 `;
