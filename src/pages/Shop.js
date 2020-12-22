@@ -4,13 +4,16 @@ import React from "react";
 import { Navbar, Banner, Gift, Container, Links } from "../components";
 import GlobalStyle from "../globalStyles";
 
+// other
+import { shopContainer } from "../components/data/container";
+
 const Shop = () => {
   return (
     <div>
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Container>shop</Container>
+      <Container {...shopContainer}>shop</Container>
     </div>
   );
 };
