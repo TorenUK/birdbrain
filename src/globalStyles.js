@@ -37,6 +37,24 @@ export const LargeTextContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  h2 {
+    text-align: left;
+  }
+
+  p {
+    width: 60%;
+
+    font-size: 1.1rem;
+    line-height: 25px;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1200px) {
+    p {
+      width: 80%;
+    }
+  }
 `;
 
 export default GlobalStyle;

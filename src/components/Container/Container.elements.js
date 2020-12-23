@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const ContainerWrapper = styled.div`
   width: ${(props) => props.width || "90%"};
   min-height: ${(props) => props.minHeight || "400px"};
-
   margin: 40px auto;
 
   display: ${(props) => props.display || "flex"};
@@ -13,6 +12,7 @@ export const ContainerWrapper = styled.div`
   flex-direction: ${(props) => props.direction};
   justify-content: center;
   align-items: center;
+
   background: ${(props) => props.background || "white"};
 
   @media screen and (max-width: 1000px) {

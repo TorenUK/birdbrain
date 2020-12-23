@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Banner, Gift, Container, Links } from "../components";
+import { Navbar, Gift, Container, Links, Header } from "../components";
 import GlobalStyle from "../globalStyles";
 
 // other
@@ -13,7 +13,10 @@ const Shop = () => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Container {...shopContainer}>shop</Container>
+      <Header title="Shop" />
+      <Container {...shopContainer}>
+        <Gift />
+      </Container>
     </div>
   );
 };
