@@ -10,11 +10,14 @@ export const ContainerWrapper = styled.div`
   grid-template-columns: ${(props) => props.gtc};
   grid-template-rows: ${(props) => props.gtr};
   flex-wrap: wrap;
+  flex-direction: ${(props) => props.direction};
   justify-content: center;
   align-items: center;
   background: ${(props) => props.background || "white"};
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 `;

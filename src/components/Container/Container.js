@@ -9,6 +9,7 @@ const Container = ({
   minHeight,
   background,
   display,
+  direction,
   gtc,
   gtr,
 }) => {
@@ -18,6 +19,7 @@ const Container = ({
       minHeight={minHeight}
       background={background}
       display={display}
+      direction={direction}
       gtc={gtc}
       gtr={gtr}
     >

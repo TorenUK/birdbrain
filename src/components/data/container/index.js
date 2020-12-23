@@ -8,6 +8,7 @@ export const aboutContainer = {
   minHeight: "600px",
   background: "beige",
   display: "grid",
+  direction: "row-reverse",
   gtc: "1fr 1fr",
   gtr: "1fr",
 };

@@ -16,6 +16,12 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const ImageContainer = styled.div`
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+`;
+
 export const LargeImage = styled.img`
   max-width: 100%;
   max-height: 100%;
