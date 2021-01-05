@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const GiftContainer = styled.div`
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 500px;
   min-width: 300px;
   min-height: 300px;
   margin: 10px;

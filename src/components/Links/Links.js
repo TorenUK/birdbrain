@@ -28,7 +28,7 @@ const Links = () => {
           <LinksLi>FAQ's</LinksLi>
           <LinksLi>Feedback</LinksLi>
           <LinksLi>Get In Touch</LinksLi>
-          <LinksLi>Blog</LinksLi>
+          <LinksLi to="/blog">Blog</LinksLi>
         </LinksUl>
         <Burger
           onClick={() => {

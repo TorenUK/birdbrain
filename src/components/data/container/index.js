@@ -21,4 +21,9 @@ export const feedbackContainer = {};
 
 export const getInTouchContainer = {};
 
-export const blogContainer = {};
+export const blogContainer = {
+  width: "80%",
+  minHeight: "600px",
+  display: "flex",
+  direction: "column",
+};
