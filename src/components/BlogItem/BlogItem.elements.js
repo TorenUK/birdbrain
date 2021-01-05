@@ -27,7 +27,10 @@ export const BlogImage = styled.div`
   width: 100%;
   height: 100%;
 
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props) => props.imageURL});
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
 `;
 
 export const BlogTitle = styled.h2``;

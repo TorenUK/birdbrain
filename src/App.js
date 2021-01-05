@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Banner, Gift, Container, Links } from "./components";
+import { Navbar, Banner, Container, Links } from "./components";
 import GlobalStyle from "./globalStyles";
 
 // pages
@@ -31,9 +31,7 @@ function App() {
           <Navbar />
           <Links />
           <Banner {...bannerData1} />
-          <Container>
-            <Gift />
-          </Container>
+          <Container></Container>
           <Container>something here</Container>
         </Route>
       </Switch>

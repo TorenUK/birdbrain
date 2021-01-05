@@ -16,7 +16,7 @@ const BlogItem = ({ title, description, image }) => {
     <>
       <BlogContainer>
         <BlogSection>
-          <BlogImage image={imageURL}></BlogImage>
+          <BlogImage imageURL={imageURL}></BlogImage>
         </BlogSection>
         <BlogSection>
           <BlogTitle>{title}</BlogTitle>

@@ -1,8 +1,6 @@
 export const shopContainer = {
-  width: "80%",
+  width: "100%",
   minHeight: "800px",
-
-  background: "grey",
 };
 
 export const aboutContainer = {
