@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BlogContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-
+  height: 450px;
   min-height: 450px;
   margin: 50px 0;
 
@@ -12,6 +12,7 @@ export const BlogContainer = styled.div`
   align-items: center;
 
   @media screen and (max-width: 1000px) {
+    height: unset;
     flex-direction: column;
   }
 `;
