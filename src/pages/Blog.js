@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 // components
-import { Navbar, Container, Links, Header } from "../components";
+import { Navbar, Container, Links, Header, BlogItem } from "../components";
+
 import GlobalStyle from "../globalStyles";
 
 // other
@@ -20,8 +21,6 @@ const Blog = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(blogs);
-
   return (
     <div>
       <GlobalStyle />
@@ -30,7 +29,11 @@ const Blog = () => {
       <Header title="Blog" />
       <Container {...blogContainer}>
         {blogs.map((blog) => (
-          <h1>{blog.title}</h1>
+          <BlogItem
+            title={blog.title}
+            description={blog.description}
+            image={blog.image}
+          />
         ))}
       </Container>
     </div>

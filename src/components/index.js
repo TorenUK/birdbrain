@@ -4,3 +4,4 @@ export { default as Links } from "./Links/Links";
 export { default as Container } from "./Container/Container";
 export { default as Gift } from "./Gift/Gift";
 export { default as Header } from "./Header/Header";
+export { default as BlogItem } from "./BlogItem/BlogItem";
