@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const BlogContainer = styled.div`
   width: 100%;
   max-width: 1200px;
-  height: 450px;
-  min-height: 450px;
+  height: 500px;
+  min-height: 500px;
   margin: 50px 0;
 
   display: flex;
@@ -30,6 +30,7 @@ export const BlogSection = styled.div`
 
   @media screen and (max-width: 1000px) {
     width: 80%;
+    margin: 20px 0;
 
     text-align: center;
   }
@@ -47,22 +48,5 @@ export const BlogImage = styled.div`
 
   @media screen and (max-width: 1000px) {
     background-size: contain;
-  }
-`;
-
-export const BlogTitle = styled.h2`
-  @media screen and (max-width: 1000px) {
-    margin: 20px 0;
-  }
-`;
-
-export const BlogDescription = styled.p`
-  width: 90%;
-
-  font-size: 1rem;
-  line-height: 22px;
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
   }
 `;

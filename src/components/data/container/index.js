@@ -4,13 +4,10 @@ export const shopContainer = {
 };
 
 export const aboutContainer = {
-  width: "100%",
-  minHeight: "600px",
-  background: "beige",
-  display: "grid",
-  direction: "row-reverse",
-  gtc: "1fr 1fr",
-  gtr: "1fr",
+  width: "90%",
+  height: "500px",
+  background: "#F1F1F1",
+  direction: "column",
 };
 
 export const faqContainer = {};
@@ -21,6 +18,7 @@ export const getInTouchContainer = {};
 
 export const blogContainer = {
   width: "80%",
+  height: "600px",
   minHeight: "600px",
   display: "flex",
   direction: "column",

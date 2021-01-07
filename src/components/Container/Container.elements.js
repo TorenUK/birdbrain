@@ -3,13 +3,11 @@ import styled from "styled-components";
 export const ContainerWrapper = styled.div`
   width: ${(props) => props.width || "90%"};
   min-height: ${(props) => props.minHeight || "400px"};
+  height: 500px;
   margin: 40px auto;
 
-  display: ${(props) => props.display || "flex"};
-  grid-template-columns: ${(props) => props.gtc};
-  grid-template-rows: ${(props) => props.gtr};
+  display: flex;
   flex-wrap: wrap;
-  flex-direction: ${(props) => props.direction};
   justify-content: center;
   align-items: center;
 
@@ -17,7 +15,5 @@ export const ContainerWrapper = styled.div`
 
   @media screen and (max-width: 1000px) {
     width: 100%;
-    display: flex;
-    flex-direction: column;
   }
 `;

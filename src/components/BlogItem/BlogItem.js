@@ -8,6 +8,7 @@ import {
   BlogTitle,
   BlogDescription,
 } from "./BlogItem.elements";
+import { TextBody, Title } from "../../globalStyles";
 
 const BlogItem = ({ title, description, image }) => {
   const imageURL = `http://localhost:1337${image.url}`;
@@ -19,8 +20,8 @@ const BlogItem = ({ title, description, image }) => {
           <BlogImage imageURL={imageURL}></BlogImage>
         </BlogSection>
         <BlogSection>
-          <BlogTitle>{title}</BlogTitle>
-          <BlogDescription>{description}</BlogDescription>
+          <Title>{title}</Title>
+          <TextBody>{description}</TextBody>
         </BlogSection>
       </BlogContainer>
     </>

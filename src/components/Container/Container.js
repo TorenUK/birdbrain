@@ -6,6 +6,7 @@ import { ContainerWrapper } from "./Container.elements";
 const Container = ({
   children,
   width,
+  height,
   minHeight,
   background,
   display,
@@ -16,6 +17,7 @@ const Container = ({
   return (
     <ContainerWrapper
       width={width}
+      height={height}
       minHeight={minHeight}
       background={background}
       display={display}

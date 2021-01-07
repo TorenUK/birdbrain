@@ -2,15 +2,18 @@ import React from "react";
 
 // components
 import { Navbar, Container, Links, Header, Footer } from "../components";
-import {
+
+import GlobalStyle, {
+  TextContainer,
   ImageContainer,
-  LargeImage,
-  LargeTextContainer,
+  Title,
+  Subtitle,
+  TextBody,
 } from "../globalStyles";
-import GlobalStyle from "../globalStyles";
 
 // other
 import { aboutContainer } from "../components/data/container";
+import craftImage from "../assets/craft.webp";
 
 const About = () => {
   return (
@@ -20,12 +23,11 @@ const About = () => {
       <Links />
       <Header title="About Us" />
       <Container {...aboutContainer}>
-        <ImageContainer>
-          <LargeImage src="https://static.wixstatic.com/media/8a7fdb5e5e14471dbd2c447053bb7bcd.jpg/v1/fill/w_699,h_820,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01/8a7fdb5e5e14471dbd2c447053bb7bcd.webp" />
-        </ImageContainer>
-        <LargeTextContainer>
-          <h2>Handmade with care</h2>
-          <p>
+        <ImageContainer image={craftImage}></ImageContainer>
+        <TextContainer>
+          <Title>Who We Are</Title>
+          <Subtitle>Handmade with care</Subtitle>
+          <TextBody>
             Bird Brain Gifts is an online store selling gifts for all occasions.
             Offering first-rate handmade products and exceptional customer
             service to shoppers from the comfort of their own homes. We started
@@ -37,10 +39,9 @@ const About = () => {
             Our online store has since become a great place to buy quality gifts
             that fit any budget. Check it out today and make a little
             independent business jump for joy!
-          </p>
-        </LargeTextContainer>
+          </TextBody>
+        </TextContainer>
       </Container>
-      <Footer />
     </div>
   );
 };

@@ -16,44 +16,76 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const ImageContainer = styled.div`
-  width: 80%;
-  height: 80%;
-  margin: 0 auto;
-`;
-
-export const LargeImage = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-
-  object-fit: contain;
-`;
-
-export const LargeTextContainer = styled.div`
-  width: 100%;
+export const TextContainer = styled.div`
+  width: 50%;
+  min-width: 250px;
   height: 100%;
+  max-height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
-  h2 {
-    text-align: left;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
   }
+`;
 
-  p {
-    width: 60%;
+export const Title = styled.h1`
+  width: 50%;
+  min-width: 350px;
 
-    font-size: 1.1rem;
-    line-height: 25px;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 1000px) {
+    margin: 20px 0;
+
     text-align: center;
   }
+`;
 
-  @media screen and (max-width: 1200px) {
-    p {
-      width: 80%;
-    }
+export const Subtitle = styled.h2`
+  width: 50%;
+  min-width: 350px;
+
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+
+  @media screen and (max-width: 1000px) {
+    text-align: center;
+  }
+`;
+
+export const TextBody = styled.p`
+  width: 50%;
+  min-width: 350px;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 30px;
+  text-align: left;
+
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+    text-align: center;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  width: 50%;
+  min-width: 350px;
+  height: 100%;
+
+  background-image: url(${(props) => props.image});
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
   }
 `;
 

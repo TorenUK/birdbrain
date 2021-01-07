@@ -38,7 +38,7 @@ function App() {
           <Navbar />
           <Links />
           <Banner {...bannerData1} />
-          <h2 style={{ textAlign: "center", margin: "10px" }}>
+          <h2 style={{ textAlign: "center", margin: "50px" }}>
             seasonal/special offer products here?
           </h2>
           <Container>

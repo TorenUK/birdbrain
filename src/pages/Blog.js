@@ -44,7 +44,6 @@ const Blog = () => {
           />
         ))}
       </Container>
-      <Footer />
     </div>
   );
 };
