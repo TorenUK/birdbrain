@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Banner, Container, Links } from "./components";
+import { Navbar, Banner, Container, Links, Thumbnail } from "./components";
 import GlobalStyle from "./globalStyles";
 
 // pages
@@ -31,7 +31,12 @@ function App() {
           <Navbar />
           <Links />
           <Banner {...bannerData1} />
-          <Container></Container>
+          <Container>
+            <Thumbnail></Thumbnail>
+            <Thumbnail></Thumbnail>
+            <Thumbnail></Thumbnail>
+            <Thumbnail></Thumbnail>
+          </Container>
           <Container>something here</Container>
         </Route>
       </Switch>
