@@ -11,7 +11,7 @@ import {
 import { TextBody, Title } from "../../globalStyles";
 
 const BlogItem = ({ title, description, image }) => {
-  const imageURL = `http://localhost:1337${image.url}`;
+  const imageURL = `https://birdbrain.herokuapp.com${image.url}`;
 
   return (
     <>

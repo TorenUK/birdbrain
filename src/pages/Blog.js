@@ -21,7 +21,7 @@ const Blog = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:1337/blogs")
+      .get("https://birdbrain.herokuapp.com/blogs")
       .then((response) => {
         setBlogs(response.data);
       })
