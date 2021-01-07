@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 // components
-import { Navbar, Container, Links, Header, BlogItem } from "../components";
+import {
+  Navbar,
+  Container,
+  Links,
+  Header,
+  BlogItem,
+  Footer,
+} from "../components";
 
 import GlobalStyle from "../globalStyles";
 
@@ -37,6 +44,7 @@ const Blog = () => {
           />
         ))}
       </Container>
+      <Footer />
     </div>
   );
 };

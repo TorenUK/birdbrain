@@ -5,3 +5,4 @@ export { default as Container } from "./Container/Container";
 export { default as Header } from "./Header/Header";
 export { default as BlogItem } from "./BlogItem/BlogItem";
 export { default as Thumbnail } from "./Thumbnail/Thumbnail";
+export { default as Footer } from "./Footer/Footer";

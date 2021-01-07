@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Container, Links, Header } from "../components";
+import { Navbar, Container, Links, Header, Footer } from "../components";
 import GlobalStyle from "../globalStyles";
 
 // other
@@ -15,6 +15,7 @@ const Shop = () => {
       <Links />
       <Header title="Shop" />
       <Container {...shopContainer}></Container>
+      <Footer />
     </div>
   );
 };

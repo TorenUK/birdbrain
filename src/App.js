@@ -1,7 +1,14 @@
 import React from "react";
 
 // components
-import { Navbar, Banner, Container, Links, Thumbnail } from "./components";
+import {
+  Navbar,
+  Banner,
+  Container,
+  Links,
+  Thumbnail,
+  Footer,
+} from "./components";
 import GlobalStyle from "./globalStyles";
 
 // pages
@@ -38,6 +45,7 @@ function App() {
             <Thumbnail></Thumbnail>
           </Container>
           <Container>something here</Container>
+          <Footer />
         </Route>
       </Switch>
     </Router>

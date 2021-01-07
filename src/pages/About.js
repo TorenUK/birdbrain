@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Container, Links, Header } from "../components";
+import { Navbar, Container, Links, Header, Footer } from "../components";
 import {
   ImageContainer,
   LargeImage,
@@ -40,6 +40,7 @@ const About = () => {
           </p>
         </LargeTextContainer>
       </Container>
+      <Footer />
     </div>
   );
 };
