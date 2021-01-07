@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BannerContainer = styled.div`
   width: 100%;
   min-height: 300px;
-  height: 300px;
+  height: 400px;
 
   display: flex;
   justify-content: center;
@@ -31,9 +31,12 @@ export const BannerTitle = styled.h1`
 `;
 
 export const BannerSubtitle = styled.h2`
+  margin: 20px 0;
+
   font-size: 1rem;
   color: #fff;
-  font-weight: 400;
+  font-weight: 600;
+  font-style: italic;
 `;
 
 export const BannerText = styled.p`
