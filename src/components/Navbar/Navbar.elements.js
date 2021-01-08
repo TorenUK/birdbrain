@@ -16,12 +16,11 @@ export const Nav = styled.nav`
   z-index: 999;
 `;
 
-export const NavbarContainer = styled(PageContainer)`
+export const NavbarContainer = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
-  height: 100%;
-
-  ${PageContainer}
 `;
 
 export const NavLogo = styled(Link)`

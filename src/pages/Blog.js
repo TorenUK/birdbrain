@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 // components
-import {
-  Navbar,
-  Container,
-  Links,
-  Header,
-  BlogItem,
-  Footer,
-} from "../components";
+import { Navbar, Links, Header, BlogItem, Footer } from "../components";
 
-import GlobalStyle from "../globalStyles";
+import GlobalStyle, { PageContainer } from "../globalStyles";
 
 // other
 import { blogContainer } from "../components/data/container";
@@ -29,12 +22,12 @@ const Blog = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <GlobalStyle />
       <Navbar />
       <Links />
       <Header title="Blog" />
-      <Container {...blogContainer}>
+      <PageContainer>
         {blogs.map((blog, idx) => (
           <BlogItem
             key={idx}
@@ -43,8 +36,9 @@ const Blog = () => {
             image={blog.image}
           />
         ))}
-      </Container>
-    </div>
+      </PageContainer>
+      <Footer />
+    </>
   );
 };
 

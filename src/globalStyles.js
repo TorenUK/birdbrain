@@ -8,15 +8,22 @@ const GlobalStyle = createGlobalStyle`
 
     font-family: 'Raleway', sans-serif;
 }
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 `;
 
 export const PageContainer = styled.div`
   width: 100%;
   max-width: 1600px;
-  min-height: 800px;
+  height: 1000px;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 
   margin: 0 auto;
 `;
@@ -24,6 +31,7 @@ export const PageContainer = styled.div`
 export const ContentContainer = styled.div`
   width: 100%;
   height: 500px;
+  min-height: 500px;
   margin: 50px 0;
 
   display: flex;
