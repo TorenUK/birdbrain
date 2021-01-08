@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 export const PageContainer = styled.div`
   width: 100%;
   max-width: 1600px;
-  height: 1000px;
+  min-height: 1000px;
 
   display: flex;
   flex-direction: column;

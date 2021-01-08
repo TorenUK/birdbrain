@@ -11,13 +11,13 @@ import {
 import { TextBody, Title } from "../../globalStyles";
 
 const BlogItem = ({ title, description, image }) => {
-  const imageURL = `https://birdbrain.herokuapp.com${image.url}`;
+  console.log(image.url);
 
   return (
     <>
       <BlogContainer>
         <BlogSection>
-          <BlogImage imageURL={imageURL}></BlogImage>
+          <BlogImage imageURL={image.url}></BlogImage>
         </BlogSection>
         <BlogSection>
           <Title>{title}</Title>

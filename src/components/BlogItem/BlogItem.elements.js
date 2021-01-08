@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const BlogContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
   height: 500px;
   min-height: 500px;
   margin: 50px 0;
@@ -18,7 +17,7 @@ export const BlogContainer = styled.div`
 `;
 
 export const BlogSection = styled.div`
-  width: 49%;
+  width: 50%;
   height: 100%;
 
   display: flex;
@@ -37,7 +36,7 @@ export const BlogSection = styled.div`
 `;
 
 export const BlogImage = styled.div`
-  width: 100%;
+  width: 70%;
 
   min-height: 400px;
 
