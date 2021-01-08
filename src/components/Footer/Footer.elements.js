@@ -20,6 +20,7 @@ export const FooterBottom = styled.div`
   height: fit-content;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 

@@ -31,8 +31,8 @@ export const ThumbnailContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  background-image: url(${(props) => props.trialImage});
-  background-size: contain;
+  background-image: url(${(props) => props.image});
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 5px;
@@ -56,9 +56,16 @@ export const ThumbnailContainer = styled.div`
 
 export const ThumbnailTitle = styled.h2`
   margin-top: 1rem;
+  padding: 4px;
 
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: white;
+  background: black;
+  border-radius: 5px;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ThumbnailBottom = styled.div`
@@ -71,8 +78,17 @@ export const ThumbnailBottom = styled.div`
 `;
 
 export const ThumbnailPrice = styled.p`
+  margin-bottom: 1rem;
+  padding: 4px;
+
   font-size: 1.5rem;
   font-weight: 700;
 
   color: white;
+  background: black;
+  border-radius: 5px;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+  }
 `;

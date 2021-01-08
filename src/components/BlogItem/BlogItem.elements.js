@@ -36,9 +36,9 @@ export const BlogSection = styled.div`
 `;
 
 export const BlogImage = styled.div`
-  width: 70%;
-
+  height: 100%;
   min-height: 400px;
+  width: 55%;
 
   background-image: url(${(props) => props.imageURL});
   background-position: center;

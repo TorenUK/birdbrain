@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // components
 import {
@@ -19,8 +19,17 @@ import Blog from "./pages/Blog";
 // other
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { bannerData1 } from "./components/data/banner";
+import axios from "axios";
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://birdbrain.herokuapp.com/products").then((response) => {
+      setProducts(response.data);
+    });
+  }, []);
+
   return (
     <Router>
       <Switch>
@@ -42,10 +51,16 @@ function App() {
             seasonal/special offer products here?
           </h2>
           <Container>
-            <Thumbnail></Thumbnail>
-            <Thumbnail></Thumbnail>
-            <Thumbnail></Thumbnail>
-            <Thumbnail></Thumbnail>
+            {products.map((product) => (
+              <Thumbnail
+                title={product.title}
+                image={product.image.url}
+                price={product.price}
+                scent={product.scent}
+                waxColour={product.waxColour}
+                stock={product.stock}
+              />
+            ))}
           </Container>
           <Container>something here</Container>
           <Footer />

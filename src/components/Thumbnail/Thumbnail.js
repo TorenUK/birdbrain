@@ -10,19 +10,18 @@ import {
 } from "./Thumbnail.elements";
 
 // other
-import trialImage from "../../assets/trial.webp";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 
-const Thumbnail = () => {
+const Thumbnail = ({ title, image, price, scent, waxColour, stock }) => {
   return (
-    <ThumbnailContainer trialImage={trialImage}>
-      <ThumbnailTitle>Handmade Soap</ThumbnailTitle>
+    <ThumbnailContainer image={image}>
+      <ThumbnailTitle>{title}</ThumbnailTitle>
       <ThumbnailView>
         <VisibilityIcon />
         <p>Quick View</p>
       </ThumbnailView>
       <ThumbnailBottom>
-        <ThumbnailPrice>£2.70</ThumbnailPrice>
+        <ThumbnailPrice>£{price.toFixed(2)}</ThumbnailPrice>
       </ThumbnailBottom>
     </ThumbnailContainer>
   );
