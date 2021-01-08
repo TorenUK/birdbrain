@@ -6,7 +6,6 @@ import { Navbar, Links, Header, BlogItem, Footer } from "../components";
 import GlobalStyle, { PageContainer } from "../globalStyles";
 
 // other
-import { blogContainer } from "../components/data/container";
 import axios from "axios";
 
 const Blog = () => {
@@ -34,6 +33,7 @@ const Blog = () => {
             title={blog.title}
             description={blog.description}
             image={blog.image}
+            igLink={blog.link}
           />
         ))}
       </PageContainer>

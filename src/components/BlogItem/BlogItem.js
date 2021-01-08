@@ -5,14 +5,15 @@ import {
   BlogContainer,
   BlogSection,
   BlogImage,
-  BlogTitle,
-  BlogDescription,
+  BlogLinks,
+  BlogLink,
 } from "./BlogItem.elements";
 import { TextBody, Title } from "../../globalStyles";
 
-const BlogItem = ({ title, description, image }) => {
-  console.log(image.url);
+// other
+import InstagramIcon from "@material-ui/icons/Instagram";
 
+const BlogItem = ({ title, description, image, igLink }) => {
   return (
     <>
       <BlogContainer>
@@ -22,6 +23,11 @@ const BlogItem = ({ title, description, image }) => {
         <BlogSection>
           <Title>{title}</Title>
           <TextBody>{description}</TextBody>
+          <BlogLinks>
+            <BlogLink target="blank" rel="noreferrer" href={igLink}>
+              <InstagramIcon />
+            </BlogLink>
+          </BlogLinks>
         </BlogSection>
       </BlogContainer>
     </>

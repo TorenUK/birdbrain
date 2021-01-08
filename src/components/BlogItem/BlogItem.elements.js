@@ -49,3 +49,17 @@ export const BlogImage = styled.div`
     background-size: contain;
   }
 `;
+
+export const BlogLinks = styled.div`
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const BlogLink = styled.a`
+  color: black;
+  text-decoration: none;
+`;
