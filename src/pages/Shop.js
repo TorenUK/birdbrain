@@ -14,7 +14,7 @@ const Shop = () => {
       <Navbar />
       <Links />
       <Header title="Shop" />
-      <Container {...shopContainer}></Container>
+      <Container {...shopContainer}>┌( ಠ_ಠ)┘ stuff also here soon</Container>
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterBottom>
         <p>Bird Brain Gifts</p>
-        <p>2021</p>
+        <p>©2021</p>
       </FooterBottom>
     </FooterContainer>
   );

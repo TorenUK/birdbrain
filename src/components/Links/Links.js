@@ -13,7 +13,6 @@ import {
 } from "./Links.elements";
 
 // other
-import { Link } from "react-router-dom";
 
 const Links = () => {
   const [clicked, setClicked] = useState(false);

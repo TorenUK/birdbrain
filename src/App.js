@@ -8,6 +8,7 @@ import {
   Links,
   Thumbnail,
   Footer,
+  Featured,
 } from "./components";
 import GlobalStyle from "./globalStyles";
 
@@ -47,9 +48,7 @@ function App() {
           <Navbar />
           <Links />
           <Banner {...bannerData1} />
-          <h2 style={{ textAlign: "center", margin: "50px" }}>
-            seasonal/special offer products here?
-          </h2>
+          <Featured></Featured>
           <Container>
             {products.map((product) => (
               <Thumbnail
@@ -62,7 +61,7 @@ function App() {
               />
             ))}
           </Container>
-          <Container>something here</Container>
+          <Container>༼ つ ◕_◕ ༽つ stuff here soon</Container>
           <Footer />
         </Route>
       </Switch>
