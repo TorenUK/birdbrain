@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Container } from "../../globalStyles";
+import { PageContainer } from "../../globalStyles";
 import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
@@ -16,12 +16,12 @@ export const Nav = styled.nav`
   z-index: 999;
 `;
 
-export const NavbarContainer = styled(Container)`
+export const NavbarContainer = styled(PageContainer)`
   display: flex;
   justify-content: space-between;
   height: 100%;
 
-  ${Container}
+  ${PageContainer}
 `;
 
 export const NavLogo = styled(Link)`

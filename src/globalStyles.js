@@ -10,10 +10,31 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-export const Container = styled.div`
+export const PageContainer = styled.div`
   width: 100%;
   max-width: 1600px;
+  min-height: 800px;
+
+  display: flex;
+  flex-direction: column;
+
   margin: 0 auto;
+`;
+
+export const ContentContainer = styled.div`
+  width: 100%;
+  height: 500px;
+  margin: 50px 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+
+  background: #f1f1f1;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: row;
+  }
 `;
 
 export const TextContainer = styled.div`
