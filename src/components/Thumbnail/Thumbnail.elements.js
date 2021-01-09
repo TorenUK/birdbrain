@@ -77,7 +77,7 @@ export const ThumbnailBottom = styled.div`
   align-items: center;
 `;
 
-export const ThumbnailPrice = styled.p`
+export const ThumbnailPreviousPrice = styled.p`
   margin-bottom: 1rem;
   padding: 4px;
 
@@ -86,6 +86,23 @@ export const ThumbnailPrice = styled.p`
 
   color: white;
   background: black;
+  opacity: 0.8;
+  border-radius: 5px;
+  text-decoration: line-through;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1rem;
+  }
+`;
+export const ThumbnailPrice = styled.p`
+  margin-bottom: 1rem;
+  padding: 4px;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  color: black;
+  background: white;
   border-radius: 5px;
 
   @media screen and (max-width: 1000px) {

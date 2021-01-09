@@ -4,6 +4,7 @@ import React from "react";
 import {
   ThumbnailBottom,
   ThumbnailContainer,
+  ThumbnailPreviousPrice,
   ThumbnailPrice,
   ThumbnailTitle,
   ThumbnailView,
@@ -12,7 +13,15 @@ import {
 // other
 import VisibilityIcon from "@material-ui/icons/Visibility";
 
-const Thumbnail = ({ title, image, price, scent, waxColour, stock }) => {
+const Thumbnail = ({
+  title,
+  image,
+  previousPrice,
+  price,
+  scent,
+  waxColour,
+  stock,
+}) => {
   return (
     <ThumbnailContainer image={image}>
       <ThumbnailTitle>{title}</ThumbnailTitle>
@@ -21,6 +30,9 @@ const Thumbnail = ({ title, image, price, scent, waxColour, stock }) => {
         <p>Quick View</p>
       </ThumbnailView>
       <ThumbnailBottom>
+        <ThumbnailPreviousPrice>
+          £{previousPrice.toFixed(2)}
+        </ThumbnailPreviousPrice>
         <ThumbnailPrice>£{price.toFixed(2)}</ThumbnailPrice>
       </ThumbnailBottom>
     </ThumbnailContainer>

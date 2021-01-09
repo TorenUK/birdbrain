@@ -50,10 +50,12 @@ function App() {
           <Banner {...bannerData1} />
           <Featured></Featured>
           <Container>
-            {products.map((product) => (
+            {products.map((product, idx) => (
               <Thumbnail
+                key={idx}
                 title={product.title}
                 image={product.image.url}
+                previousPrice={product.previousPrice}
                 price={product.price}
                 scent={product.scent}
                 waxColour={product.waxColour}
