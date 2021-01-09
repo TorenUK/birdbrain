@@ -130,4 +130,13 @@ export const ThumbnailStock = styled.div`
   font-size: 0.9rem;
   font-weight: 700;
   text-align: center;
+
+  @media screen and (max-width: 1000px) {
+    width: 45px;
+    height: 40px;
+    top: -10%;
+    right: -8%;
+
+    font-size: 0.6rem;
+  }
 `;
