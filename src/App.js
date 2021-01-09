@@ -9,6 +9,7 @@ import {
   Thumbnail,
   Footer,
   Featured,
+  Carousel,
 } from "./components";
 import GlobalStyle from "./globalStyles";
 
@@ -48,7 +49,8 @@ function App() {
           <Navbar />
           <Links />
           <Banner {...bannerData1} />
-          <Featured></Featured>
+          <Featured />
+
           <Container>
             {products.map((product, idx) => (
               <Thumbnail

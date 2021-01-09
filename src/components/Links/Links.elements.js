@@ -17,6 +17,7 @@ export const LinksContainer = styled.div`
   align-items: center;
 
   background: white;
+  z-index: 100;
 `;
 
 export const LinksUl = styled.ul`
