@@ -25,6 +25,7 @@ export const ThumbnailContainer = styled.div`
   width: 300px;
   height: 300px;
   margin: 20px 50px;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -58,7 +59,8 @@ export const ThumbnailTitle = styled.h2`
   margin-top: 1rem;
   padding: 4px;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: white;
   background: black;
   border-radius: 5px;
@@ -108,4 +110,24 @@ export const ThumbnailPrice = styled.p`
   @media screen and (max-width: 1000px) {
     font-size: 1rem;
   }
+`;
+
+export const ThumbnailStock = styled.div`
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  top: -5%;
+  right: -6%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #b7235a;
+  border: 3px solid black;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
 `;

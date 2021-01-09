@@ -6,6 +6,10 @@ export const CarouselWrapper = styled.div`
 
   display: flex;
   overflow: hidden;
+
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
 `;
 
 const radius = "0.5rem";
@@ -58,5 +62,6 @@ export const CarouselSlide = styled.div`
 `;
 
 export const CarouselTitle = styled.h1`
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 500;
 `;

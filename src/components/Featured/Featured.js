@@ -8,7 +8,7 @@ import { Carousel } from "../../components";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const slides = [
-  { title: "info here", subtitle: "ಠ_ಠ" },
+  { title: "info here?", subtitle: "(ʘ ͜ʖ ʘ)" },
   { title: "and here", subtitle: "(¬‿¬)" },
   { title: "also here", subtitle: "ヾ(⌐■_■)ノ♪" },
 ];

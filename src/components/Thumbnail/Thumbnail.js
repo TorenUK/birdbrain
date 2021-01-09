@@ -8,6 +8,7 @@ import {
   ThumbnailPrice,
   ThumbnailTitle,
   ThumbnailView,
+  ThumbnailStock,
 } from "./Thumbnail.elements";
 
 // other
@@ -22,8 +23,11 @@ const Thumbnail = ({
   waxColour,
   stock,
 }) => {
+  console.log(stock);
+
   return (
     <ThumbnailContainer image={image}>
+      {stock <= 5 ? <ThumbnailStock>Low in stock</ThumbnailStock> : null}
       <ThumbnailTitle>{title}</ThumbnailTitle>
       <ThumbnailView>
         <VisibilityIcon />

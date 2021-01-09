@@ -36,9 +36,18 @@ export const LinksUl = styled.ul`
 `;
 
 export const LinksLi = styled(Link)`
+  font-weight: 600;
   text-decoration: none;
   list-style: none;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    color: black;
+  }
 `;
 
 export const Burger = styled(MenuIcon)`
