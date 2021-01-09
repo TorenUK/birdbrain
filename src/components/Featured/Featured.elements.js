@@ -2,14 +2,22 @@ import styled from "styled-components";
 
 export const FeaturedContainer = styled.div`
   width: 100%;
-  height: 120px;
+  height: 70px;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
-  background: #fcd1d2;
-  color: black;
+  background-image: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
+  color: white;
 `;
 
 export const FeaturedSection = styled.section`
@@ -20,4 +28,6 @@ export const FeaturedSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
 `;

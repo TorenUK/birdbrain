@@ -3,18 +3,24 @@ import styled from "styled-components";
 export const BannerContainer = styled.div`
   width: 100%;
   min-height: 300px;
-  height: 400px;
+  height: 300px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: black;
+  background: black url(${(props) => props.backgroundImg});
+  background-position: center;
+  background-size: 20%;
+
+  @media screen and (max-width: 1000px) {
+    background-size: 50%;
+  }
 `;
 
 export const BannerTextContainer = styled.div`
   max-width: 370px;
-  height: 50%;
+  height: 90%;
 
   display: flex;
   flex-direction: column;

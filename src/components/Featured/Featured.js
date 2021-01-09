@@ -9,8 +9,8 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 const Featured = () => {
   return (
     <FeaturedContainer>
-      <FeaturedSection>stuff here?</FeaturedSection>
-      <FeaturedSection>and here?</FeaturedSection>
+      <FeaturedSection>featured stuff here?</FeaturedSection>
+      <FeaturedSection>discount stuff here?</FeaturedSection>
       <FeaturedSection>
         <p>Shop Valentines Items →</p>
       </FeaturedSection>

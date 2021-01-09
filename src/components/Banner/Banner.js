@@ -10,10 +10,11 @@ import {
 } from "./Banner.elements";
 
 // other
+import feathers from "../../assets/feathers.png";
 
 const Banner = ({ title, subtitle, text }) => {
   return (
-    <BannerContainer>
+    <BannerContainer backgroundImg={feathers}>
       <BannerTextContainer>
         <BannerTitle>{title}</BannerTitle>
         <BannerSubtitle>{subtitle}</BannerSubtitle>

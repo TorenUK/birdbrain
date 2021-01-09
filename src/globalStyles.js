@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
     font-family: 'Raleway', sans-serif;
+    
 }
 
 *::-webkit-scrollbar {
