@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { ContainerWrapper } from "./Container.elements";
+import { ContainerTitle, ContainerWrapper } from "./Container.elements";
 
 const Container = ({
   children,
@@ -13,20 +13,24 @@ const Container = ({
   direction,
   gtc,
   gtr,
+  title,
 }) => {
   return (
-    <ContainerWrapper
-      width={width}
-      height={height}
-      minHeight={minHeight}
-      background={background}
-      display={display}
-      direction={direction}
-      gtc={gtc}
-      gtr={gtr}
-    >
-      {children}
-    </ContainerWrapper>
+    <>
+      <ContainerTitle>{title}</ContainerTitle>
+      <ContainerWrapper
+        width={width}
+        height={height}
+        minHeight={minHeight}
+        background={background}
+        display={display}
+        direction={direction}
+        gtc={gtc}
+        gtr={gtr}
+      >
+        {children}
+      </ContainerWrapper>
+    </>
   );
 };
 

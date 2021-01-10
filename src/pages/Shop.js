@@ -24,8 +24,6 @@ const Shop = () => {
     });
   }, []);
 
-  console.log(products);
-
   return (
     <div>
       <GlobalStyle />
@@ -50,6 +48,7 @@ const Shop = () => {
           ))}
         </Container>
       </PageContainer>
+      <Footer />
     </div>
   );
 };

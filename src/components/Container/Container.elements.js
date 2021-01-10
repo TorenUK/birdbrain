@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const ContainerWrapper = styled.div`
-  width: ${(props) => props.width || "90%"};
+  width: ${(props) => props.width || "100%"};
   min-height: ${(props) => props.minHeight || "400px"};
-  height: 500px;
   margin: 40px auto;
 
   display: flex;
@@ -16,4 +15,12 @@ export const ContainerWrapper = styled.div`
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
+`;
+
+export const ContainerTitle = styled.h1`
+  margin-top: 50px;
+
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
 `;

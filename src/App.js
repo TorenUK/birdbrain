@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://birdbrain.herokuapp.com/products?stock_lte=5")
+      .get("https://birdbrain.herokuapp.com/products?_limit=3")
       .then((response) => {
         setProducts(response.data);
       });
@@ -51,7 +51,7 @@ function App() {
           <Links />
           <Banner {...bannerData1} />
           <Featured />
-          <Container>
+          <Container title="Featured">
             {products.map((product, idx) => (
               <Thumbnail
                 key={idx}
@@ -65,7 +65,7 @@ function App() {
               />
             ))}
           </Container>
-          <Container>༼ つ ◕_◕ ༽つ stuff here soon</Container>
+          <Container title="༼ つ ◕_◕ ༽つ stuff here soon"></Container>
           <Footer />
         </Route>
       </Switch>

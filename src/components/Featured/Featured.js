@@ -6,6 +6,7 @@ import { Carousel } from "../../components";
 
 // other
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 
 const slides = [
   { title: "info here?", subtitle: "(ʘ ͜ʖ ʘ)" },
