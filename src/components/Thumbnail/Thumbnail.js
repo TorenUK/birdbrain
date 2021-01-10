@@ -48,7 +48,19 @@ const Thumbnail = ({
           <ThumbnailPrice>£{price.toFixed(2)}</ThumbnailPrice>
         </ThumbnailBottom>
       </ThumbnailContainer>
-      {open ? <Modal open={open} setOpen={setOpen} /> : null}
+      {open ? (
+        <Modal
+          title={title}
+          image={image}
+          previousPrice={previousPrice}
+          price={price}
+          scent={scent}
+          waxColour={waxColour}
+          stock={stock}
+          open={open}
+          setOpen={setOpen}
+        />
+      ) : null}
     </>
   );
 };

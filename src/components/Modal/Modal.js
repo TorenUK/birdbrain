@@ -1,12 +1,28 @@
 import React from "react";
 
 // components
-import { ModalContainer, ModalClose, ModalTitle } from "./Modal.elements";
+import {
+  ModalContainer,
+  ModalClose,
+  ModalTitle,
+  ModalImageContainer,
+} from "./Modal.elements";
 
-const Modal = ({ open, setOpen }) => {
+const Modal = ({
+  open,
+  setOpen,
+  title,
+  image,
+  previousPrice,
+  price,
+  scent,
+  waxColour,
+  stock,
+}) => {
   return (
     <ModalContainer>
-      <ModalTitle>Product Tite</ModalTitle>
+      <ModalTitle>{title}</ModalTitle>
+      <ModalImageContainer image={image} />
       <ModalClose
         onClick={() => {
           setOpen(false);
