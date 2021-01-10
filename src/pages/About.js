@@ -26,7 +26,7 @@ const About = () => {
       <PageContainer>
         <ContentContainer>
           <TextContainer>
-            <Title>Who We Are</Title>
+            {/* <Title>Who We Are</Title> */}
             <Subtitle>Handmade with care</Subtitle>
             <TextBody>
               Bird Brain Gifts is an online store selling gifts for all

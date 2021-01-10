@@ -7,6 +7,7 @@ import {
   ModalTitle,
   ModalImageContainer,
 } from "./Modal.elements";
+import { Form1 } from "../../components";
 
 const Modal = ({
   open,
@@ -23,6 +24,7 @@ const Modal = ({
     <ModalContainer>
       <ModalTitle>{title}</ModalTitle>
       <ModalImageContainer image={image} />
+      <Form1 />
       <ModalClose
         onClick={() => {
           setOpen(false);

@@ -9,3 +9,4 @@ export { default as Footer } from "./Footer/Footer";
 export { default as Featured } from "./Featured/Featured";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as Modal } from "./Modal/Modal";
+export { default as Form1 } from "./Form1/Form1";

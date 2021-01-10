@@ -12,7 +12,7 @@ export const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
 
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   background: black;
