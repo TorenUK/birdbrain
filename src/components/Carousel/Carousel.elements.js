@@ -6,10 +6,6 @@ export const CarouselWrapper = styled.div`
 
   display: flex;
   overflow: hidden;
-
-  @media screen and (max-width: 850px) {
-    display: none;
-  }
 `;
 
 const radius = "0.5rem";

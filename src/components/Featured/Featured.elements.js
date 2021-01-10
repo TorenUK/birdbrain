@@ -21,6 +21,10 @@ export const FeaturedContainer = styled.div`
       #989898;
   background-blend-mode: multiply, multiply;
   color: white;
+
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
 `;
 
 export const FeaturedSection = styled.section`

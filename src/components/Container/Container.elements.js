@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ContainerWrapper = styled.div`
   width: ${(props) => props.width || "100%"};
-  min-height: ${(props) => props.minHeight || "400px"};
-  margin: 40px auto;
+  min-height: ${(props) => props.minHeight || "100px"};
+  margin: 80px 0;
 
   display: flex;
   flex-wrap: wrap;

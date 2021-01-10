@@ -33,18 +33,16 @@ const Shop = () => {
       <PageContainer>
         <Container>
           {products.map((product, idx) => (
-            <>
-              <Thumbnail
-                key={idx}
-                title={product.title}
-                image={product.image.url}
-                previousPrice={product.previousPrice}
-                price={product.price}
-                scent={product.scent}
-                waxColour={product.waxColour}
-                stock={product.stock}
-              />
-            </>
+            <Thumbnail
+              key={idx}
+              title={product.title}
+              image={product.image.url}
+              previousPrice={product.previousPrice}
+              price={product.price}
+              scent={product.scent}
+              waxColour={product.waxColour}
+              stock={product.stock}
+            />
           ))}
         </Container>
       </PageContainer>

@@ -20,8 +20,6 @@ export const PageContainer = styled.div`
   width: 100%;
   max-width: 1600px;
 
-  margin: 100px 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
