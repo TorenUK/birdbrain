@@ -24,9 +24,9 @@ const Links = () => {
           <LinksLi to="/">Home</LinksLi>
           <LinksLi to="/shop">Shop</LinksLi>
           <LinksLi to="/about">About Us</LinksLi>
-          <LinksLi>FAQ's</LinksLi>
-          <LinksLi>Feedback</LinksLi>
-          <LinksLi>Get In Touch</LinksLi>
+          <LinksLi to="#">FAQ's</LinksLi>
+          <LinksLi to="#">Feedback</LinksLi>
+          <LinksLi to="#">Get In Touch</LinksLi>
           <LinksLi to="/blog">Blog</LinksLi>
         </LinksUl>
         <Burger
@@ -46,10 +46,10 @@ const Links = () => {
             <MobileLinksLi to="/">Home</MobileLinksLi>
             <MobileLinksLi to="/shop">Shop</MobileLinksLi>
             <MobileLinksLi to="/about">About Us</MobileLinksLi>
-            <MobileLinksLi>FAQ's</MobileLinksLi>
-            <MobileLinksLi>Feedback</MobileLinksLi>
-            <MobileLinksLi>Get In Touch</MobileLinksLi>
-            <MobileLinksLi>Blog</MobileLinksLi>
+            <MobileLinksLi to="#">FAQ's</MobileLinksLi>
+            <MobileLinksLi to="#">Feedback</MobileLinksLi>
+            <MobileLinksLi to="#">Get In Touch</MobileLinksLi>
+            <MobileLinksLi to="/blog">Blog</MobileLinksLi>
           </MobileUl>
         </MobileContainer>
       ) : null}

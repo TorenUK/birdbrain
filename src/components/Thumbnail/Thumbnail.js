@@ -23,8 +23,6 @@ const Thumbnail = ({
   waxColour,
   stock,
 }) => {
-  console.log(stock);
-
   return (
     <ThumbnailContainer image={image}>
       {stock <= 5 ? <ThumbnailStock>Low in stock</ThumbnailStock> : null}
