@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 *::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 `;
@@ -19,12 +19,12 @@ const GlobalStyle = createGlobalStyle`
 export const PageContainer = styled.div`
   width: 100%;
   max-width: 1600px;
-  min-height: 1000px;
+
+  margin: 100px 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
 
   margin: 0 auto;
 `;
@@ -118,9 +118,5 @@ export const ImageContainer = styled.div`
     width: 100%;
   }
 `;
-
-const hello = {
-  test: "yep",
-};
 
 export default GlobalStyle;

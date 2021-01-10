@@ -9,7 +9,6 @@ import {
   Thumbnail,
   Footer,
   Featured,
-  Carousel,
 } from "./components";
 import GlobalStyle from "./globalStyles";
 
@@ -27,9 +26,11 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://birdbrain.herokuapp.com/products").then((response) => {
-      setProducts(response.data);
-    });
+    axios
+      .get("https://birdbrain.herokuapp.com/products?stock_lte=5")
+      .then((response) => {
+        setProducts(response.data);
+      });
   }, []);
 
   return (
@@ -50,7 +51,6 @@ function App() {
           <Links />
           <Banner {...bannerData1} />
           <Featured />
-
           <Container>
             {products.map((product, idx) => (
               <Thumbnail
