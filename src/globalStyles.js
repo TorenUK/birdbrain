@@ -119,4 +119,8 @@ export const ImageContainer = styled.div`
   }
 `;
 
+const hello = {
+  test: "yep",
+};
+
 export default GlobalStyle;
