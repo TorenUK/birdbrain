@@ -8,3 +8,4 @@ export { default as Thumbnail } from "./Thumbnail/Thumbnail";
 export { default as Footer } from "./Footer/Footer";
 export { default as Featured } from "./Featured/Featured";
 export { default as Carousel } from "./Carousel/Carousel";
+export { default as Modal } from "./Modal/Modal";

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerWrapper = styled.div`
+  position: relative;
   width: ${(props) => props.width || "100%"};
   min-height: ${(props) => props.minHeight || "100px"};
   margin: 100px 0;
@@ -22,5 +23,4 @@ export const ContainerTitle = styled.h1`
 
   text-align: center;
   font-size: 1.2rem;
-  font-weight: 700;
 `;
