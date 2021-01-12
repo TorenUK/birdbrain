@@ -10,17 +10,25 @@ import * as Yup from "yup";
 const Form1 = () => {
   return (
     <Form1Wrapper>
-      <h2>options here</h2>
+      <h2>form options here</h2>
+      <br />
+      <h3>dispatch object to redux on submit</h3>
+      <br />
+      <h3> ← image to correspond with selection</h3>
+      <br />
+      <h3>different form fields for different product types</h3>
+      <br />
+      <h3>render form fields using strapi booleans</h3>
+
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ text1: "", text2: "", colour: "" }}
         validate={(values) => {
           const errors = {};
-          if (!values.email) {
-            errors.email = "Required";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Invalid email address";
+          if (!values.text1) {
+            errors.text1 = "Required";
+          }
+          if (!values.text2) {
+            errors.text2 = "required";
           }
           return errors;
         }}
@@ -31,14 +39,49 @@ const Form1 = () => {
           }, 400);
         }}
       >
-        {({ isSubmitting }) => (
-          <Form>
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
+        {({ isSubmitting, values }) => (
+          <Form
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Field type="text" name="text1" />
+            <ErrorMessage name="text1" component="div" />
+            <div role="group">
+              <div>Picked: {values.colour}</div>
+              <label>
+                <Field type="radio" name="colour" value="colour1" />
+                colour1
+              </label>
+              <label>
+                <Field type="radio" name="colour" value="colour2" />
+                colour2
+              </label>
+              <label>
+                <Field type="radio" name="colour" value="colour3" />
+                colour3
+              </label>
+              <label>
+                <Field type="radio" name="colour" value="colour4" />
+                colour4
+              </label>
+              <label>
+                <Field type="radio" name="colour" value="colour5" />
+                colour5
+              </label>
+              <label>
+                <Field type="radio" name="colour" value="colour6" />
+                colour6
+              </label>
+            </div>
+
+            <Field type="text" name="text2" />
+            <ErrorMessage name="text2" component="div" />
             <button type="submit" disabled={isSubmitting}>
-              Submit
+              add to basket
             </button>
           </Form>
         )}
