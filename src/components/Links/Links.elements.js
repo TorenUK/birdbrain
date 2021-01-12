@@ -39,6 +39,7 @@ export const LinksLi = styled(Link)`
   font-weight: 600;
   text-decoration: none;
   list-style: none;
+  color: inherit;
   cursor: pointer;
 
   &:hover {
