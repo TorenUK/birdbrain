@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     
 }
 
+body {
+  position: relative;
+}
+
 .Toastify__toast--dark {
   background-color: #B7235A !important;
   border-radius: 5px !important;

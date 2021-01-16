@@ -9,6 +9,7 @@ import {
   Thumbnail,
   Footer,
   Featured,
+  BasketIcon,
 } from "./components";
 import GlobalStyle from "./globalStyles";
 
@@ -24,8 +25,14 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// redux
+import { useSelector } from "react-redux";
+import { selectBasket } from "./features/basket/basketSlice";
+
 function App() {
   const [products, setProducts] = useState([]);
+
+  const basket = useSelector(selectBasket);
 
   // toast
   const notify = (item) => toast.dark(`${item} added to basket!`);
@@ -83,6 +90,7 @@ function App() {
             pauseOnFocusLoss
             draggable
           />
+          {basket.length ? <BasketIcon basket={basket} /> : null}
         </Route>
       </Switch>
     </Router>
