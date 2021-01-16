@@ -10,6 +10,19 @@ const GlobalStyle = createGlobalStyle`
     
 }
 
+.Toastify__toast--dark {
+  background-color: #B7235A !important;
+  border-radius: 5px !important;
+  text-align: center !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+}
+
+.Toastify__progress-bar {
+  background-color: #fff !important;
+}
+
 *::-webkit-scrollbar {
   /* display: none; */
 }

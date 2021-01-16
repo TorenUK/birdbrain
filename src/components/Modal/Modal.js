@@ -19,12 +19,13 @@ const Modal = ({
   scent,
   waxColour,
   stock,
+  notify,
 }) => {
   return (
     <ModalContainer>
       <ModalTitle>{title}</ModalTitle>
       <ModalImageContainer image={image} />
-      <Form1 />
+      <Form1 title={title} setOpen={setOpen} notify={notify} />
       <ModalClose
         onClick={() => {
           setOpen(false);

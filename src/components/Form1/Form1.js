@@ -6,11 +6,13 @@ import { Form1Wrapper } from "./Form1.elements";
 // other
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { addToBasket } from "../../features/basket/basketSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToBasket, selectBasket } from "../../features/basket/basketSlice";
 
-const Form1 = () => {
+const Form1 = ({ title, setOpen, notify }) => {
   const dispatch = useDispatch();
+  const basket = useSelector(selectBasket);
+  console.log(basket);
 
   return (
     <Form1Wrapper>
@@ -25,21 +27,22 @@ const Form1 = () => {
       <h3>render form fields using strapi booleans</h3>
 
       <Formik
-        initialValues={{ text1: "", text2: "", colour: "" }}
+        initialValues={{ option1: "", option2: "", colour: "" }}
         validate={(values) => {
           const errors = {};
-          if (!values.text1) {
-            errors.text1 = "Required";
+          if (!values.option1) {
+            errors.option1 = "Required";
           }
-          if (!values.text2) {
-            errors.text2 = "required";
+          if (!values.option2) {
+            errors.option2 = "required";
           }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
-          dispatch(addToBasket({ values }));
+          dispatch(addToBasket({ item: title, values }));
+          notify(title);
+          setOpen(false);
         }}
       >
         {({ isSubmitting, values }) => (
@@ -51,8 +54,8 @@ const Form1 = () => {
               justifyContent: "center",
             }}
           >
-            <Field type="text" name="text1" />
-            <ErrorMessage name="text1" component="div" />
+            <Field type="text" name="option1" />
+            <ErrorMessage name="option1" component="div" />
             <div role="group">
               <div>Picked: {values.colour}</div>
               <label>
@@ -81,8 +84,8 @@ const Form1 = () => {
               </label>
             </div>
 
-            <Field type="text" name="text2" />
-            <ErrorMessage name="text2" component="div" />
+            <Field type="text" name="option2" />
+            <ErrorMessage name="option2" component="div" />
             <button type="submit" disabled={isSubmitting}>
               add to basket
             </button>

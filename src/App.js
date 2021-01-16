@@ -21,9 +21,14 @@ import Blog from "./pages/Blog";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { bannerData1 } from "./components/data/banner";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [products, setProducts] = useState([]);
+
+  // toast
+  const notify = (item) => toast.dark(`${item} added to basket!`);
 
   useEffect(() => {
     axios
@@ -62,11 +67,22 @@ function App() {
                 scent={product.scent}
                 waxColour={product.waxColour}
                 stock={product.stock}
+                notify={notify}
               />
             ))}
           </Container>
           <Container title="༼ つ ◕_◕ ༽つ stuff here soon"></Container>
           <Footer />
+          <ToastContainer
+            position="bottom-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+          />
         </Route>
       </Switch>
     </Router>

@@ -23,8 +23,13 @@ const Thumbnail = ({
   scent,
   waxColour,
   stock,
+  notify,
 }) => {
   const [open, setOpen] = useState(false);
+
+  if (open) {
+    document.body.style.overflow = "unset";
+  }
 
   return (
     <>
@@ -59,6 +64,7 @@ const Thumbnail = ({
           stock={stock}
           open={open}
           setOpen={setOpen}
+          notify={notify}
         />
       ) : null}
     </>
