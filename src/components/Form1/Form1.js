@@ -6,8 +6,12 @@ import { Form1Wrapper } from "./Form1.elements";
 // other
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../../features/basket/basketSlice";
 
 const Form1 = () => {
+  const dispatch = useDispatch();
+
   return (
     <Form1Wrapper>
       <h2>form options here</h2>
@@ -33,10 +37,9 @@ const Form1 = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+          dispatch(addToBasket({ values }));
         }}
       >
         {({ isSubmitting, values }) => (
