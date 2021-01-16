@@ -13,6 +13,8 @@ export const BasketIconContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: red;
+  font-weight: 700;
+  color: white !important;
+  background: #b7235a;
   border-radius: 5px;
 `;
