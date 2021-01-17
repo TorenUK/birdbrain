@@ -12,7 +12,6 @@ import { addToBasket, selectBasket } from "../../features/basket/basketSlice";
 const Form1 = ({ title, setOpen, notify }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
-  console.log(basket);
 
   return (
     <Form1Wrapper>

@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from "react";
 
 // components
-import { Navbar, Links, Header, BlogItem, Footer } from "../components";
+import {
+  Navbar,
+  Links,
+  Header,
+  BlogItem,
+  Footer,
+  BasketIcon,
+} from "../components";
 
 import GlobalStyle, { PageContainer } from "../globalStyles";
 
 // other
 import axios from "axios";
 
+// redux
+import { useSelector } from "react-redux";
+import { selectBasket } from "../features/basket/basketSlice";
+
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
+
+  const basket = useSelector(selectBasket);
 
   useEffect(() => {
     axios
@@ -38,6 +51,7 @@ const Blog = () => {
         ))}
       </PageContainer>
       <Footer />
+      {basket.length ? <BasketIcon basket={basket} /> : null}
     </>
   );
 };

@@ -17,6 +17,7 @@ import GlobalStyle from "./globalStyles";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import Basket from "./pages/Basket";
 
 // other
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -49,13 +50,16 @@ function App() {
     <Router>
       <Switch>
         <Route path="/shop">
-          <Shop />
+          <Shop notify={notify} />
         </Route>
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/Blog">
+        <Route path="/blog">
           <Blog />
+        </Route>
+        <Route path="/basket">
+          <Basket />
         </Route>
         <Route path="/">
           <GlobalStyle />

@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { Navbar, Links, Header, Footer } from "../components";
+import { Navbar, Links, Header, Footer, BasketIcon } from "../components";
 
 import GlobalStyle, {
   TextContainer,
@@ -16,7 +16,13 @@ import GlobalStyle, {
 // other
 import craftImage from "../assets/craft.webp";
 
+// redux
+import { useSelector } from "react-redux";
+import { selectBasket } from "../features/basket/basketSlice";
+
 const About = () => {
+  const basket = useSelector(selectBasket);
+
   return (
     <div>
       <GlobalStyle />
@@ -46,6 +52,7 @@ const About = () => {
         </ContentContainer>
       </PageContainer>
       <Footer />
+      {basket.length ? <BasketIcon basket={basket} /> : null}
     </div>
   );
 };

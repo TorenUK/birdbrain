@@ -8,15 +8,24 @@ import {
   Header,
   Footer,
   Thumbnail,
+  BasketIcon,
 } from "../components";
 import GlobalStyle from "../globalStyles";
 
 // other
 import { PageContainer } from "../globalStyles";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Shop = () => {
+// redux
+import { useSelector } from "react-redux";
+import { selectBasket } from "../features/basket/basketSlice";
+
+const Shop = ({ notify }) => {
   const [products, setProducts] = useState([]);
+
+  const basket = useSelector(selectBasket);
 
   useEffect(() => {
     axios.get("https://birdbrain.herokuapp.com/products").then((response) => {
@@ -42,11 +51,23 @@ const Shop = () => {
               scent={product.scent}
               waxColour={product.waxColour}
               stock={product.stock}
+              notify={notify}
             />
           ))}
         </Container>
       </PageContainer>
       <Footer />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
+      {basket.length ? <BasketIcon basket={basket} /> : null}
     </div>
   );
 };
