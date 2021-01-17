@@ -13,6 +13,9 @@ const Form1 = ({ title, image, price, setOpen, notify }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const colourFieldRender = true;
+  const scentFieldRender = true;
+
   return (
     <Form1Wrapper>
       <h2>form options here</h2>
@@ -26,15 +29,9 @@ const Form1 = ({ title, image, price, setOpen, notify }) => {
       <h3>render form fields using strapi booleans</h3>
 
       <Formik
-        initialValues={{ option1: "", option2: "", colour: "" }}
+        initialValues={{ colour: "", scent: "", textarea: "" }}
         validate={(values) => {
           const errors = {};
-          if (!values.option1) {
-            errors.option1 = "Required";
-          }
-          if (!values.option2) {
-            errors.option2 = "required";
-          }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -53,38 +50,69 @@ const Form1 = ({ title, image, price, setOpen, notify }) => {
               justifyContent: "center",
             }}
           >
-            <Field type="text" name="option1" />
-            <ErrorMessage name="option1" component="div" />
-            <div role="group">
-              <div>Picked: {values.colour}</div>
-              <label>
-                <Field type="radio" name="colour" value="colour1" />
-                colour1
-              </label>
-              <label>
-                <Field type="radio" name="colour" value="colour2" />
-                colour2
-              </label>
-              <label>
-                <Field type="radio" name="colour" value="colour3" />
-                colour3
-              </label>
-              <label>
-                <Field type="radio" name="colour" value="colour4" />
-                colour4
-              </label>
-              <label>
-                <Field type="radio" name="colour" value="colour5" />
-                colour5
-              </label>
-              <label>
-                <Field type="radio" name="colour" value="colour6" />
-                colour6
-              </label>
-            </div>
-
-            <Field type="text" name="option2" />
-            <ErrorMessage name="option2" component="div" />
+            {colourFieldRender ? (
+              <div role="group">
+                <div>Colour: {values.colour}</div>
+                <label>
+                  <Field type="radio" name="colour" value="colour1" />
+                  colour1
+                </label>
+                <label>
+                  <Field type="radio" name="colour" value="colour2" />
+                  colour2
+                </label>
+                <label>
+                  <Field type="radio" name="colour" value="colour3" />
+                  colour3
+                </label>
+                <label>
+                  <Field type="radio" name="colour" value="colour4" />
+                  colour4
+                </label>
+                <label>
+                  <Field type="radio" name="colour" value="colour5" />
+                  colour5
+                </label>
+                <label>
+                  <Field type="radio" name="colour" value="colour6" />
+                  colour6
+                </label>
+              </div>
+            ) : null}
+            {scentFieldRender ? (
+              <div role="group">
+                <div>Scent: {values.scent}</div>
+                <label>
+                  <Field type="radio" name="scent" value="scent1" />
+                  scent1
+                </label>
+                <label>
+                  <Field type="radio" name="scent" value="scent2" />
+                  scent2
+                </label>
+                <label>
+                  <Field type="radio" name="scent" value="scent3" />
+                  scent3
+                </label>
+                <label>
+                  <Field type="radio" name="scent" value="scent4" />
+                  scent4
+                </label>
+                <label>
+                  <Field type="radio" name="scent" value="scent5" />
+                  scent5
+                </label>
+                <label>
+                  <Field type="radio" name="scent" value="scent6" />
+                  scent6
+                </label>
+              </div>
+            ) : null}
+            <textarea
+              name="textarea"
+              style={{ height: "100px", resize: "none" }}
+              placeholder="say smmt"
+            ></textarea>
             <button type="submit" disabled={isSubmitting}>
               add to basket
             </button>
