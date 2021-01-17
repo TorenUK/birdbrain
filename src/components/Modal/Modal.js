@@ -25,7 +25,13 @@ const Modal = ({
     <ModalContainer>
       <ModalTitle>{title}</ModalTitle>
       <ModalImageContainer image={image} />
-      <Form1 title={title} setOpen={setOpen} notify={notify} />
+      <Form1
+        title={title}
+        image={image}
+        price={price}
+        setOpen={setOpen}
+        notify={notify}
+      />
       <ModalClose
         onClick={() => {
           setOpen(false);

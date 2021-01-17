@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, selectBasket } from "../../features/basket/basketSlice";
 
-const Form1 = ({ title, setOpen, notify }) => {
+const Form1 = ({ title, image, price, setOpen, notify }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -39,7 +39,7 @@ const Form1 = ({ title, setOpen, notify }) => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setSubmitting(false);
-          dispatch(addToBasket({ item: title, values }));
+          dispatch(addToBasket({ item: title, image, price, values }));
           notify(title);
           setOpen(false);
         }}
