@@ -2,7 +2,7 @@ import React from "react";
 
 // components
 import { Navbar, Links, Header, BlogItem, Footer } from "../components";
-import { BasketItem } from "../components";
+import { BasketItem, Container } from "../components";
 
 import GlobalStyle, { PageContainer } from "../globalStyles";
 
@@ -18,11 +18,12 @@ const Basket = () => {
       <Navbar />
       <Links />
       <Header title="Your Basket" />
-      <PageContainer>
-        {basket?.map((item) => (
-          <BasketItem />
+      <Container width="50%">
+        {basket?.map((item, idx) => (
+          <BasketItem key={idx} image={item.image} />
         ))}
-      </PageContainer>
+      </Container>
+
       <Footer />
     </>
   );

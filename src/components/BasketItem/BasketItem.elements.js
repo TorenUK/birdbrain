@@ -9,5 +9,11 @@ export const BasketItemContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: pink;
+  background-image: url(${(props) => props.image});
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid black;
 `;

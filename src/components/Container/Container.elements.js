@@ -4,7 +4,7 @@ export const ContainerWrapper = styled.div`
   position: relative;
   width: ${(props) => props.width || "100%"};
   min-height: ${(props) => props.minHeight || "100px"};
-  margin: 100px 0;
+  margin: 100px auto;
 
   display: flex;
   flex-wrap: wrap;
