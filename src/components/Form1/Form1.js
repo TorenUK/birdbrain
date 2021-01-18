@@ -3,15 +3,12 @@ import React from "react";
 // components
 import { Form1Wrapper } from "./Form1.elements";
 
-// other
-import { useDispatch, useSelector } from "react-redux";
-import { selectBasket } from "../../features/basket/basketSlice";
-
 // custom forms
 import {
   HandmadeSoapForm,
   MarbleCoasterForm,
   ToteForm,
+  SmallJarCandle,
 } from "../../customForms";
 
 const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
@@ -51,8 +48,19 @@ const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
             notify={notify}
           />
         );
+        break;
+      case "jar":
+        return (
+          <ToteForm
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          />
+        );
       default:
-        return console.log("no match");
+        return null;
     }
   };
 

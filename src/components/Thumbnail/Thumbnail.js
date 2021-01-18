@@ -48,9 +48,12 @@ const Thumbnail = ({
           <p>Quick View</p>
         </ThumbnailView>
         <ThumbnailBottom>
-          <ThumbnailPreviousPrice>
-            £{previousPrice.toFixed(2)}
-          </ThumbnailPreviousPrice>
+          {previousPrice ? (
+            <ThumbnailPreviousPrice>
+              £{previousPrice.toFixed(2)}
+            </ThumbnailPreviousPrice>
+          ) : null}
+
           <ThumbnailPrice>£{price.toFixed(2)}</ThumbnailPrice>
         </ThumbnailBottom>
       </ThumbnailContainer>

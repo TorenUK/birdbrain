@@ -32,6 +32,7 @@ import { selectBasket } from "./features/basket/basketSlice";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [newProducts, setNewProducts] = useState([]);
 
   const basket = useSelector(selectBasket);
 
@@ -43,6 +44,12 @@ function App() {
       .get("https://birdbrain.herokuapp.com/products?_limit=3")
       .then((response) => {
         setProducts(response.data);
+      });
+
+    axios
+      .get("https://birdbrain.herokuapp.com/products?_start=3&_limit=4")
+      .then((response) => {
+        setNewProducts(response.data);
       });
   }, []);
 
@@ -69,6 +76,20 @@ function App() {
           <Featured />
           <Container title="Featured">
             {products.map((product, idx) => (
+              <Thumbnail
+                key={idx}
+                title={product.title}
+                image={product.image.url}
+                previousPrice={product.previousPrice}
+                price={product.price}
+                stock={product.stock}
+                notify={notify}
+                formType={product.formType}
+              />
+            ))}
+          </Container>
+          <Container title="New In">
+            {newProducts.map((product, idx) => (
               <Thumbnail
                 key={idx}
                 title={product.title}

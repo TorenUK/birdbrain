@@ -64,6 +64,7 @@ export const ThumbnailTitle = styled.h2`
   color: white;
   background: black;
   border-radius: 5px;
+  text-align: center;
 
   @media screen and (max-width: 1000px) {
     font-size: 1rem;
