@@ -24,6 +24,7 @@ const Thumbnail = ({
   waxColour,
   stock,
   notify,
+  formType,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -59,12 +60,11 @@ const Thumbnail = ({
           image={image}
           previousPrice={previousPrice}
           price={price}
-          scent={scent}
-          waxColour={waxColour}
           stock={stock}
           open={open}
           setOpen={setOpen}
           notify={notify}
+          formType={formType}
         />
       ) : null}
     </>

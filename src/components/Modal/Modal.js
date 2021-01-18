@@ -16,10 +16,9 @@ const Modal = ({
   image,
   previousPrice,
   price,
-  scent,
-  waxColour,
   stock,
   notify,
+  formType,
 }) => {
   return (
     <ModalContainer>
@@ -31,6 +30,7 @@ const Modal = ({
         price={price}
         setOpen={setOpen}
         notify={notify}
+        formType={formType}
       />
       <ModalClose
         onClick={() => {

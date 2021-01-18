@@ -4,17 +4,59 @@ import React from "react";
 import { Form1Wrapper } from "./Form1.elements";
 
 // other
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { addToBasket, selectBasket } from "../../features/basket/basketSlice";
+import { selectBasket } from "../../features/basket/basketSlice";
 
-const Form1 = ({ title, image, price, setOpen, notify }) => {
-  const dispatch = useDispatch();
-  const basket = useSelector(selectBasket);
+// custom forms
+import {
+  HandmadeSoapForm,
+  MarbleCoasterForm,
+  ToteForm,
+} from "../../customForms";
 
-  const colourFieldRender = true;
-  const scentFieldRender = true;
+const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
+  const formSelect = (formType) => {
+    const newFormType = formType?.toString();
+
+    switch (newFormType) {
+      case "soap":
+        return (
+          <HandmadeSoapForm
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          />
+        );
+        break;
+      case "coaster":
+        return (
+          <MarbleCoasterForm
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          />
+        );
+        break;
+      case "tote":
+        return (
+          <ToteForm
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          />
+        );
+      default:
+        return console.log("no match");
+    }
+  };
+
+  const test = true;
 
   return (
     <Form1Wrapper>
@@ -26,99 +68,7 @@ const Form1 = ({ title, image, price, setOpen, notify }) => {
       <br />
       <h3>different form fields for different product types</h3>
       <br />
-      <h3>render form fields using strapi booleans</h3>
-
-      <Formik
-        initialValues={{ colour: "", scent: "", textarea: "" }}
-        validate={(values) => {
-          const errors = {};
-          return errors;
-        }}
-        onSubmit={(values, { setSubmitting }) => {
-          setSubmitting(false);
-          dispatch(addToBasket({ item: title, image, price, values }));
-          notify(title);
-          setOpen(false);
-        }}
-      >
-        {({ isSubmitting, values }) => (
-          <Form
-            style={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
-            {colourFieldRender ? (
-              <div role="group">
-                <div>Colour: {values.colour}</div>
-                <label>
-                  <Field type="radio" name="colour" value="colour1" />
-                  colour1
-                </label>
-                <label>
-                  <Field type="radio" name="colour" value="colour2" />
-                  colour2
-                </label>
-                <label>
-                  <Field type="radio" name="colour" value="colour3" />
-                  colour3
-                </label>
-                <label>
-                  <Field type="radio" name="colour" value="colour4" />
-                  colour4
-                </label>
-                <label>
-                  <Field type="radio" name="colour" value="colour5" />
-                  colour5
-                </label>
-                <label>
-                  <Field type="radio" name="colour" value="colour6" />
-                  colour6
-                </label>
-              </div>
-            ) : null}
-            {scentFieldRender ? (
-              <div role="group">
-                <div>Scent: {values.scent}</div>
-                <label>
-                  <Field type="radio" name="scent" value="scent1" />
-                  scent1
-                </label>
-                <label>
-                  <Field type="radio" name="scent" value="scent2" />
-                  scent2
-                </label>
-                <label>
-                  <Field type="radio" name="scent" value="scent3" />
-                  scent3
-                </label>
-                <label>
-                  <Field type="radio" name="scent" value="scent4" />
-                  scent4
-                </label>
-                <label>
-                  <Field type="radio" name="scent" value="scent5" />
-                  scent5
-                </label>
-                <label>
-                  <Field type="radio" name="scent" value="scent6" />
-                  scent6
-                </label>
-              </div>
-            ) : null}
-            <textarea
-              name="textarea"
-              style={{ height: "100px", resize: "none" }}
-              placeholder="say smmt"
-            ></textarea>
-            <button type="submit" disabled={isSubmitting}>
-              add to basket
-            </button>
-          </Form>
-        )}
-      </Formik>
+      {formSelect(formType)}
     </Form1Wrapper>
   );
 };

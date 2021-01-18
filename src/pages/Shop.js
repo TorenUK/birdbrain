@@ -49,9 +49,8 @@ const Shop = ({ notify }) => {
               previousPrice={product.previousPrice}
               price={product.price}
               scent={product.scent}
-              waxColour={product.waxColour}
-              stock={product.stock}
               notify={notify}
+              formType={product.formType}
             />
           ))}
         </Container>

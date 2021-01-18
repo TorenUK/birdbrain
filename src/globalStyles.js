@@ -7,6 +7,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
     font-family: 'Raleway', sans-serif;
+
+    @media screen and (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
     
 }
 
