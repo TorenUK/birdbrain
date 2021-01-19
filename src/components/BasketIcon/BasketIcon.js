@@ -16,7 +16,6 @@ const BasketIcon = ({ basket }) => {
     <LinksLi to="/basket">
       <BasketIconContainer>
         <ShoppingBasketIcon />
-        basket thing here
       </BasketIconContainer>
     </LinksLi>
   );

@@ -10,6 +10,10 @@ import GlobalStyle, { PageContainer } from "../globalStyles";
 import { useSelector } from "react-redux";
 import { selectBasket } from "../features/basket/basketSlice";
 
+// other
+import { Button } from "@material-ui/core";
+import { LinksLi } from "../components/Links/Links.elements";
+
 const Basket = () => {
   const basket = useSelector(selectBasket);
   return (
@@ -23,7 +27,9 @@ const Basket = () => {
           <BasketItem key={idx} image={item.image} />
         ))}
       </Container>
-
+      <Container>
+        <LinksLi to="/checkout">checkout</LinksLi>
+      </Container>
       <Footer />
     </>
   );

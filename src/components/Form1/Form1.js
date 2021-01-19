@@ -64,8 +64,6 @@ const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
     }
   };
 
-  const test = true;
-
   return (
     <Form1Wrapper>
       <h2>form options here</h2>

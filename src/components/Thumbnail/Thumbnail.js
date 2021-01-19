@@ -30,6 +30,8 @@ const Thumbnail = ({
 
   if (open) {
     document.body.style.overflow = "unset";
+  } else if (!open) {
+    document.body.style.overflow = "unset";
   }
 
   return (

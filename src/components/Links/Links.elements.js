@@ -89,6 +89,7 @@ export const MobileUl = styled.ul`
 export const MobileLinksLi = styled(Link)`
   text-decoration: none;
   list-style: none;
+  color: white;
   cursor: pointer;
 `;
 

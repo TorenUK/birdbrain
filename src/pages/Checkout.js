@@ -125,7 +125,6 @@ const Checkout = () => {
         </div>
       </PageContainer>
       <Footer />
-      {basket.length ? <BasketIcon basket={basket} /> : null}
     </>
   );
 };

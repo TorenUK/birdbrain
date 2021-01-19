@@ -20,6 +20,12 @@ const Modal = ({
   notify,
   formType,
 }) => {
+  if (open) {
+    document.body.style.overflow = "hidden";
+  } else if (!open) {
+    document.body.style.overflow = "unset";
+  }
+
   return (
     <ModalContainer>
       <ModalTitle>{title}</ModalTitle>

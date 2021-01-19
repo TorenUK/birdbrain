@@ -67,7 +67,8 @@ export const ThumbnailTitle = styled.h2`
   text-align: center;
 
   @media screen and (max-width: 1000px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    padding: 2px;
   }
 `;
 

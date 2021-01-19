@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const BasketIconContainer = styled.div`
-  width: 120px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 
   position: fixed;
   bottom: 5%;
@@ -20,4 +20,11 @@ export const BasketIconContainer = styled.div`
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+
+  @media screen and (max-width: 850px) {
+    width: 45px;
+    height: 45px;
+
+    font-size: 0.8rem;
+  }
 `;
