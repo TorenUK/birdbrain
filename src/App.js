@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 // components
 import {
@@ -18,6 +20,7 @@ import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Basket from "./pages/Basket";
+import Checkout from "./pages/Checkout";
 
 // other
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -29,6 +32,11 @@ import "react-toastify/dist/ReactToastify.css";
 // redux
 import { useSelector } from "react-redux";
 import { selectBasket } from "./features/basket/basketSlice";
+
+// stripe
+const promise = loadStripe(
+  "pk_test_51HCr8zGrO8LMr0aUXQ0OQTnN3yG2EZOvmnm5zs01TjUVekfhGgS3b0WL7BeDxqV97ikJ7DqJR5qaFknoFIx7pnhu00rn1llTud"
+);
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -56,6 +64,11 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/checkout">
+          <Elements stripe={promise}>
+            <Checkout />
+          </Elements>
+        </Route>
         <Route path="/shop">
           <Shop notify={notify} />
         </Route>
