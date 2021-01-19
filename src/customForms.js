@@ -13,6 +13,13 @@ export const HandmadeSoapForm = ({ title, image, price, notify, setOpen }) => {
       initialValues={{ colour: "", scent: "", textarea: "" }}
       validate={(values) => {
         const errors = {};
+        if (!values.colour) {
+          errors.colour = "please select a colour";
+        }
+
+        if (!values.scent) {
+          errors.scent = "please select a scent";
+        }
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
@@ -22,7 +29,7 @@ export const HandmadeSoapForm = ({ title, image, price, notify, setOpen }) => {
         setOpen(false);
       }}
     >
-      {({ isSubmitting, values }) => (
+      {({ isSubmitting, values, errors }) => (
         <Form
           style={{
             height: "100%",
@@ -58,7 +65,8 @@ export const HandmadeSoapForm = ({ title, image, price, notify, setOpen }) => {
               Pink
             </label>
           </div>
-
+          <h2>{errors.colour}</h2>
+          <h2>{errors.scent}</h2>
           <div role="group">
             <div>Scent: {values.scent}</div>
             <label>

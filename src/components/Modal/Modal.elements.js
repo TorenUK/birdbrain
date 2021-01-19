@@ -37,6 +37,13 @@ export const ModalClose = styled(Button)`
   left: 2rem;
   color: black !important;
   background: grey !important;
+
+  @media screen and (max-width: 1000px) {
+    width: 50px !important;
+    height: 30px !important;
+    top: 1rem;
+    left: 1rem;
+  }
 `;
 
 export const ModalTitle = styled.h1`
