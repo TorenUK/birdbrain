@@ -14,6 +14,10 @@ import { selectBasket } from "../features/basket/basketSlice";
 
 import { LinksLi } from "../components/Links/Links.elements";
 
+const total = (basket) => {
+  return basket.reduce((amount, item) => parseFloat(item.price) + amount, 0);
+};
+
 const Basket = () => {
   const basket = useSelector(selectBasket);
   return (
@@ -28,7 +32,7 @@ const Basket = () => {
         ))}
       </Container>
       <Container>
-        <LinksLi to="/checkout">checkout</LinksLi>
+        <LinksLi to="/checkout">subtotal: £{total(basket)} 💳 </LinksLi>
       </Container>
       <Footer />
     </>
