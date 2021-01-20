@@ -82,6 +82,22 @@ export const TextContainer = styled.div`
     width: 100%;
   }
 `;
+export const FormTextContainer = styled.div`
+  width: 50%;
+  min-width: 250px;
+  height: 100%;
+  max-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  text-align: center;
+  @media screen and (max-width: 1000px) {
+    width: 70%;
+  }
+`;
 
 export const Title = styled.h1`
   width: 50%;

@@ -4,6 +4,9 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, selectBasket } from "./features/basket/basketSlice";
 
+// other
+import { Button } from "@material-ui/core";
+
 export const HandmadeSoapForm = ({
   title,
   image,
@@ -109,9 +112,9 @@ export const HandmadeSoapForm = ({
               Vanilla
             </label>
           </div>
-          <button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             add to basket
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
@@ -183,9 +186,9 @@ export const SmallJarCandle = ({
               Vanilla
             </label>
           </div>
-          <button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             add to basket
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
@@ -248,9 +251,9 @@ export const MarbleCoasterForm = ({
               Purple
             </label>
           </div>
-          <button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             add to basket
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
@@ -294,9 +297,9 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
               White
             </label>
           </div>
-          <button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             add to basket
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
@@ -329,9 +332,9 @@ export const SoapBar = ({ title, image, price, notify, setOpen, id }) => {
             justifyContent: "center",
           }}
         >
-          <button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             add to basket
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>
@@ -379,9 +382,9 @@ export const WaxMelt = ({ title, image, price, notify, setOpen, id }) => {
               Vanilla
             </label>
           </div>
-          <button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             add to basket
-          </button>
+          </Button>
         </Form>
       )}
     </Formik>

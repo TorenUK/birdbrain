@@ -24,6 +24,7 @@ const Thumbnail = ({
   stock,
   notify,
   formType,
+  description,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -70,6 +71,7 @@ const Thumbnail = ({
           setOpen={setOpen}
           notify={notify}
           formType={formType}
+          description={description}
         />
       ) : null}
     </>

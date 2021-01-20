@@ -8,6 +8,7 @@ import {
   ModalImageContainer,
 } from "./Modal.elements";
 import { Form1 } from "../../components";
+import { TextContainer } from "../../globalStyles";
 
 const Modal = ({
   id,
@@ -20,6 +21,7 @@ const Modal = ({
   stock,
   notify,
   formType,
+  description,
 }) => {
   if (open) {
     document.body.style.overflow = "hidden";
@@ -41,6 +43,7 @@ const Modal = ({
         setOpen={setOpen}
         notify={notify}
         formType={formType}
+        description={description}
       />
       <ModalClose
         onClick={() => {

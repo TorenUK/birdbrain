@@ -13,7 +13,19 @@ import {
   WaxMelt,
 } from "../../customForms";
 
-const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
+//other
+import { FormTextContainer } from "../../globalStyles";
+
+const Form1 = ({
+  id,
+  title,
+  image,
+  price,
+  setOpen,
+  notify,
+  formType,
+  description,
+}) => {
   const formSelect = (formType) => {
     const newFormType = formType?.toString();
 
@@ -95,7 +107,12 @@ const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
     }
   };
 
-  return <Form1Wrapper>{formSelect(formType)}</Form1Wrapper>;
+  return (
+    <Form1Wrapper>
+      <FormTextContainer>{description}</FormTextContainer>
+      {formSelect(formType)}
+    </Form1Wrapper>
+  );
 };
 
 export default Form1;

@@ -54,6 +54,7 @@ const Shop = ({ notify }) => {
               scent={product.scent}
               notify={notify}
               formType={product.formType}
+              description={product.description}
             />
           ))}
         </Container>

@@ -105,6 +105,7 @@ function App() {
                 stock={product.stock}
                 notify={notify}
                 formType={product.formType}
+                description={product.description}
               />
             ))}
           </Container>
@@ -120,6 +121,7 @@ function App() {
                 stock={product.stock}
                 notify={notify}
                 formType={product.formType}
+                description={product.description}
               />
             ))}
           </Container>

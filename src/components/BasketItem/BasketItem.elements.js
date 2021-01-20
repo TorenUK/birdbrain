@@ -26,8 +26,8 @@ export const BasketItemContainer = styled.div`
 `;
 
 export const BasketRemove = styled.button`
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   bottom: 5%;
   left: 5%;
