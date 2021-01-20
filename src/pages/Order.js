@@ -14,25 +14,23 @@ import { selectBasket } from "../features/basket/basketSlice";
 
 import { LinksLi } from "../components/Links/Links.elements";
 
-const Basket = () => {
-  const basket = useSelector(selectBasket);
+const Order = () => {
   return (
     <>
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Header title="Your Basket" />
-      <Container width="50%">
-        {basket?.map((item, idx) => (
-          <BasketItem key={idx} id={item.id} image={item.image} />
-        ))}
+      <Header title="Your Order" />
+      <Container width="80%">
+        PLEASE SCREENSHOT THIS PAGE TO KEEP RECORD OF ORDER DETAILS
       </Container>
-      <Container>
-        <LinksLi to="/checkout">checkout</LinksLi>
+      <Container width="80%">
+        <h2>EMAIL CONFIRMATION COMING SOON</h2>
       </Container>
+      <Container></Container>
       <Footer />
     </>
   );
 };
 
-export default Basket;
+export default Order;

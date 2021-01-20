@@ -28,9 +28,11 @@ const Shop = ({ notify }) => {
   const basket = useSelector(selectBasket);
 
   useEffect(() => {
-    axios.get("https://birdbrain.herokuapp.com/products").then((response) => {
-      setProducts(response.data);
-    });
+    axios
+      .get("https://birdbrain.herokuapp.com/products?stock_gte=1")
+      .then((response) => {
+        setProducts(response.data);
+      });
   }, []);
 
   return (
@@ -43,6 +45,7 @@ const Shop = ({ notify }) => {
         <Container>
           {products.map((product, idx) => (
             <Thumbnail
+              id={product.id}
               key={idx}
               title={product.title}
               image={product.image.url}

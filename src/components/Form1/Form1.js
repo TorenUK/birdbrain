@@ -68,19 +68,7 @@ const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
     }
   };
 
-  return (
-    <Form1Wrapper>
-      <h2>form options here</h2>
-      <br />
-      <h3>dispatch object to redux on submit</h3>
-      <br />
-      <h3> ← image to correspond with selection</h3>
-      <br />
-      <h3>different form fields for different product types</h3>
-      <br />
-      {formSelect(formType)}
-    </Form1Wrapper>
-  );
+  return <Form1Wrapper>{formSelect(formType)}</Form1Wrapper>;
 };
 
 export default Form1;

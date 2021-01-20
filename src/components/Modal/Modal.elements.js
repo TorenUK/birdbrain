@@ -49,11 +49,14 @@ export const ModalClose = styled(Button)`
 export const ModalTitle = styled.h1`
   position: absolute;
   top: 2rem;
+  padding: 3px;
 
   font-size: 1.5rem;
   font-weight: 700;
   font-weight: 700;
   color: white;
+  background: black;
+  border-radius: 5px;
 `;
 
 export const ModalImageContainer = styled.div`

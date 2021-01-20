@@ -16,6 +16,7 @@ import GlobalStyle, { PageContainer } from "../globalStyles";
 
 // other
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 // redux
 import { useSelector } from "react-redux";
@@ -33,14 +34,19 @@ const Checkout = () => {
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState("");
 
+  const history = useHistory();
+
   const stripe = useStripe();
   const elements = useElements();
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios.post("http://localhost:1337/create-intent", {
-        basket,
-      });
+      const response = await axios.post(
+        "https://birdbrain.herokuapp.com/create-intent",
+        {
+          basket,
+        }
+      );
 
       setClientSecret(response.data.clientSecret);
     };
@@ -73,6 +79,7 @@ const Checkout = () => {
     axios.post("http://localhost:1337/create-order", {
       basket,
     });
+    history.push("/order");
   };
 
   const cardStyle = {

@@ -21,6 +21,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Basket from "./pages/Basket";
 import Checkout from "./pages/Checkout";
+import Order from "./pages/Order";
 
 // other
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -49,13 +50,15 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://birdbrain.herokuapp.com/products?_limit=3")
+      .get("https://birdbrain.herokuapp.com/products?_limit=3&stock_gte=1")
       .then((response) => {
         setProducts(response.data);
       });
 
     axios
-      .get("https://birdbrain.herokuapp.com/products?_start=3&_limit=4")
+      .get(
+        "https://birdbrain.herokuapp.com/products?_start=3&_limit=4&stock_gte=1"
+      )
       .then((response) => {
         setNewProducts(response.data);
       });
@@ -80,6 +83,9 @@ function App() {
         </Route>
         <Route path="/basket">
           <Basket />
+        </Route>
+        <Route path="/order">
+          <Order />
         </Route>
         <Route path="/">
           <GlobalStyle />

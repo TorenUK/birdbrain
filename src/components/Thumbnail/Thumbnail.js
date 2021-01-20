@@ -21,8 +21,6 @@ const Thumbnail = ({
   image,
   previousPrice,
   price,
-  scent,
-  waxColour,
   stock,
   notify,
   formType,
