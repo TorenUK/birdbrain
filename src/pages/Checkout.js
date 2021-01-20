@@ -42,9 +42,12 @@ const Checkout = () => {
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios.post("http://localhost:1337/create-intent", {
-        basket,
-      });
+      const response = await axios.post(
+        "https://birdbrain.herokuapp.com/create-intent",
+        {
+          basket,
+        }
+      );
 
       setClientSecret(response.data.clientSecret);
     };
@@ -74,7 +77,7 @@ const Checkout = () => {
     setError(null);
     setProcessing(false);
     setSucceeded(true);
-    axios.post("http://localhost:1337/orders", {
+    axios.post("https://birdbrain.herokuapp.com/orders", {
       email: "toren@toren.uk",
       payment: 100,
       stuff: JSON.stringify(basket, null, 2),

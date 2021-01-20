@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
   }
 }
     
+label {
+  margin: 0 2px;
+}
+
 }
 
 body {

@@ -23,14 +23,6 @@ export const HandmadeSoapForm = ({
       initialValues={{ colour: "", scent: "" }}
       validate={(values) => {
         const errors = {};
-        if (!values.colour) {
-          errors.colour = "please select a colour";
-        }
-
-        if (!values.scent) {
-          errors.scent = "please select a scent";
-        }
-        return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
@@ -43,13 +35,15 @@ export const HandmadeSoapForm = ({
         <Form
           style={{
             height: "100%",
+            width: "100%",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
           }}
         >
           <div role="group">
-            <div>Colour: {values.colour}</div>
+            <div style={{ textAlign: "center" }}>Colour: {values.colour}</div>
             <label>
               <Field type="radio" name="colour" value="Black" />
               Black
@@ -75,10 +69,10 @@ export const HandmadeSoapForm = ({
               Pink
             </label>
           </div>
-          <h2>{errors.colour}</h2>
-          <h2>{errors.scent}</h2>
           <div role="group">
-            <div>Scent: {values.scent}</div>
+            <div style={{ textAlign: "center", margin: "5px 0" }}>
+              Scent: {values.scent}
+            </div>
             <label>
               <Field type="radio" name="scent" value="Chocolate" />
               Chocolate
@@ -156,7 +150,9 @@ export const SmallJarCandle = ({
           }}
         >
           <div role="group">
-            <div>Scent: {values.scent}</div>
+            <div style={{ textAlign: "center", margin: "5px 0" }}>
+              Scent: {values.scent}
+            </div>
             <label>
               <Field type="radio" name="scent" value="Orange Spice" />
               Orange Spice
@@ -229,7 +225,9 @@ export const MarbleCoasterForm = ({
           }}
         >
           <div role="group">
-            <div>Colour: {values.colour}</div>
+            <div style={{ textAlign: "center", margin: "5px 0" }}>
+              Colour: {values.colour}
+            </div>
             <label>
               <Field type="radio" name="colour" value="Blue Marble" />
               Blue
@@ -287,7 +285,9 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
           }}
         >
           <div role="group">
-            <div>Colour: {values.colour}</div>
+            <div style={{ textAlign: "center", margin: "5px 0" }}>
+              Colour: {values.colour}
+            </div>
             <label>
               <Field type="radio" name="colour" value="Black" />
               Black
@@ -364,11 +364,14 @@ export const WaxMelt = ({ title, image, price, notify, setOpen, id }) => {
             height: "100%",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "center",
           }}
         >
           <div role="group">
-            <div>Scent: {values.scent}</div>
+            <div style={{ textAlign: "center", margin: "5px 0" }}>
+              Scent: {values.scent}
+            </div>
             <label>
               <Field type="radio" name="scent" value="Mocha" />
               Mocha

@@ -29,8 +29,6 @@ const Modal = ({
     document.body.style.overflow = "unset";
   }
 
-  console.log(id);
-
   return (
     <ModalContainer>
       <ModalTitle>{title}</ModalTitle>
