@@ -19,8 +19,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 // redux
-import { useSelector } from "react-redux";
-import { selectBasket } from "../features/basket/basketSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectBasket, emptyBasket } from "../features/basket/basketSlice";
 
 // stripe
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -35,6 +35,7 @@ const Checkout = () => {
   const [clientSecret, setClientSecret] = useState("");
 
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const stripe = useStripe();
   const elements = useElements();
@@ -76,9 +77,12 @@ const Checkout = () => {
     setError(null);
     setProcessing(false);
     setSucceeded(true);
-    axios.post("http://localhost:1337/create-order", {
-      basket,
+    axios.post("https://birdbrain.herokuapp.com/orders", {
+      email: "toren@toren.uk",
+      payment: 100,
+      stuff: JSON.stringify(basket),
     });
+    dispatch(emptyBasket());
     history.push("/order");
   };
 
@@ -106,8 +110,7 @@ const Checkout = () => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Header title="Checkout" />
-      <Container title="༼ つ ◕_◕ ༽つ stuff here soon">
+      <Container title="checkout">
         {basket?.map((item, idx) => (
           <BasketItem key={idx} image={item.image} />
         ))}
@@ -135,7 +138,6 @@ const Checkout = () => {
           {error && <div>{error}</div>}
         </div>
       </PageContainer>
-      <Footer />
     </>
   );
 };
