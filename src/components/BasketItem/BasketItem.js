@@ -10,7 +10,7 @@ import { removeFromBasket } from "../../features/basket/basketSlice";
 // other
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-const BasketItem = ({ image, key }) => {
+const BasketItem = ({ image, id }) => {
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +18,7 @@ const BasketItem = ({ image, key }) => {
       <BasketRemove>
         <DeleteForeverIcon
           onClick={() => {
-            dispatch(removeFromBasket({ id: key }));
+            dispatch(removeFromBasket({ id: id }));
           }}
         />
       </BasketRemove>

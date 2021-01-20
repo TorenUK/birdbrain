@@ -38,7 +38,9 @@ const Checkout = () => {
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios.post("http://localhost:1337/create-intent");
+      const response = await axios.post("http://localhost:1337/create-intent", {
+        basket,
+      });
 
       setClientSecret(response.data.clientSecret);
     };
@@ -64,11 +66,13 @@ const Checkout = () => {
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`);
       setProcessing(false);
-    } else {
-      setError(null);
-      setProcessing(false);
-      setSucceeded(true);
     }
+    setError(null);
+    setProcessing(false);
+    setSucceeded(true);
+    axios.post("http://localhost:1337/create-order", {
+      basket,
+    });
   };
 
   const cardStyle = {

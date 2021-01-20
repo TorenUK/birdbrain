@@ -16,6 +16,7 @@ import { Modal } from "../../components";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 
 const Thumbnail = ({
+  id,
   title,
   image,
   previousPrice,
@@ -61,6 +62,7 @@ const Thumbnail = ({
       </ThumbnailContainer>
       {open ? (
         <Modal
+          id={id}
           title={title}
           image={image}
           previousPrice={previousPrice}

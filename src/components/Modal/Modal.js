@@ -10,6 +10,7 @@ import {
 import { Form1 } from "../../components";
 
 const Modal = ({
+  id,
   open,
   setOpen,
   title,
@@ -31,6 +32,7 @@ const Modal = ({
       <ModalTitle>{title}</ModalTitle>
       <ModalImageContainer image={image} />
       <Form1
+        id={id}
         title={title}
         image={image}
         price={price}

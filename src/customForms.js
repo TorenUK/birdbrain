@@ -4,7 +4,14 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, selectBasket } from "./features/basket/basketSlice";
 
-export const HandmadeSoapForm = ({ title, image, price, notify, setOpen }) => {
+export const HandmadeSoapForm = ({
+  title,
+  image,
+  price,
+  notify,
+  setOpen,
+  id,
+}) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -24,7 +31,7 @@ export const HandmadeSoapForm = ({ title, image, price, notify, setOpen }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ item: title, image, price, values }));
+        dispatch(addToBasket({ id, title, image, price, values }));
         notify(title);
         setOpen(false);
       }}
@@ -117,7 +124,14 @@ export const HandmadeSoapForm = ({ title, image, price, notify, setOpen }) => {
   );
 };
 
-export const SmallJarCandle = ({ title, image, price, notify, setOpen }) => {
+export const SmallJarCandle = ({
+  title,
+  image,
+  price,
+  notify,
+  setOpen,
+  id,
+}) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -130,7 +144,7 @@ export const SmallJarCandle = ({ title, image, price, notify, setOpen }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ item: title, image, price, values }));
+        dispatch(addToBasket({ id, title, image, price, values }));
         notify(title);
         setOpen(false);
       }}
@@ -188,7 +202,14 @@ export const SmallJarCandle = ({ title, image, price, notify, setOpen }) => {
     </Formik>
   );
 };
-export const MarbleCoasterForm = ({ title, image, price, notify, setOpen }) => {
+export const MarbleCoasterForm = ({
+  title,
+  image,
+  price,
+  notify,
+  setOpen,
+  id,
+}) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -201,7 +222,7 @@ export const MarbleCoasterForm = ({ title, image, price, notify, setOpen }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ item: title, image, price, values }));
+        dispatch(addToBasket({ id, title, image, price, values }));
         notify(title);
         setOpen(false);
       }}
@@ -251,7 +272,7 @@ export const MarbleCoasterForm = ({ title, image, price, notify, setOpen }) => {
     </Formik>
   );
 };
-export const ToteForm = ({ title, image, price, notify, setOpen }) => {
+export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -264,7 +285,7 @@ export const ToteForm = ({ title, image, price, notify, setOpen }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ item: title, image, price, values }));
+        dispatch(addToBasket({ id, title, image, price, values }));
         notify(title);
         setOpen(false);
       }}

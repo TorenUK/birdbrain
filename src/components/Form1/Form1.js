@@ -11,7 +11,7 @@ import {
   SmallJarCandle,
 } from "../../customForms";
 
-const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
+const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
   const formSelect = (formType) => {
     const newFormType = formType?.toString();
 
@@ -19,6 +19,7 @@ const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
       case "soap":
         return (
           <HandmadeSoapForm
+            id={id}
             title={title}
             image={image}
             price={price}
@@ -30,6 +31,7 @@ const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
       case "coaster":
         return (
           <MarbleCoasterForm
+            id={id}
             title={title}
             image={image}
             price={price}
@@ -41,6 +43,7 @@ const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
       case "tote":
         return (
           <ToteForm
+            id={id}
             title={title}
             image={image}
             price={price}
@@ -52,6 +55,7 @@ const Form1 = ({ title, image, price, setOpen, notify, formType }) => {
       case "jar":
         return (
           <ToteForm
+            id={id}
             title={title}
             image={image}
             price={price}
