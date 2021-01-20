@@ -9,6 +9,8 @@ import {
   MarbleCoasterForm,
   ToteForm,
   SmallJarCandle,
+  SoapBar,
+  WaxMelt,
 } from "../../customForms";
 
 const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
@@ -52,9 +54,9 @@ const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
           />
         );
         break;
-      case "jar":
+      case "soapbar":
         return (
-          <ToteForm
+          <SoapBar
             id={id}
             title={title}
             image={image}
@@ -63,6 +65,31 @@ const Form1 = ({ id, title, image, price, setOpen, notify, formType }) => {
             notify={notify}
           />
         );
+        break;
+      case "sjarcandle":
+        return (
+          <SmallJarCandle
+            id={id}
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          />
+        );
+        break;
+      case "waxmelt":
+        return (
+          <WaxMelt
+            id={id}
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          />
+        );
+
       default:
         return null;
     }

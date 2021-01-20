@@ -111,6 +111,7 @@ function App() {
           <Container title="New In">
             {newProducts.map((product, idx) => (
               <Thumbnail
+                id={product.id}
                 key={idx}
                 title={product.title}
                 image={product.image.url}

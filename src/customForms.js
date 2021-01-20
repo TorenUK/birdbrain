@@ -17,7 +17,7 @@ export const HandmadeSoapForm = ({
 
   return (
     <Formik
-      initialValues={{ colour: "", scent: "", textarea: "" }}
+      initialValues={{ colour: "", scent: "" }}
       validate={(values) => {
         const errors = {};
         if (!values.colour) {
@@ -109,12 +109,6 @@ export const HandmadeSoapForm = ({
               Vanilla
             </label>
           </div>
-
-          <textarea
-            name="textarea"
-            style={{ height: "100px", resize: "none" }}
-            placeholder="say smmt"
-          ></textarea>
           <button type="submit" disabled={isSubmitting}>
             add to basket
           </button>
@@ -137,7 +131,7 @@ export const SmallJarCandle = ({
 
   return (
     <Formik
-      initialValues={{ scent: "", textarea: "" }}
+      initialValues={{ scent: "" }}
       validate={(values) => {
         const errors = {};
         return errors;
@@ -189,11 +183,6 @@ export const SmallJarCandle = ({
               Vanilla
             </label>
           </div>
-          <textarea
-            name="textarea"
-            style={{ height: "100px", resize: "none" }}
-            placeholder="say smmt"
-          ></textarea>
           <button type="submit" disabled={isSubmitting}>
             add to basket
           </button>
@@ -215,7 +204,7 @@ export const MarbleCoasterForm = ({
 
   return (
     <Formik
-      initialValues={{ colour: "", textarea: "" }}
+      initialValues={{ colour: "" }}
       validate={(values) => {
         const errors = {};
         return errors;
@@ -259,11 +248,6 @@ export const MarbleCoasterForm = ({
               Purple
             </label>
           </div>
-          <textarea
-            name="textarea"
-            style={{ height: "100px", resize: "none" }}
-            placeholder="say smmt"
-          ></textarea>
           <button type="submit" disabled={isSubmitting}>
             add to basket
           </button>
@@ -278,7 +262,7 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
 
   return (
     <Formik
-      initialValues={{ colour: "", textarea: "" }}
+      initialValues={{ colour: "" }}
       validate={(values) => {
         const errors = {};
         return errors;
@@ -310,11 +294,91 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
               White
             </label>
           </div>
-          <textarea
-            name="textarea"
-            style={{ height: "100px", resize: "none" }}
-            placeholder="say smmt"
-          ></textarea>
+          <button type="submit" disabled={isSubmitting}>
+            add to basket
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
+};
+export const SoapBar = ({ title, image, price, notify, setOpen, id }) => {
+  const dispatch = useDispatch();
+  const basket = useSelector(selectBasket);
+
+  return (
+    <Formik
+      initialValues={{ colour: "" }}
+      validate={(values) => {
+        const errors = {};
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setSubmitting(false);
+        dispatch(addToBasket({ id, title, image, price, values }));
+        notify(title);
+        setOpen(false);
+      }}
+    >
+      {({ isSubmitting, values }) => (
+        <Form
+          style={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <button type="submit" disabled={isSubmitting}>
+            add to basket
+          </button>
+        </Form>
+      )}
+    </Formik>
+  );
+};
+export const WaxMelt = ({ title, image, price, notify, setOpen, id }) => {
+  const dispatch = useDispatch();
+  const basket = useSelector(selectBasket);
+
+  return (
+    <Formik
+      initialValues={{ scent: "" }}
+      validate={(values) => {
+        const errors = {};
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setSubmitting(false);
+        dispatch(addToBasket({ id, title, image, price, values }));
+        notify(title);
+        setOpen(false);
+      }}
+    >
+      {({ isSubmitting, values }) => (
+        <Form
+          style={{
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <div role="group">
+            <div>Scent: {values.scent}</div>
+            <label>
+              <Field type="radio" name="scent" value="Mocha" />
+              Mocha
+            </label>
+            <label>
+              <Field type="radio" name="scent" value="Fresh Linen" />
+              Fresh Linen
+            </label>
+            <label>
+              <Field type="radio" name="scent" value="Vanilla" />
+              Vanilla
+            </label>
+          </div>
           <button type="submit" disabled={isSubmitting}>
             add to basket
           </button>
