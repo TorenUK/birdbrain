@@ -18,6 +18,10 @@ label {
   margin: 0 2px;
 }
 
+input {
+  margin: 0.5rem 0;
+}
+
 }
 
 body {

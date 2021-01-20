@@ -25,6 +25,14 @@ import { selectBasket, emptyBasket } from "../features/basket/basketSlice";
 // stripe
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
+const total = (basket) => {
+  return basket.reduce((amount, item) => parseFloat(item.price) + amount, 0);
+};
+
+const grandTotal = (total) => {
+  return total + 3.99;
+};
+
 const Checkout = () => {
   const basket = useSelector(selectBasket);
 
@@ -33,6 +41,10 @@ const Checkout = () => {
   const [processing, setProcessing] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState("");
+
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [postcode, setPostcode] = useState("");
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -78,8 +90,10 @@ const Checkout = () => {
     setProcessing(false);
     setSucceeded(true);
     axios.post("https://birdbrain.herokuapp.com/orders", {
-      email: "toren@toren.uk",
-      payment: 100,
+      email: email,
+      address: address,
+      postcode: postcode,
+      payment: total(basket) + 3.99,
       stuff: JSON.stringify(basket, null, 2),
     });
     dispatch(emptyBasket());
@@ -117,26 +131,67 @@ const Checkout = () => {
       </Container>
       <PageContainer>
         <form>
-          <input name="name" placeholder="full name" type="text" />
-          <input name="line1" placeholder="address line 1" type="text" />
-          <input name="postcode" placeholder="postcode" type="text" />
+          <input
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            name="email"
+            placeholder="email address"
+            type="text"
+            required
+          />
+          <input name="name" placeholder="full name" type="text" required />
+          <input
+            onChange={(e) => {
+              setAddress(e.target.value);
+            }}
+            name="line1"
+            placeholder="address line 1"
+            type="text"
+            required
+          />
+          <input
+            onChange={(e) => {
+              setPostcode(e.target.value);
+            }}
+            name="postcode"
+            placeholder="postcode"
+            type="text"
+            required
+          />
           <CardElement
             onChange={handleChange}
             id="card-element"
             options={cardStyle}
           />
-        </form>
-        <div className="checkout__buttons">
-          <button
-            disabled={processing || disabled || succeeded}
-            onClick={handleSubmit}
-            type="submit"
-            id="pay"
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            <span>{processing ? <p>processing</p> : "pay now"}</span>
-          </button>
-          {error && <div>{error}</div>}
-        </div>
+            <div>subtotal: £{total(basket).toFixed(2)}</div>
+            <div style={{ margin: "0.5rem 0" }}>shipping: £3.99</div>
+            <button
+              disabled={processing || disabled || succeeded}
+              onClick={handleSubmit}
+              type="submit"
+              id="pay"
+            >
+              <span>
+                {processing ? (
+                  <p>processing</p>
+                ) : (
+                  `pay ${grandTotal(total(basket)).toFixed(2)}`
+                )}
+              </span>
+            </button>
+            {error && <div>{error}</div>}
+          </div>
+        </form>
       </PageContainer>
     </>
   );

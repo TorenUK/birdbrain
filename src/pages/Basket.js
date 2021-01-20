@@ -26,13 +26,16 @@ const Basket = () => {
       <Navbar />
       <Links />
       <Header title="Your Basket" />
+
       <Container width="50%">
         {basket?.map((item, idx) => (
           <BasketItem key={idx} id={item.id} image={item.image} />
         ))}
       </Container>
       <Container>
-        <LinksLi to="/checkout">subtotal: £{total(basket)} 💳 </LinksLi>
+        <LinksLi to="/checkout">
+          subtotal: £{total(basket).toFixed(2)} 💳{" "}
+        </LinksLi>
       </Container>
       <Footer />
     </>
