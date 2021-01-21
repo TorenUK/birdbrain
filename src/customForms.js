@@ -311,7 +311,7 @@ export const SoapBar = ({ title, image, price, notify, setOpen, id }) => {
 
   return (
     <Formik
-      initialValues={{ colour: "" }}
+      initialValues={{}}
       validate={(values) => {
         const errors = {};
         return errors;
