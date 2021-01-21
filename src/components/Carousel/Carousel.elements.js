@@ -27,6 +27,7 @@ export const CarouselContent = styled.div`
   position: relative;
 
   flex: 1 0 auto;
+  text-align: center;
 
   border-radius: 0 ${radius} ${radius} 0;
   background: black;

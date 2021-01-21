@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
   }
 }
     
+
+
+
 label {
   margin: 0 2px;
 }
@@ -164,4 +167,27 @@ export const ImageContainer = styled.div`
   }
 `;
 
+export const CheckoutForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+
+  @media screen and (max-width: 850px) {
+    margin-bottom: unset;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+`;
+
+export const CheckoutInput = styled.input`
+  margin: 10px;
+  padding: 5px;
+
+  @media screen and (max-width: 850px) {
+    margin: 5px;
+  }
+`;
 export default GlobalStyle;

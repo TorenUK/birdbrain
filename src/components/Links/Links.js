@@ -57,6 +57,9 @@ const Links = () => {
             <MobileLinksLi to="#">Feedback</MobileLinksLi>
             <MobileLinksLi to="#">Get In Touch</MobileLinksLi> */}
             <MobileLinksLi to="/blog">Blog</MobileLinksLi>
+            {basket?.length ? (
+              <MobileLinksLi to="/basket">Your Basket</MobileLinksLi>
+            ) : null}
           </MobileUl>
         </MobileContainer>
       ) : null}

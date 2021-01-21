@@ -9,6 +9,8 @@ export const Form1Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
+  font-size: 1.2rem;
+
   background: white;
 
   @media screen and (max-width: 1000px) {

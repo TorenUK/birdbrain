@@ -17,15 +17,13 @@ const slides = [
 const Featured = () => {
   return (
     <FeaturedContainer>
-      <FeaturedSection>colour?</FeaturedSection>
+      <FeaturedSection></FeaturedSection>
       <FeaturedSection>
         <Carousel slides={slides}>
           <FavoriteIcon />
         </Carousel>
       </FeaturedSection>
-      <FeaturedSection>
-        <p>Shop Valentines Items →</p>
-      </FeaturedSection>
+      <FeaturedSection></FeaturedSection>
     </FeaturedContainer>
   );
 };

@@ -54,4 +54,5 @@ export const NavLinks = styled.div`
 
 export const NavLink = styled.a`
   cursor: pointer;
+  color: black;
 `;

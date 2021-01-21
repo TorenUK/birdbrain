@@ -22,6 +22,7 @@ export const BasketIconContainer = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 850px) {
+    bottom: 8%;
     width: 45px;
     height: 45px;
 

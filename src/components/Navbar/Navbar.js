@@ -26,14 +26,11 @@ const Navbar = () => {
             BIRD BRAIN GIFTS
           </NavLogo>
           <NavLinks>
-            <NavLink>
+            <NavLink
+              href="https://www.instagram.com/birdbrain_gifts/"
+              target="blank"
+            >
               <InstagramIcon />
-            </NavLink>
-            <NavLink>
-              <FacebookIcon />
-            </NavLink>
-            <NavLink>
-              <MailOutlineIcon />
             </NavLink>
           </NavLinks>
         </NavbarContainer>

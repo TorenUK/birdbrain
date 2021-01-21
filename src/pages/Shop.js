@@ -45,6 +45,7 @@ const Shop = ({ notify }) => {
         <Container>
           {products.map((product, idx) => (
             <Thumbnail
+              stock={product.stock}
               id={product.id}
               key={idx}
               title={product.title}

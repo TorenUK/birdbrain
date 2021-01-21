@@ -12,15 +12,21 @@ import {
   BasketItem,
 } from "../components";
 
-import GlobalStyle, { PageContainer } from "../globalStyles";
+import GlobalStyle, {
+  PageContainer,
+  CheckoutForm,
+  CheckoutInput,
+} from "../globalStyles";
 
 // other
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { selectBasket, emptyBasket } from "../features/basket/basketSlice";
+import { addOrder } from "../features/order/orderSlice";
 
 // stripe
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -42,8 +48,10 @@ const Checkout = () => {
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState("");
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
   const [postcode, setPostcode] = useState("");
 
   const history = useHistory();
@@ -65,7 +73,7 @@ const Checkout = () => {
     };
 
     getClientSecret().catch((err) => console.log(err));
-  }, [basket]);
+  }, []);
 
   const handleChange = async (event) => {
     // Listen for changes in the CardElement
@@ -90,13 +98,26 @@ const Checkout = () => {
     setProcessing(false);
     setSucceeded(true);
     axios.post("https://birdbrain.herokuapp.com/orders", {
+      name: name,
       email: email,
       address: address,
+      city: city,
       postcode: postcode,
       payment: total(basket) + 3.99,
       stuff: JSON.stringify(basket, null, 2),
     });
     dispatch(emptyBasket());
+    dispatch(
+      addOrder({
+        name: name,
+        email: email,
+        address: address,
+        city: city,
+        postcode: postcode,
+        payment: total(basket) + 3.99,
+        stuff: basket,
+      })
+    );
     history.push("/order");
   };
 
@@ -124,14 +145,10 @@ const Checkout = () => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Container title="checkout">
-        {basket?.map((item, idx) => (
-          <BasketItem key={idx} image={item.image} />
-        ))}
-      </Container>
+      <Container title="checkout"></Container>
       <PageContainer>
-        <form>
-          <input
+        <CheckoutForm>
+          <CheckoutInput
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -140,8 +157,16 @@ const Checkout = () => {
             type="text"
             required
           />
-          <input name="name" placeholder="full name" type="text" required />
-          <input
+          <CheckoutInput
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            name="name"
+            placeholder="full name"
+            type="text"
+            required
+          />
+          <CheckoutInput
             onChange={(e) => {
               setAddress(e.target.value);
             }}
@@ -150,7 +175,16 @@ const Checkout = () => {
             type="text"
             required
           />
-          <input
+          <CheckoutInput
+            onChange={(e) => {
+              setCity(e.target.value);
+            }}
+            name="city"
+            placeholder="City/Town"
+            type="text"
+            required
+          />
+          <CheckoutInput
             onChange={(e) => {
               setPostcode(e.target.value);
             }}
@@ -159,39 +193,48 @@ const Checkout = () => {
             type="text"
             required
           />
+        </CheckoutForm>
+        <form
+          style={{
+            maxWidth: "400px",
+            minWidth: "350px",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <CardElement
             onChange={handleChange}
             id="card-element"
             options={cardStyle}
           />
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div>subtotal: £{total(basket).toFixed(2)}</div>
-            <div style={{ margin: "0.5rem 0" }}>shipping: £3.99</div>
-            <button
-              disabled={processing || disabled || succeeded}
-              onClick={handleSubmit}
-              type="submit"
-              id="pay"
-            >
-              <span>
-                {processing ? (
-                  <p>processing</p>
-                ) : (
-                  `pay ${grandTotal(total(basket)).toFixed(2)}`
-                )}
-              </span>
-            </button>
-            {error && <div>{error}</div>}
-          </div>
         </form>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h2>subtotal: £{total(basket).toFixed(2)}</h2>
+          <h2 style={{ margin: "0.5rem 0" }}>shipping: £3.99</h2>
+          <Button
+            size="large"
+            disabled={processing || disabled || succeeded}
+            onClick={handleSubmit}
+            type="submit"
+            id="pay"
+          >
+            <span>
+              {processing ? (
+                <p>processing</p>
+              ) : (
+                `pay ${grandTotal(total(basket)).toFixed(2)}`
+              )}
+            </span>
+          </Button>
+          {error && <div>{error}</div>}
+        </div>
       </PageContainer>
     </>
   );

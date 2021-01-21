@@ -42,7 +42,7 @@ export const HandmadeSoapForm = ({
             justifyContent: "center",
           }}
         >
-          <div role="group">
+          <div id="form" role="group">
             <div style={{ textAlign: "center" }}>Colour: {values.colour}</div>
             <label>
               <Field type="radio" name="colour" value="Black" />
@@ -69,7 +69,7 @@ export const HandmadeSoapForm = ({
               Pink
             </label>
           </div>
-          <div role="group">
+          <div id="form" role="group">
             <div style={{ textAlign: "center", margin: "5px 0" }}>
               Scent: {values.scent}
             </div>
@@ -149,7 +149,7 @@ export const SmallJarCandle = ({
             justifyContent: "center",
           }}
         >
-          <div role="group">
+          <div id="form" role="group">
             <div style={{ textAlign: "center", margin: "5px 0" }}>
               Scent: {values.scent}
             </div>
@@ -224,31 +224,6 @@ export const MarbleCoasterForm = ({
             justifyContent: "center",
           }}
         >
-          <div role="group">
-            <div style={{ textAlign: "center", margin: "5px 0" }}>
-              Colour: {values.colour}
-            </div>
-            <label>
-              <Field type="radio" name="colour" value="Blue Marble" />
-              Blue
-            </label>
-            <label>
-              <Field type="radio" name="colour" value="Pink Marble" />
-              Pink
-            </label>
-            <label>
-              <Field type="radio" name="colour" value="Green Marble" />
-              Green
-            </label>
-            <label>
-              <Field type="radio" name="colour" value="Yellow Marble" />
-              Yellow
-            </label>
-            <label>
-              <Field type="radio" name="colour" value="Purple Marble" />
-              Purple
-            </label>
-          </div>
           <Button type="submit" disabled={isSubmitting}>
             add to basket
           </Button>
@@ -284,7 +259,7 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
             justifyContent: "center",
           }}
         >
-          <div role="group">
+          <div id="form" role="group">
             <div style={{ textAlign: "center", margin: "5px 0" }}>
               Colour: {values.colour}
             </div>
@@ -368,7 +343,7 @@ export const WaxMelt = ({ title, image, price, notify, setOpen, id }) => {
             justifyContent: "center",
           }}
         >
-          <div role="group">
+          <div id="form" role="group">
             <div style={{ textAlign: "center", margin: "5px 0" }}>
               Scent: {values.scent}
             </div>
