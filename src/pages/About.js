@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // components
 import { Navbar, Links, Header, Footer, BasketIcon } from "../components";
@@ -15,6 +15,7 @@ import GlobalStyle, {
 
 // other
 import craftImage from "../assets/craft.webp";
+import axios from "axios";
 
 // redux
 import { useSelector } from "react-redux";
@@ -22,6 +23,12 @@ import { selectBasket } from "../features/basket/basketSlice";
 
 const About = () => {
   const basket = useSelector(selectBasket);
+
+  // useEffect(() => {
+
+  //   axios.get('/')
+
+  // });
 
   return (
     <div>

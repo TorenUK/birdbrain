@@ -11,6 +11,7 @@ import {
   SmallJarCandle,
   SoapBar,
   WaxMelt,
+  Candle,
 } from "../../customForms";
 
 //other
@@ -100,6 +101,18 @@ const Form1 = ({
             setOpen={setOpen}
             notify={notify}
           />
+        );
+        break;
+      case "candle":
+        return (
+          <Candle
+            id={id}
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          ></Candle>
         );
 
       default:
