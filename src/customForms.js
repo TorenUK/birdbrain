@@ -6,6 +6,7 @@ import { addToBasket, selectBasket } from "./features/basket/basketSlice";
 
 // other
 import { Button } from "@material-ui/core";
+import axios from "axios";
 
 export const HandmadeSoapForm = ({
   title,
@@ -18,6 +19,20 @@ export const HandmadeSoapForm = ({
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const handleStock = async (id, vals) => {
+    const result = await axios.get(
+      `https://birdbrain.herokuapp.com/products?id_in=${id}`
+    );
+
+    if (result.data[0].stock > 0) {
+      dispatch(addToBasket({ id, title, image, price, vals }));
+      notify(title);
+      setOpen(false);
+    } else {
+      alert("sorry, this product is no longer available");
+    }
+  };
+
   return (
     <Formik
       initialValues={{ colour: "", scent: "" }}
@@ -26,9 +41,7 @@ export const HandmadeSoapForm = ({
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ id, title, image, price, values }));
-        notify(title);
-        setOpen(false);
+        handleStock(id, values);
       }}
     >
       {({ isSubmitting, values, errors }) => (
@@ -126,6 +139,18 @@ export const SmallJarCandle = ({
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const handleStock = async (id, vals) => {
+    const result = await axios.get(
+      `https://birdbrain.herokuapp.com/products?id_in=${id}`
+    );
+
+    if (result.data[0].stock > 0) {
+      dispatch(addToBasket({ id, title, image, price, vals }));
+      notify(title);
+      setOpen(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ scent: "" }}
@@ -135,9 +160,7 @@ export const SmallJarCandle = ({
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ id, title, image, price, values }));
-        notify(title);
-        setOpen(false);
+        handleStock(id, values);
       }}
     >
       {({ isSubmitting, values }) => (
@@ -201,6 +224,18 @@ export const MarbleCoasterForm = ({
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const handleStock = async (id, vals) => {
+    const result = await axios.get(
+      `https://birdbrain.herokuapp.com/products?id_in=${id}`
+    );
+
+    if (result.data[0].stock > 0) {
+      dispatch(addToBasket({ id, title, image, price, vals }));
+      notify(title);
+      setOpen(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ colour: "" }}
@@ -210,9 +245,7 @@ export const MarbleCoasterForm = ({
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ id, title, image, price, values }));
-        notify(title);
-        setOpen(false);
+        handleStock(id, values);
       }}
     >
       {({ isSubmitting, values }) => (
@@ -236,6 +269,18 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const handleStock = async (id, vals) => {
+    const result = await axios.get(
+      `https://birdbrain.herokuapp.com/products?id_in=${id}`
+    );
+
+    if (result.data[0].stock > 0) {
+      dispatch(addToBasket({ id, title, image, price, vals }));
+      notify(title);
+      setOpen(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ colour: "" }}
@@ -245,9 +290,7 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ id, title, image, price, values }));
-        notify(title);
-        setOpen(false);
+        handleStock(id, values);
       }}
     >
       {({ isSubmitting, values }) => (
@@ -284,6 +327,18 @@ export const SoapBar = ({ title, image, price, notify, setOpen, id }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const handleStock = async (id, vals) => {
+    const result = await axios.get(
+      `https://birdbrain.herokuapp.com/products?id_in=${id}`
+    );
+
+    if (result.data[0].stock > 0) {
+      dispatch(addToBasket({ id, title, image, price, vals }));
+      notify(title);
+      setOpen(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{}}
@@ -293,9 +348,7 @@ export const SoapBar = ({ title, image, price, notify, setOpen, id }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ id, title, image, price, values }));
-        notify(title);
-        setOpen(false);
+        handleStock(id, values);
       }}
     >
       {({ isSubmitting, values }) => (
@@ -319,6 +372,18 @@ export const WaxMelt = ({ title, image, price, notify, setOpen, id }) => {
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
+  const handleStock = async (id, vals) => {
+    const result = await axios.get(
+      `https://birdbrain.herokuapp.com/products?id_in=${id}`
+    );
+
+    if (result.data[0].stock > 0) {
+      dispatch(addToBasket({ id, title, image, price, vals }));
+      notify(title);
+      setOpen(false);
+    }
+  };
+
   return (
     <Formik
       initialValues={{ scent: "" }}
@@ -328,9 +393,7 @@ export const WaxMelt = ({ title, image, price, notify, setOpen, id }) => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
-        dispatch(addToBasket({ id, title, image, price, values }));
-        notify(title);
-        setOpen(false);
+        handleStock(id, values);
       }}
     >
       {({ isSubmitting, values }) => (
