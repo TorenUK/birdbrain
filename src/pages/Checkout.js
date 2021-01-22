@@ -93,32 +93,33 @@ const Checkout = () => {
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`);
       setProcessing(false);
-    }
-    setError(null);
-    setProcessing(false);
-    setSucceeded(true);
-    axios.post("https://birdbrain.herokuapp.com/orders", {
-      name: name,
-      email: email,
-      address: address,
-      city: city,
-      postcode: postcode,
-      payment: total(basket) + 3.99,
-      stuff: JSON.stringify(basket, null, 2),
-    });
-    dispatch(emptyBasket());
-    dispatch(
-      addOrder({
+    } else {
+      setError(null);
+      setProcessing(false);
+      setSucceeded(true);
+      axios.post("https://birdbrain.herokuapp.com/orders", {
         name: name,
         email: email,
         address: address,
         city: city,
         postcode: postcode,
         payment: total(basket) + 3.99,
-        stuff: basket,
-      })
-    );
-    history.push("/order");
+        stuff: JSON.stringify(basket, null, 2),
+      });
+      dispatch(emptyBasket());
+      dispatch(
+        addOrder({
+          name: name,
+          email: email,
+          address: address,
+          city: city,
+          postcode: postcode,
+          payment: total(basket) + 3.99,
+          stuff: basket,
+        })
+      );
+      history.push("/order");
+    }
   };
 
   const cardStyle = {
