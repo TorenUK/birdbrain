@@ -80,3 +80,19 @@ export const ModalImageContainer = styled.div`
     background-size: contain;
   }
 `;
+
+export const ModalPrice = styled.div`
+  position: absolute;
+  top: 5rem;
+  padding: 3px;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-weight: 700;
+  color: white;
+  background: black;
+  border-radius: 5px;
+  @media screen and (max-width: 1000px) {
+    top: 0.4rem;
+  }
+`;

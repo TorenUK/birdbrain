@@ -6,6 +6,7 @@ import {
   ModalClose,
   ModalTitle,
   ModalImageContainer,
+  ModalPrice,
 } from "./Modal.elements";
 import { Form1 } from "../../components";
 import { TextContainer } from "../../globalStyles";
@@ -32,6 +33,9 @@ const Modal = ({
   return (
     <ModalContainer>
       <ModalTitle>{title}</ModalTitle>
+      <ModalPrice>
+        <h2>£{price.toFixed(2)}</h2>
+      </ModalPrice>
       <ModalImageContainer image={image} />
       <Form1
         id={id}
