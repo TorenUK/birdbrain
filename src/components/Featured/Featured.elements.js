@@ -32,7 +32,7 @@ export const FeaturedSection = styled.section`
   height: 80%;
 
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
 

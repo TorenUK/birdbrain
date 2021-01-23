@@ -125,7 +125,6 @@ function App() {
               />
             ))}
           </Container>
-          <Container title="༼ つ ◕_◕ ༽つ stuff here soon"></Container>
           <Footer />
           <ToastContainer
             position="bottom-center"

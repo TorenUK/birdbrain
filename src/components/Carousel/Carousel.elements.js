@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const CarouselWrapper = styled.div`
-  width: 300px;
-  margin: 0.5rem auto;
+  min-width: 350px;
+  margin: 0 auto;
 
   display: flex;
   overflow: hidden;
@@ -26,7 +26,7 @@ export const CarouselIcon = styled.div`
 export const CarouselContent = styled.div`
   position: relative;
 
-  flex: 1 0 auto;
+  flex: 1 0;
   text-align: center;
 
   border-radius: 0 ${radius} ${radius} 0;
@@ -53,7 +53,7 @@ export const CarouselSlide = styled.div`
   height: 60px;
 
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
 `;

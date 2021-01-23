@@ -9,9 +9,9 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 
 const slides = [
-  { title: "info here?", subtitle: "(ʘ ͜ʖ ʘ)" },
-  { title: "and here", subtitle: "(¬‿¬)" },
-  { title: "also here", subtitle: "ヾ(⌐■_■)ノ♪" },
+  { title: "Follow us here:", subtitle: "" },
+  { title: "instagram.com/birdbrain_gifts", subtitle: "" },
+  { title: "Handmade with care", subtitle: "" },
 ];
 
 const Featured = () => {
