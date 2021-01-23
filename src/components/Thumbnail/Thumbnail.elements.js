@@ -55,14 +55,31 @@ export const ThumbnailContainer = styled.div`
   }
 `;
 
+export const ThumbnailTitleContainer = styled.div`
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: black;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  @media screen and (max-width: 1000px) {
+    height: 35px;
+  }
+`;
+
 export const ThumbnailTitle = styled.h2`
-  margin-top: 1rem;
   padding: 4px;
 
   font-size: 1.2rem;
   font-weight: 700;
   color: white;
-  background: black;
+
   border-radius: 5px;
   text-align: center;
 
@@ -118,26 +135,27 @@ export const ThumbnailStock = styled.div`
   width: 60px;
   height: 40px;
   position: absolute;
-  top: -5%;
-  right: -6%;
+  bottom: -3%;
+  right: -8%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   background: #b7235a;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   color: white;
   font-size: 0.9rem;
   font-weight: 700;
   text-align: center;
+  opacity: 0.7;
 
   @media screen and (max-width: 1000px) {
     width: 45px;
     height: 40px;
     top: -10%;
-    right: -8%;
+    right: -13%;
 
     font-size: 0.6rem;
   }

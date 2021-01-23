@@ -4,15 +4,7 @@ import React from "react";
 import { Form1Wrapper } from "./Form1.elements";
 
 // custom forms
-import {
-  HandmadeSoapForm,
-  MarbleCoasterForm,
-  ToteForm,
-  SmallJarCandle,
-  SoapBar,
-  WaxMelt,
-  Candle,
-} from "../../customForms";
+import { ToteForm, SmallJarCandle, Candle, Default } from "../../customForms";
 
 //other
 import { FormTextContainer } from "../../globalStyles";
@@ -31,45 +23,9 @@ const Form1 = ({
     const newFormType = formType?.toString();
 
     switch (newFormType) {
-      case "soap":
-        return (
-          <HandmadeSoapForm
-            id={id}
-            title={title}
-            image={image}
-            price={price}
-            setOpen={setOpen}
-            notify={notify}
-          />
-        );
-        break;
-      case "coaster":
-        return (
-          <MarbleCoasterForm
-            id={id}
-            title={title}
-            image={image}
-            price={price}
-            setOpen={setOpen}
-            notify={notify}
-          />
-        );
-        break;
       case "tote":
         return (
           <ToteForm
-            id={id}
-            title={title}
-            image={image}
-            price={price}
-            setOpen={setOpen}
-            notify={notify}
-          />
-        );
-        break;
-      case "soapbar":
-        return (
-          <SoapBar
             id={id}
             title={title}
             image={image}
@@ -91,19 +47,30 @@ const Form1 = ({
           />
         );
         break;
-      case "waxmelt":
+      case "candle":
         return (
-          <WaxMelt
+          <Candle
             id={id}
             title={title}
             image={image}
             price={price}
             setOpen={setOpen}
             notify={notify}
-          />
+          ></Candle>
         );
         break;
-      case "candle":
+      case "default":
+        return (
+          <Default
+            id={id}
+            title={title}
+            image={image}
+            price={price}
+            setOpen={setOpen}
+            notify={notify}
+          ></Default>
+        );
+      case "default":
         return (
           <Candle
             id={id}

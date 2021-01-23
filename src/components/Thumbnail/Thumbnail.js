@@ -9,6 +9,7 @@ import {
   ThumbnailTitle,
   ThumbnailView,
   ThumbnailStock,
+  ThumbnailTitleContainer,
 } from "./Thumbnail.elements";
 import { Modal } from "../../components";
 
@@ -44,7 +45,10 @@ const Thumbnail = ({
         image={image}
       >
         {stock <= 5 ? <ThumbnailStock>Low in stock</ThumbnailStock> : null}
-        <ThumbnailTitle>{title}</ThumbnailTitle>
+        <ThumbnailTitleContainer>
+          <ThumbnailTitle>{title}</ThumbnailTitle>
+        </ThumbnailTitleContainer>
+
         <ThumbnailView>
           <VisibilityIcon />
           <p>Quick View</p>

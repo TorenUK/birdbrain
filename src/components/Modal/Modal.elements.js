@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core";
 
 export const ModalContainer = styled.div`
   width: 95%;
-  height: 85%;
+  height: 80%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -17,6 +17,7 @@ export const ModalContainer = styled.div`
 
   background: black;
   z-index: 100;
+  border-radius: 5px;
 
   @media screen and (max-width: 1000px) {
     width: 100%;
@@ -57,11 +58,14 @@ export const ModalTitle = styled.h1`
   color: white;
   background: black;
   border-radius: 5px;
+  @media screen and (max-width: 1000px) {
+    margin-top: 1rem;
+  }
 `;
 
 export const ModalImageContainer = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 30%;
+  height: 60%;
 
   background-image: url(${(props) => props.image});
   background-size: cover;
@@ -70,8 +74,8 @@ export const ModalImageContainer = styled.div`
   border-radius: 5px;
 
   @media screen and (max-width: 1000px) {
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
 
     background-size: contain;
   }

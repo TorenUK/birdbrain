@@ -24,11 +24,13 @@ import { selectBasket } from "../features/basket/basketSlice";
 const About = () => {
   const basket = useSelector(selectBasket);
 
-  // useEffect(() => {
+  const [url, setUrl] = useState("");
 
-  //   axios.get('/')
-
-  // });
+  useEffect(() => {
+    axios
+      .get("https://birdbrain.herokuapp.com/about")
+      .then((r) => setUrl(r.data.image.url));
+  });
 
   return (
     <div>
@@ -55,7 +57,7 @@ const About = () => {
               and make a little independent business jump for joy!
             </TextBody>
           </TextContainer>
-          <ImageContainer image={craftImage} />
+          <ImageContainer image={url} />
         </ContentContainer>
       </PageContainer>
       <Footer />
