@@ -4,7 +4,7 @@ import React from "react";
 import { Form1Wrapper } from "./Form1.elements";
 
 // custom forms
-import { ToteForm, SmallJarCandle, Candle, Default } from "../../customForms";
+import { ToteForm, Candle, Default } from "../../customForms";
 
 //other
 import { FormTextContainer } from "../../globalStyles";
@@ -26,18 +26,6 @@ const Form1 = ({
       case "tote":
         return (
           <ToteForm
-            id={id}
-            title={title}
-            image={image}
-            price={price}
-            setOpen={setOpen}
-            notify={notify}
-          />
-        );
-        break;
-      case "sjarcandle":
-        return (
-          <SmallJarCandle
             id={id}
             title={title}
             image={image}
