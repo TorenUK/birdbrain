@@ -13,6 +13,7 @@ import {
   Featured,
   BasketIcon,
 } from "./components";
+import { LinksLi } from "./components/Links/Links.elements";
 import GlobalStyle from "./globalStyles";
 
 // pages
@@ -125,6 +126,9 @@ function App() {
                 description={product.description}
               />
             ))}
+          </Container>
+          <Container>
+            <LinksLi to="/shop">shop all →</LinksLi>
           </Container>
           <Footer />
           <ToastContainer

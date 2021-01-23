@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 // components
-import { Navbar, Links, Header, Footer, BasketIcon } from "../components";
+import {
+  Navbar,
+  Links,
+  Header,
+  Footer,
+  BasketIcon,
+  Container,
+} from "../components";
 
 import GlobalStyle, {
   TextContainer,
@@ -59,6 +66,7 @@ const About = () => {
           </TextContainer>
           <ImageContainer image={url} />
         </ContentContainer>
+        <Container></Container>
       </PageContainer>
       <Footer />
       {basket.length ? <BasketIcon basket={basket} /> : null}
