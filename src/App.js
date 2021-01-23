@@ -42,6 +42,7 @@ const promise = loadStripe(
 function App() {
   const [products, setProducts] = useState([]);
   const [newProducts, setNewProducts] = useState([]);
+  const [url, setUrl] = useState("");
 
   const basket = useSelector(selectBasket);
 

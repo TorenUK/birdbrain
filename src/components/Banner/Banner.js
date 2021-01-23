@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // elements
 import {
@@ -11,10 +11,19 @@ import {
 
 // other
 import feathers from "../../assets/feathers.png";
+import axios from "axios";
 
 const Banner = ({ title, subtitle, text }) => {
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://birdbrain.herokuapp.com/banner")
+      .then((r) => setUrl(r.data.image.url));
+  });
+
   return (
-    <BannerContainer backgroundImg={feathers}>
+    <BannerContainer backgroundImg={url}>
       <BannerTextContainer>
         <BannerTitle>{title}</BannerTitle>
         <BannerSubtitle>{subtitle}</BannerSubtitle>
