@@ -44,7 +44,9 @@ const Thumbnail = ({
         }}
         image={image}
       >
-        {stock <= 5 ? <ThumbnailStock>Low in stock</ThumbnailStock> : null}
+        {stock <= 4 ? (
+          <ThumbnailStock>only {stock} in stock!</ThumbnailStock>
+        ) : null}
         <ThumbnailTitleContainer>
           <ThumbnailTitle>{title}</ThumbnailTitle>
         </ThumbnailTitleContainer>

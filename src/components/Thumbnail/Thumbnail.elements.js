@@ -146,10 +146,10 @@ export const ThumbnailStock = styled.div`
   border: 2px solid black;
   border-radius: 5px;
   color: white;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.8;
 
   @media screen and (max-width: 1000px) {
     width: 45px;

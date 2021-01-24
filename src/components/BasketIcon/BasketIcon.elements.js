@@ -5,7 +5,7 @@ export const BasketIconContainer = styled.div`
   height: 80px;
 
   position: fixed;
-  bottom: 5%;
+  bottom: 7%;
   left: 5%;
 
   display: flex;

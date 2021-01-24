@@ -33,7 +33,7 @@ export const FormSelect = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
@@ -64,11 +64,10 @@ export const FormLabel = styled.label`
 
   @media screen and (max-width: 850px) {
     width: 80px;
-    height: 60px;
+    height: 50px;
 
-    font-size: 0.9rem;
+    font-size: 0.5rem;
     font-weight: 600;
-    font-size: 0.8rem;
   }
 `;
 

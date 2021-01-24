@@ -52,6 +52,7 @@ export const ModalTitle = styled.h1`
   top: 2rem;
   padding: 3px;
 
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
   font-weight: 700;
