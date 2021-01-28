@@ -53,12 +53,18 @@ body {
 export const PageContainer = styled.div`
   width: 100%;
   max-width: 1600px;
+  min-height: 800px;
+  position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   margin: 0 auto;
+
+  @media screen and (max-width: 850px) {
+    min-height: unset;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -171,18 +177,16 @@ export const CheckoutForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
+  position: absolute;
+  top: 0;
 
   @media screen and (max-width: 850px) {
-    margin-bottom: unset;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -30%);
+    position: unset;
   }
 `;
 
 export const CheckoutInput = styled.input`
+  min-width: 250px;
   margin: 10px;
   padding: 5px;
 
@@ -190,4 +194,21 @@ export const CheckoutInput = styled.input`
     margin: 5px;
   }
 `;
+
+export const StripeElement = styled.form`
+  position: absolute;
+  top: 40%;
+  @media screen and (max-width: 850px) {
+    position: unset;
+  }
+`;
+
+export const CheckoutBottom = styled.div`
+  position: absolute;
+  top: 65%;
+  @media screen and (max-width: 850px) {
+    position: unset;
+  }
+`;
+
 export default GlobalStyle;

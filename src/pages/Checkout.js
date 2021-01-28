@@ -16,6 +16,8 @@ import GlobalStyle, {
   PageContainer,
   CheckoutForm,
   CheckoutInput,
+  StripeElement,
+  CheckoutBottom,
 } from "../globalStyles";
 
 // other
@@ -146,7 +148,16 @@ const Checkout = () => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Container title="checkout"></Container>
+      <div
+        style={{
+          height: "70px",
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "3rem",
+        }}
+      >
+        <h2>Checkout</h2>
+      </div>
       <PageContainer>
         <CheckoutForm>
           <CheckoutInput
@@ -195,7 +206,7 @@ const Checkout = () => {
             required
           />
         </CheckoutForm>
-        <form
+        <StripeElement
           style={{
             maxWidth: "400px",
             minWidth: "350px",
@@ -208,8 +219,8 @@ const Checkout = () => {
             id="card-element"
             options={cardStyle}
           />
-        </form>
-        <div
+        </StripeElement>
+        <CheckoutBottom
           style={{
             display: "flex",
             flexDirection: "column",
@@ -217,8 +228,10 @@ const Checkout = () => {
             justifyContent: "center",
           }}
         >
-          <h2>subtotal: £{total(basket).toFixed(2)}</h2>
-          <h2 style={{ margin: "0.5rem 0" }}>shipping: £3.99</h2>
+          <h3 style={{ margin: "0.5rem 0" }}>
+            subtotal: £{total(basket).toFixed(2)}
+          </h3>
+          <h3 style={{ margin: "0.5rem 0" }}>shipping: £3.99</h3>
           <Button
             size="large"
             disabled={processing || disabled || succeeded}
@@ -226,7 +239,7 @@ const Checkout = () => {
             type="submit"
             id="pay"
           >
-            <span>
+            <span style={{ fontSize: "1.2rem" }}>
               {processing ? (
                 <p>processing</p>
               ) : (
@@ -235,7 +248,7 @@ const Checkout = () => {
             </span>
           </Button>
           {error && <div>{error}</div>}
-        </div>
+        </CheckoutBottom>
       </PageContainer>
     </>
   );
