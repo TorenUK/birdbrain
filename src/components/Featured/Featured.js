@@ -11,7 +11,7 @@ import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 const slides = [
   { title: "Follow us here:", subtitle: "" },
   { title: "instagram.com/birdbrain_gifts", subtitle: "" },
-  { title: "Handmade with care", subtitle: "" },
+  { title: "facebook.com/birdbraingifts", subtitle: "" },
 ];
 
 const Featured = () => {

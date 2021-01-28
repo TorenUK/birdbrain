@@ -32,6 +32,12 @@ const Navbar = () => {
             >
               <InstagramIcon />
             </NavLink>
+            <NavLink
+              href="https://www.facebook.com/birdbraingifts"
+              target="blank"
+            >
+              <FacebookIcon />
+            </NavLink>
           </NavLinks>
         </NavbarContainer>
       </Nav>

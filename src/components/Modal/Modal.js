@@ -5,11 +5,16 @@ import {
   ModalContainer,
   ModalClose,
   ModalTitle,
+  ModalCarouselContainer,
   ModalImageContainer,
   ModalPrice,
 } from "./Modal.elements";
 import { Form1 } from "../../components";
 import { TextContainer } from "../../globalStyles";
+
+// other
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 const Modal = ({
   id,
@@ -36,7 +41,17 @@ const Modal = ({
       <ModalPrice>
         <h2>£{price.toFixed(2)}</h2>
       </ModalPrice>
-      <ModalImageContainer image={image} />
+      <ModalCarouselContainer>
+        <Carousel>
+          <div>
+            <ModalImageContainer src={image} />
+          </div>
+          <div>
+            <ModalImageContainer src={image} />
+          </div>
+        </Carousel>
+      </ModalCarouselContainer>
+
       <Form1
         id={id}
         title={title}

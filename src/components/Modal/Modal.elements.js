@@ -59,27 +59,30 @@ export const ModalTitle = styled.h1`
   color: white;
   background: black;
   border-radius: 5px;
+  z-index: 100;
   @media screen and (max-width: 1000px) {
     margin-top: 1rem;
   }
 `;
 
-export const ModalImageContainer = styled.div`
+export const ModalCarouselContainer = styled.div`
   width: 30%;
   height: 60%;
 
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 1000px) {
     width: 50%;
     height: 50%;
-
-    background-size: contain;
   }
+`;
+
+export const ModalImageContainer = styled.img`
+  max-width: 400px;
+
+  object-fit: contain;
 `;
 
 export const ModalPrice = styled.div`
