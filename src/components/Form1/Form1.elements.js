@@ -63,8 +63,8 @@ export const FormLabel = styled.label`
   border-radius: 5px;
 
   @media screen and (max-width: 850px) {
-    width: 80px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
 
     font-size: 0.5rem;
     font-weight: 600;

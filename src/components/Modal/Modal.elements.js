@@ -24,7 +24,7 @@ export const ModalContainer = styled.div`
     height: 100vh;
 
     height: 100vh;
-    overflow-y: hidden;
+    overflow-y: scroll;
 
     flex-direction: column;
   }

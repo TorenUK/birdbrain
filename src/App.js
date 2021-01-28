@@ -148,4 +148,26 @@ function App() {
   );
 }
 
+const add = (item, _qty = 1) => {
+  order[item] += _qty;
+};
+
+const order = {
+  thing: 0,
+  stuff: 0,
+};
+
+console.log(order);
+
+const basket = [
+  { id: "thing", qty: 2 },
+  { id: "stuff", qty: 3 },
+];
+
+basket.map((i) => {
+  add(i.id, i.qty);
+});
+
+console.log(order);
+
 export default App;

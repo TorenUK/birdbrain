@@ -14,7 +14,7 @@ export const BannerContainer = styled.div`
   background-size: 20%;
 
   @media screen and (max-width: 1000px) {
-    background-size: 50%;
+    background-size: 100%;
   }
 `;
 
