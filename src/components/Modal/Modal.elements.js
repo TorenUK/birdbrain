@@ -80,9 +80,8 @@ export const ModalCarouselContainer = styled.div`
 `;
 
 export const ModalImageContainer = styled.img`
-  max-width: 400px;
-
-  object-fit: contain;
+  max-width: 300px;
+  object-fit: cover;
 `;
 
 export const ModalPrice = styled.div`

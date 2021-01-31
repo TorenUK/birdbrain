@@ -27,7 +27,7 @@ export const Form1Wrapper = styled.div`
 
 export const FormSelect = styled.div`
   width: 200px;
-  height: 20px;
+  height: 10px;
 
   display: flex;
   justify-content: center;
@@ -39,12 +39,15 @@ export const FormSelect = styled.div`
 
 export const FormLabelContainer = styled.div`
   width: 100%;
-  height: 200px;
+  height: 100px;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 850px) {
+  }
 `;
 
 export const FormLabel = styled.label`
@@ -81,10 +84,11 @@ export const AddToBasket = styled(Button)`
   font-weight: 600 !important;
 
   @media screen and (max-width: 850px) {
-    width: 100px !important;
-    height: 45px !important;
+    width: 120px !important;
+    height: 30px !important;
     margin-bottom: 0.9rem !important;
 
     font-size: 0.7rem !important;
+    font-weight: 500 !important;
   }
 `;
