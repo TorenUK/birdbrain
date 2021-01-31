@@ -101,7 +101,7 @@ function App() {
                 id={product.id}
                 key={idx}
                 title={product.title}
-                image={product.image.url}
+                image={product.image?.url}
                 previousPrice={product.previousPrice}
                 price={product.price}
                 stock={product.stock}
