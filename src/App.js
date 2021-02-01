@@ -23,6 +23,7 @@ import Blog from "./pages/Blog";
 import Basket from "./pages/Basket";
 import Checkout from "./pages/Checkout";
 import Order from "./pages/Order";
+import Contact from "./pages/Contact";
 
 // other
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -73,6 +74,9 @@ function App() {
           <Elements stripe={promise}>
             <Checkout />
           </Elements>
+        </Route>
+        <Route path="/contact">
+          <Contact />
         </Route>
         <Route path="/shop">
           <Shop notify={notify} />
