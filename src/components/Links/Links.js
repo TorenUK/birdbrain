@@ -32,7 +32,7 @@ const Links = () => {
           <LinksLi to="/about">About Us</LinksLi>
           {/* <LinksLi to="#">FAQ's</LinksLi>
           <LinksLi to="#">Feedback</LinksLi>
-          <LinksLi to="#">Get In Touch</LinksLi> */}
+           */}
           <LinksLi to="/blog">Blog</LinksLi>
           <LinksLi to="/contact">Get In Touch</LinksLi>
           {basket?.length ? <LinksLi to="/basket">Your Basket</LinksLi> : null}
@@ -58,6 +58,7 @@ const Links = () => {
             <MobileLinksLi to="#">Feedback</MobileLinksLi>
             <MobileLinksLi to="#">Get In Touch</MobileLinksLi> */}
             <MobileLinksLi to="/blog">Blog</MobileLinksLi>
+            <MobileLinksLi to="/contact">Get in Touch</MobileLinksLi>
             {basket?.length ? (
               <MobileLinksLi to="/basket">Your Basket</MobileLinksLi>
             ) : null}

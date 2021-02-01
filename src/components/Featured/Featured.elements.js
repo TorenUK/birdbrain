@@ -8,18 +8,13 @@ export const FeaturedContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.15) 0%,
-      rgba(0, 0, 0, 0.15) 100%
-    ),
-    radial-gradient(
-        at top center,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(0, 0, 0, 0.4) 120%
-      )
-      #989898;
-  background-blend-mode: multiply, multiply;
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
   color: white;
 
   @media screen and (max-width: 850px) {
@@ -32,9 +27,14 @@ export const FeaturedSection = styled.section`
   height: 80%;
 
   display: flex;
+  flex-direction: column;
 
   justify-content: center;
   align-items: center;
 
   text-align: center;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;

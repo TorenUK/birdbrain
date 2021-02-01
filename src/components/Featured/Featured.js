@@ -7,6 +7,7 @@ import { Carousel } from "../../components";
 // other
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
+import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 
 const slides = [
   { title: "Follow us here:", subtitle: "" },
@@ -17,13 +18,19 @@ const slides = [
 const Featured = () => {
   return (
     <FeaturedContainer>
-      <FeaturedSection></FeaturedSection>
+      <FeaturedSection>
+        <LocalShippingIcon />
+        Dispatch within 3-5 working days
+      </FeaturedSection>
       <FeaturedSection>
         <Carousel slides={slides}>
           <FavoriteIcon />
         </Carousel>
       </FeaturedSection>
-      <FeaturedSection></FeaturedSection>
+      <FeaturedSection>
+        <CardGiftcardIcon />
+        Handmade with care
+      </FeaturedSection>
     </FeaturedContainer>
   );
 };
