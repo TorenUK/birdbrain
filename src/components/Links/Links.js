@@ -34,6 +34,7 @@ const Links = () => {
           <LinksLi to="#">Feedback</LinksLi>
           <LinksLi to="#">Get In Touch</LinksLi> */}
           <LinksLi to="/blog">Blog</LinksLi>
+          <LinksLi to="/contact">Get In Touch</LinksLi>
           {basket?.length ? <LinksLi to="/basket">Your Basket</LinksLi> : null}
         </LinksUl>
         <Burger
