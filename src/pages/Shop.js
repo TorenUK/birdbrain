@@ -49,7 +49,8 @@ const Shop = ({ notify }) => {
               id={product.id}
               key={idx}
               title={product.title}
-              image={product.image?.url}
+              image1={product.image?.url}
+              image2={product.image2?.url}
               previousPrice={product.previousPrice}
               price={product.price}
               scent={product.scent}

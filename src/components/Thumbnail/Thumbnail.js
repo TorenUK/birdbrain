@@ -19,7 +19,8 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 const Thumbnail = ({
   id,
   title,
-  image,
+  image1,
+  image2,
   previousPrice,
   price,
   stock,
@@ -42,7 +43,7 @@ const Thumbnail = ({
           setOpen(true);
           document.body.style.overflow = "hidden";
         }}
-        image={image}
+        image={image1}
       >
         {stock <= 4 ? (
           <ThumbnailStock>only {stock} in stock!</ThumbnailStock>
@@ -61,7 +62,6 @@ const Thumbnail = ({
               £{previousPrice.toFixed(2)}
             </ThumbnailPreviousPrice>
           ) : null}
-
           <ThumbnailPrice>£{price.toFixed(2)}</ThumbnailPrice>
         </ThumbnailBottom>
       </ThumbnailContainer>
@@ -69,7 +69,8 @@ const Thumbnail = ({
         <Modal
           id={id}
           title={title}
-          image={image}
+          image={image1}
+          image2={image2}
           previousPrice={previousPrice}
           price={price}
           stock={stock}

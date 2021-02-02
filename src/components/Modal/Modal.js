@@ -5,9 +5,10 @@ import {
   ModalContainer,
   ModalClose,
   ModalTitle,
-  ModalCarouselContainer,
+  // ModalCarouselContainer,
   ModalImageContainer,
   ModalPrice,
+  CarouselDiv,
 } from "./Modal.elements";
 import { Form1 } from "../../components";
 import { TextContainer } from "../../globalStyles";
@@ -22,6 +23,7 @@ const Modal = ({
   setOpen,
   title,
   image,
+  image2,
   previousPrice,
   price,
   stock,
@@ -41,21 +43,20 @@ const Modal = ({
       <ModalPrice>
         <h2>£{price.toFixed(2)}</h2>
       </ModalPrice>
-      <ModalCarouselContainer>
-        <Carousel>
-          <div>
-            <ModalImageContainer src={image} />
-          </div>
-          <div>
-            <ModalImageContainer src={image} />
-          </div>
-        </Carousel>
-      </ModalCarouselContainer>
+
+      <Carousel>
+        <CarouselDiv image={image}>
+          <ModalImageContainer src={image} />
+        </CarouselDiv>
+        <CarouselDiv image={image2}>
+          <ModalImageContainer src={image2} />
+        </CarouselDiv>
+      </Carousel>
 
       <Form1
         id={id}
         title={title}
-        image={image}
+        image1={image}
         price={price}
         setOpen={setOpen}
         notify={notify}

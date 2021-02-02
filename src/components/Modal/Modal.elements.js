@@ -19,11 +19,10 @@ export const ModalContainer = styled.div`
   z-index: 100;
   border-radius: 5px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1600px) {
     width: 100%;
     height: 100vh;
 
-    height: 100vh;
     overflow-y: scroll;
 
     flex-direction: column;
@@ -65,23 +64,31 @@ export const ModalTitle = styled.h1`
   }
 `;
 
-export const ModalCarouselContainer = styled.div`
-  width: 30%;
-  height: 60%;
+export const CarouselDiv = styled.div`
+  width: 400px;
+  height: 450px;
+
+  margin: 0 auto;
+
+  background-image: url(${(props) => props.image});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+export const ModalImageContainer = styled.img`
+  width: 100%;
+  opacity: 0;
+
+  object-fit: contain;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media screen and (max-width: 1000px) {
-    width: 50%;
-    height: 50%;
+    max-width: 300px;
   }
-`;
-
-export const ModalImageContainer = styled.img`
-  max-width: 300px;
-  object-fit: cover;
 `;
 
 export const ModalPrice = styled.div`
