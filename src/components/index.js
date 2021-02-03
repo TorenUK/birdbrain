@@ -12,3 +12,4 @@ export { default as Modal } from "./Modal/Modal";
 export { default as Form1 } from "./Form1/Form1";
 export { default as BasketIcon } from "./BasketIcon/BasketIcon";
 export { default as BasketItem } from "./BasketItem/BasketItem";
+export { default as ContactForm } from "./ContactForm/ContactForm";
