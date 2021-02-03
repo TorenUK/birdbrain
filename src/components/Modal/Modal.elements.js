@@ -74,6 +74,11 @@ export const CarouselDiv = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  @media screen and (max-width: 1000px) {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+  }
 `;
 
 export const ModalImageContainer = styled.img`
