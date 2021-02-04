@@ -7,7 +7,9 @@ import {
   MyTextArea,
 } from "./ContactForm.elements";
 
+// other
 import { Field, Form, Formik, FormikProps } from "formik";
+import axios from "axios";
 
 const MyInput = ({ field, form, ...props }) => {
   return <MyTextArea {...field} {...props} />;
@@ -31,7 +33,17 @@ const ContactForm = () => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            axios
+              .post("https://birdbrain.herokuapp.com/messages", {
+                email: values.email,
+                message: values.message,
+              })
+              .then((r) => {
+                alert("message recieved");
+              })
+              .catch((e) => {
+                alert("sorry, message service unavailable at this time");
+              });
             setSubmitting(false);
           }, 400);
         }}
