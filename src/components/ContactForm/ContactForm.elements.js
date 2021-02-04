@@ -16,9 +16,11 @@ export const MyForm = styled.form`
 `;
 
 export const MyTextArea = styled.textarea`
-  width: 80%;
+  width: 60%;
   max-width: 800px;
   height: 200px;
+
+  font-size: 1.3rem;
 
   resize: none;
 `;

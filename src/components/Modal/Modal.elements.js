@@ -35,13 +35,15 @@ export const ModalClose = styled(Button)`
   position: absolute !important;
   top: 2rem;
   left: 2rem;
+
+  z-index: 100;
   color: black !important;
   background: grey !important;
 
   @media screen and (max-width: 1000px) {
     width: 50px !important;
     height: 30px !important;
-    top: 1rem;
+    top: 1rem !important;
     left: 1rem;
   }
 `;
