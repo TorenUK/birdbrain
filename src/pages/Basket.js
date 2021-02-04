@@ -21,6 +21,7 @@ const total = (basket) => {
 
 const Basket = () => {
   const basket = useSelector(selectBasket);
+
   return (
     <>
       <GlobalStyle />

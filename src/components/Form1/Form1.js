@@ -12,7 +12,7 @@ import { FormTextContainer } from "../../globalStyles";
 const Form1 = ({
   id,
   title,
-  image,
+  image1,
   price,
   setOpen,
   notify,
@@ -28,7 +28,7 @@ const Form1 = ({
           <ToteForm
             id={id}
             title={title}
-            image={image}
+            image={image1}
             price={price}
             setOpen={setOpen}
             notify={notify}
@@ -40,7 +40,7 @@ const Form1 = ({
           <Candle
             id={id}
             title={title}
-            image={image}
+            image={image1}
             price={price}
             setOpen={setOpen}
             notify={notify}
@@ -52,7 +52,7 @@ const Form1 = ({
           <Default
             id={id}
             title={title}
-            image={image}
+            image={image1}
             price={price}
             setOpen={setOpen}
             notify={notify}
@@ -63,7 +63,7 @@ const Form1 = ({
           <Candle
             id={id}
             title={title}
-            image={image}
+            image={image1}
             price={price}
             setOpen={setOpen}
             notify={notify}
