@@ -100,10 +100,9 @@ export const TextContainer = styled.div`
   }
 `;
 export const FormTextContainer = styled.div`
-  width: 50%;
+  width: 60%;
   min-width: 250px;
-  height: 100%;
-  max-height: 100%;
+  min-height: 300px;
 
   display: flex;
   flex-direction: column;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Button } from "@material-ui/core";
 
 export const ModalContainer = styled.div`
-  width: 95%;
+  width: 90%;
   height: 80%;
   position: fixed;
   top: 50%;
@@ -20,9 +20,13 @@ export const ModalContainer = styled.div`
   border-radius: 5px;
 
   @media screen and (max-width: 1600px) {
-    width: 100%;
-    height: 100vh;
+    overflow-y: scroll;
 
+    flex-direction: column;
+  }
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    height: 100%;
     overflow-y: scroll;
 
     flex-direction: column;
@@ -109,7 +113,14 @@ export const ModalPrice = styled.div`
   color: white;
   background: black;
   border-radius: 5px;
+  @media screen and (max-width: 1700px) {
+    background: black;
+    z-index: 100;
+  }
   @media screen and (max-width: 1000px) {
     top: 0.4rem;
+
+    background: black;
+    z-index: 100;
   }
 `;

@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { Button } from "@material-ui/core";
 
 export const Form1Wrapper = styled.div`
-  width: 50%;
-  height: 60%;
+  width: 40%;
+  height: 40%;
 
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ export const FormSelect = styled.div`
 
 export const FormLabelContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 150px;
 
   display: flex;
   flex-wrap: wrap;
@@ -77,7 +77,6 @@ export const FormLabel = styled.label`
 export const AddToBasket = styled(Button)`
   width: 150px !important;
   height: 40px !important;
-  margin-bottom: 1rem !important;
 
   background: black !important;
   color: white !important;
