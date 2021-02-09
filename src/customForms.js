@@ -13,8 +13,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToBasket, selectBasket } from "./features/basket/basketSlice";
 
 // other
+import { updateQuantity } from "./utils/basket.qty";
 import { Button } from "@material-ui/core";
 import axios from "axios";
+
+const qty = 1;
 
 export const Default = ({ title, image, price, notify, setOpen, id }) => {
   const dispatch = useDispatch();
@@ -26,7 +29,11 @@ export const Default = ({ title, image, price, notify, setOpen, id }) => {
     );
 
     if (result.data[0].stock > 0) {
-      dispatch(addToBasket({ id, title, image, price, vals }));
+      dispatch(
+        addToBasket(
+          updateQuantity({ id, title, image, price, vals, qty }, basket)
+        )
+      );
       notify(title);
       setOpen(false);
     } else {
@@ -74,7 +81,11 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
     );
 
     if (result.data[0].stock > 0) {
-      dispatch(addToBasket({ id, title, image, price, vals }));
+      dispatch(
+        addToBasket(
+          updateQuantity({ id, title, image, price, vals, qty }, basket)
+        )
+      );
       notify(title);
       setOpen(false);
     } else {
@@ -156,7 +167,11 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
     );
 
     if (result.data[0].stock > 0) {
-      dispatch(addToBasket({ id, title, image, price, vals }));
+      dispatch(
+        addToBasket(
+          updateQuantity({ id, title, image, price, vals, qty }, basket)
+        )
+      );
       notify(title);
       setOpen(false);
     }

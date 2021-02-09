@@ -32,6 +32,9 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// rando
+import { updateQuantity } from "./utils/basket.qty";
+
 // redux
 import { useSelector } from "react-redux";
 import { selectBasket } from "./features/basket/basketSlice";
@@ -40,6 +43,12 @@ import { selectBasket } from "./features/basket/basketSlice";
 const promise = loadStripe(
   "pk_test_51HCr8zGrO8LMr0aUXQ0OQTnN3yG2EZOvmnm5zs01TjUVekfhGgS3b0WL7BeDxqV97ikJ7DqJR5qaFknoFIx7pnhu00rn1llTud"
 );
+
+// const bask = [{ id: "123", qty: 3 }];
+
+// const obj = { id: "123", qty: 1 };
+
+// console.log(updateQuantity(obj, bask));
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -153,27 +162,5 @@ function App() {
     </Router>
   );
 }
-
-const add = (item, _qty = 1) => {
-  order[item] += _qty;
-};
-
-const order = {
-  thing: 0,
-  stuff: 0,
-};
-
-console.log(order);
-
-const basket = [
-  { id: "thing", qty: 2 },
-  { id: "stuff", qty: 3 },
-];
-
-basket.map((i) => {
-  add(i.id, i.qty);
-});
-
-console.log(order);
 
 export default App;
