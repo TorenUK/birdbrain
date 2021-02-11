@@ -72,7 +72,7 @@ const Shop = ({ notify }) => {
         pauseOnFocusLoss
         draggable
       />
-      {basket.length ? <BasketIcon basket={basket} /> : null}
+      {basket?.length ? <BasketIcon basket={basket} /> : null}
     </div>
   );
 };

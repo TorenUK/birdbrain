@@ -156,7 +156,7 @@ function App() {
             pauseOnFocusLoss
             draggable
           />
-          {basket.length ? <BasketIcon basket={basket} /> : null}
+          {basket?.length ? <BasketIcon basket={basket} /> : null}
         </Route>
       </Switch>
     </Router>
