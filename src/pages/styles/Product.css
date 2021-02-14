@@ -5,11 +5,22 @@
 }
 
 .product__details {
-  height: 150px;
+  height: 180px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+.product__details p {
+  width: 50%;
+}
+
+.product__details__icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -41,4 +52,13 @@
 
   display: grid;
   place-items: center;
+}
+
+@media screen and (max-width: 850px) {
+  .product__details {
+  }
+
+  .product__details p {
+    width: 95%;
+  }
 }

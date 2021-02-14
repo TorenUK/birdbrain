@@ -16,10 +16,12 @@ import { addToBasket, selectBasket } from "./features/basket/basketSlice";
 import { updateQuantity } from "./utils/basket.qty";
 import { Button } from "@material-ui/core";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const qty = 1;
 
 export const Default = ({ title, image, price, notify, setOpen, id }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -34,8 +36,8 @@ export const Default = ({ title, image, price, notify, setOpen, id }) => {
           updateQuantity({ id, title, image, price, vals, qty }, basket)
         )
       );
+      history.push("/");
       notify(title);
-      setOpen(false);
     } else {
       alert("sorry, this product is no longer available");
     }
@@ -47,7 +49,7 @@ export const Default = ({ title, image, price, notify, setOpen, id }) => {
       validate={(values) => {
         const errors = {};
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, handleChange, handleBlur }) => {
         setSubmitting(false);
         handleStock(id, values);
       }}
@@ -72,6 +74,7 @@ export const Default = ({ title, image, price, notify, setOpen, id }) => {
   );
 };
 export const Candle = ({ title, image, price, notify, setOpen, id }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -86,8 +89,8 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
           updateQuantity({ id, title, image, price, vals, qty }, basket)
         )
       );
+      history.push("/");
       notify(title);
-      setOpen(false);
     } else {
       alert("sorry, this product is no longer available");
     }
@@ -95,16 +98,21 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
 
   return (
     <Formik
-      initialValues={{ colour: "", scent: "" }}
+      initialValues={{ scent: "" }}
       validate={(values) => {
         const errors = {};
+
+        if (!values.scent) {
+          errors.scent = "scent required";
+        }
+        return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
         handleStock(id, values);
       }}
     >
-      {({ isSubmitting, values, errors }) => (
+      {({ isSubmitting, values, errors, handleChange, handleBlur }) => (
         <Form
           style={{
             height: "100%",
@@ -118,36 +126,23 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
           <FormSelect style={{ textAlign: "center", margin: "5px 0" }}>
             Scent: {values.scent}
           </FormSelect>
-          <FormLabelContainer role="group">
-            <FormLabel>
-              <Field type="radio" name="scent" value="Orange Spice" />
-              Orange Spice
-            </FormLabel>
-            <FormLabel>
-              <Field type="radio" name="scent" value="Vanilla" />
-              Vanilla
-            </FormLabel>
-            <FormLabel>
-              <Field type="radio" name="scent" value="Citrus and Basil" />
-              Citrus and Basil
-            </FormLabel>
-            <FormLabel>
-              <Field type="radio" name="scent" value="Fresh Linen" />
-              Fresh Linen
-            </FormLabel>
-            <FormLabel>
-              <Field type="radio" name="scent" value="Mocha" />
-              Mocha
-            </FormLabel>
-            <FormLabel>
-              <Field type="radio" name="scent" value="Pumpkin Spice" />
-              Pumpkin Spice
-            </FormLabel>
-            <FormLabel>
-              <Field type="radio" name="scent" value="Sweet Fig" />
-              Sweet Fig
-            </FormLabel>
-          </FormLabelContainer>
+          <select
+            value={values.scent}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            style={{ margin: "3rem 0" }}
+            name="scent"
+          >
+            <option value="" label="Select a scent" />
+            <option value="Orange Spice">Orange Spice</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Citrus and Basil">Citrus and Basil</option>
+            <option value="Fresh Linen">Fresh Linen</option>
+            <option value="Mocha">Mocha</option>
+            <option value="Pumpkin Spice">Pumpkin Spice</option>
+            <option value="Sweet Fig">Sweet Fig</option>
+          </select>
+          <div style={{ margin: "1rem 0", color: "red" }}>{errors.scent}</div>
           <AddToBasket type="submit" disabled={isSubmitting}>
             add to basket
           </AddToBasket>
@@ -158,6 +153,7 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
 };
 
 export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
 
@@ -172,8 +168,8 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
           updateQuantity({ id, title, image, price, vals, qty }, basket)
         )
       );
+      history.push("/");
       notify(title);
-      setOpen(false);
     }
   };
 

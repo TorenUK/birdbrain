@@ -66,7 +66,7 @@ function App() {
 
     axios
       .get(
-        "https://birdbrain.herokuapp.com/products?_start=3&_limit=4&stock_gte=1"
+        "https://birdbrain.herokuapp.com/products?_where[new_in_eq]=true&stock_gte=1"
       )
       .then((response) => {
         setNewProducts(response.data);
@@ -83,7 +83,7 @@ function App() {
           </Elements>
         </Route>
         <Route path="/product">
-          <Product />
+          <Product notify={notify} />
         </Route>
         <Route path="/contact">
           <Contact />
