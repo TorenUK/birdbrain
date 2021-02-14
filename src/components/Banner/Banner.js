@@ -23,7 +23,7 @@ const Banner = ({ title, subtitle, text }) => {
   });
 
   return (
-    <BannerContainer backgroundImg={url}>
+    <BannerContainer backgroundImg="../../assets/feathers.png">
       <BannerTextContainer>
         <BannerTitle>{title}</BannerTitle>
         <BannerSubtitle>{subtitle}</BannerSubtitle>

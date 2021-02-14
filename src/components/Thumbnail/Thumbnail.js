@@ -15,6 +15,11 @@ import { Modal } from "../../components";
 
 // other
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import { useHistory } from "react-router-dom";
+
+//redux
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../features/product/productSlice";
 
 const Thumbnail = ({
   id,
@@ -30,6 +35,9 @@ const Thumbnail = ({
 }) => {
   const [open, setOpen] = useState(false);
 
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   if (open) {
     document.body.style.overflow = "unset";
   } else if (!open) {
@@ -40,8 +48,10 @@ const Thumbnail = ({
     <>
       <ThumbnailContainer
         onClick={() => {
-          setOpen(true);
-          document.body.style.overflow = "hidden";
+          // setOpen(true);
+          // document.body.style.overflow = "hidden";
+          history.push("/product");
+          dispatch(addProduct(id));
         }}
         image={image1}
       >

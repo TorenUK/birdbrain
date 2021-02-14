@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Button } from "@material-ui/core";
 
 export const Form1Wrapper = styled.div`
+  min-width: 350px;
+  min-height: 300px;
   width: 40%;
   height: 40%;
 

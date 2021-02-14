@@ -24,6 +24,7 @@ import Basket from "./pages/Basket";
 import Checkout from "./pages/Checkout";
 import Order from "./pages/Order";
 import Contact from "./pages/Contact";
+import Product from "./pages/Product";
 
 // other
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -44,16 +45,11 @@ const promise = loadStripe(
   "pk_test_51HCr8zGrO8LMr0aUXQ0OQTnN3yG2EZOvmnm5zs01TjUVekfhGgS3b0WL7BeDxqV97ikJ7DqJR5qaFknoFIx7pnhu00rn1llTud"
 );
 
-// const bask = [{ id: "123", qty: 3 }];
-
-// const obj = { id: "123", qty: 1 };
-
-// console.log(updateQuantity(obj, bask));
-
 function App() {
   const [products, setProducts] = useState([]);
   const [newProducts, setNewProducts] = useState([]);
   const [url, setUrl] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const basket = useSelector(selectBasket);
 
@@ -61,6 +57,7 @@ function App() {
   const notify = (item) => toast.dark(`${item} added to basket!`);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("https://birdbrain.herokuapp.com/products?_limit=3&stock_gte=1")
       .then((response) => {
@@ -73,6 +70,7 @@ function App() {
       )
       .then((response) => {
         setNewProducts(response.data);
+        setLoading(false);
       });
   }, []);
 
@@ -83,6 +81,9 @@ function App() {
           <Elements stripe={promise}>
             <Checkout />
           </Elements>
+        </Route>
+        <Route path="/product">
+          <Product />
         </Route>
         <Route path="/contact">
           <Contact />
@@ -108,7 +109,7 @@ function App() {
           <Links />
           <Banner {...bannerData1} />
           <Featured />
-          <Container title="Featured">
+          <Container title={loading ? "loading..." : "Featured"}>
             {products.map((product, idx) => (
               <Thumbnail
                 id={product.id}
@@ -125,7 +126,7 @@ function App() {
               />
             ))}
           </Container>
-          <Container title="New In">
+          <Container title={loading ? "loading..." : "New In"}>
             {newProducts.map((product, idx) => (
               <Thumbnail
                 id={product.id}

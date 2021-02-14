@@ -1,0 +1,44 @@
+.product__container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.product__details {
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.carousel-root {
+  max-height: 800px;
+  display: grid;
+  place-items: center;
+}
+
+.carousel {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.carousel__container {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.carousel__img {
+  max-width: 380px;
+
+  object-fit: contain;
+}
+
+.slide {
+  width: 400px;
+  height: 400px;
+
+  display: grid;
+  place-items: center;
+}

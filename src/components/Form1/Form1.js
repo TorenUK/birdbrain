@@ -75,12 +75,7 @@ const Form1 = ({
     }
   };
 
-  return (
-    <Form1Wrapper>
-      <FormTextContainer>{description}</FormTextContainer>
-      {formSelect(formType)}
-    </Form1Wrapper>
-  );
+  return <Form1Wrapper>{formSelect(formType)}</Form1Wrapper>;
 };
 
 export default Form1;
