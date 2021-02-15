@@ -24,6 +24,7 @@ import GlobalStyle, {
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import { updateStock } from "../utils/update.stock";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -64,17 +65,21 @@ const Checkout = () => {
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios.post(
-        "https://birdbrain.herokuapp.com/create-intent",
-        {
-          basket,
-        }
-      );
+      try {
+        const response = await axios.post(
+          "https://birdbrain.herokuapp.com/create-intent",
+          {
+            basket,
+          }
+        );
 
-      setClientSecret(response.data.clientSecret);
+        setClientSecret(response.data.clientSecret);
+      } catch (e) {
+        console.log(e);
+      }
     };
 
-    getClientSecret().catch((err) => console.log(err));
+    getClientSecret();
   }, []);
 
   const handleChange = async (event) => {
@@ -99,28 +104,33 @@ const Checkout = () => {
       setError(null);
       setProcessing(false);
       setSucceeded(true);
-      axios.post("https://birdbrain.herokuapp.com/orders", {
-        name: name,
-        email: email,
-        address: address,
-        city: city,
-        postcode: postcode,
-        payment: total(basket) + 3.99,
-        stuff: JSON.stringify(basket, null, 2),
-      });
-      dispatch(emptyBasket());
-      dispatch(
-        addOrder({
+      axios
+        .post("https://birdbrain.herokuapp.com/orders", {
           name: name,
           email: email,
           address: address,
           city: city,
           postcode: postcode,
           payment: total(basket) + 3.99,
-          stuff: basket,
+          stuff: JSON.stringify(basket, null, 2),
         })
-      );
-      history.push("/order");
+        .then((r) => {
+          dispatch(emptyBasket());
+          dispatch(
+            addOrder({
+              name: name,
+              email: email,
+              address: address,
+              city: city,
+              postcode: postcode,
+              payment: total(basket) + 3.99,
+              stuff: basket,
+              data: r.data,
+            })
+          );
+          history.push("/order");
+        })
+        .catch((e) => console.log(e));
     }
   };
 

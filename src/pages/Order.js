@@ -39,7 +39,17 @@ const Order = () => {
         <h2>Dispatch 3-5 working days</h2>
       </Container>
       <Container width="80%">
-        <h2>EMAIL CONFIRMATION COMING SOON!</h2>
+        <div
+          style={{
+            Display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            textAlign: "center",
+          }}
+        >
+          <h2>PLEASE KEEP RECORD OF YOUR ORDER ID:</h2>
+          <h2 style={{ color: "red" }}>{order[0].data.id}</h2>
+        </div>
       </Container>
       <Footer />
     </>

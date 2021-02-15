@@ -19,8 +19,6 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 const BasketItem = ({ image, id, title, price, hide, vals }) => {
   const dispatch = useDispatch();
 
-  console.log(vals, "-----");
-
   return (
     <BasketItemContainer image={image.url}>
       <BasketTitle>{title}</BasketTitle>

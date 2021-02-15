@@ -52,8 +52,6 @@ const Product = ({ notify }) => {
     getData();
   }, []);
 
-  console.log(data[0]);
-
   return (
     <>
       <GlobalStyle />

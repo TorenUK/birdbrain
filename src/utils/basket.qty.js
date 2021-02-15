@@ -1,6 +1,5 @@
 export const updateQuantity = (itemObj, basket = []) => {
   let newBasket = [...basket];
-  console.log(newBasket);
 
   if (basket?.length) {
     const regex = new RegExp(itemObj.id);
