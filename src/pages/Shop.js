@@ -24,14 +24,17 @@ import { selectBasket } from "../features/basket/basketSlice";
 
 const Shop = ({ notify }) => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const basket = useSelector(selectBasket);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("https://birdbrain.herokuapp.com/products?stock_gte=1")
       .then((response) => {
         setProducts(response.data);
+        setLoading(false)
       });
   }, []);
 
@@ -40,7 +43,7 @@ const Shop = ({ notify }) => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Header title="Shop" />
+      <Header title={loading ? 'loading products...' : 'All Products'} />
       <PageContainer>
         <Container>
           {products.map((product, idx) => (
