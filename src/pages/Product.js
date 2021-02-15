@@ -81,6 +81,7 @@ const Product = ({ notify }) => {
                     <FavoriteBorderIcon />
                     Handcrafted
                   </div>
+                  <p>{p.stock} available</p>
                 </div>
               </div>
               <div style={{ display: "grid", placeItems: "center" }}>
@@ -92,6 +93,7 @@ const Product = ({ notify }) => {
                   setOpen={p.setOpen}
                   notify={notify}
                   formType={p.formType}
+                  stock={p.stock}
                 />
               </div>
             </>

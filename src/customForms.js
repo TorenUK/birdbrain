@@ -20,7 +20,15 @@ import { useHistory } from "react-router-dom";
 
 const qty = 1;
 
-export const Default = ({ title, image, price, notify, setOpen, id }) => {
+export const Default = ({
+  title,
+  image,
+  price,
+  notify,
+  setOpen,
+  id,
+  stock,
+}) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
@@ -45,16 +53,16 @@ export const Default = ({ title, image, price, notify, setOpen, id }) => {
 
   return (
     <Formik
-      initialValues={{}}
+      initialValues={{ quantity: 1 }}
       validate={(values) => {
         const errors = {};
       }}
-      onSubmit={(values, { setSubmitting, handleChange, handleBlur }) => {
+      onSubmit={(values, { setSubmitting }) => {
         setSubmitting(false);
         handleStock(id, values);
       }}
     >
-      {({ isSubmitting, values, errors }) => (
+      {({ isSubmitting, values, errors, handleChange, handleBlur }) => (
         <Form
           style={{
             height: "100%",
@@ -73,7 +81,7 @@ export const Default = ({ title, image, price, notify, setOpen, id }) => {
     </Formik>
   );
 };
-export const Candle = ({ title, image, price, notify, setOpen, id }) => {
+export const Candle = ({ title, image, price, notify, setOpen, id, stock }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
@@ -98,7 +106,7 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
 
   return (
     <Formik
-      initialValues={{ scent: "" }}
+      initialValues={{ scent: "", quantity: 1 }}
       validate={(values) => {
         const errors = {};
 
@@ -143,6 +151,7 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
             <option value="Sweet Fig">Sweet Fig</option>
           </select>
           <div style={{ margin: "1rem 0", color: "red" }}>{errors.scent}</div>
+
           <AddToBasket type="submit" disabled={isSubmitting}>
             add to basket
           </AddToBasket>
@@ -152,7 +161,15 @@ export const Candle = ({ title, image, price, notify, setOpen, id }) => {
   );
 };
 
-export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
+export const ToteForm = ({
+  title,
+  image,
+  price,
+  notify,
+  setOpen,
+  id,
+  stock,
+}) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const basket = useSelector(selectBasket);
@@ -175,7 +192,7 @@ export const ToteForm = ({ title, image, price, notify, setOpen, id }) => {
 
   return (
     <Formik
-      initialValues={{ colour: "" }}
+      initialValues={{ colour: "", quantity: 1 }}
       validate={(values) => {
         const errors = {};
         return errors;

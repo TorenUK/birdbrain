@@ -17,6 +17,7 @@ const Form1 = ({
   setOpen,
   notify,
   formType,
+  stock,
   description,
 }) => {
   const formSelect = (formType) => {
@@ -32,6 +33,7 @@ const Form1 = ({
             price={price}
             setOpen={setOpen}
             notify={notify}
+            stock={stock}
           />
         );
         break;
@@ -44,6 +46,7 @@ const Form1 = ({
             price={price}
             setOpen={setOpen}
             notify={notify}
+            stock={stock}
           ></Candle>
         );
         break;
@@ -56,6 +59,7 @@ const Form1 = ({
             price={price}
             setOpen={setOpen}
             notify={notify}
+            stock={stock}
           ></Default>
         );
       case "default":
@@ -67,6 +71,7 @@ const Form1 = ({
             price={price}
             setOpen={setOpen}
             notify={notify}
+            stock={stock}
           ></Candle>
         );
 
