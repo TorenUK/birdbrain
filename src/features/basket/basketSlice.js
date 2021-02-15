@@ -5,7 +5,7 @@ export const basketSlice = createSlice({
   initialState: [],
   reducers: {
     addToBasket: (state, action) => {
-      return [...action.payload];
+      return [...state, action.payload];
     },
     removeFromBasket: (state, action) => {
       return state.filter((item) => item.id !== action.payload.id);

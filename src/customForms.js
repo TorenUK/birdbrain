@@ -39,11 +39,7 @@ export const Default = ({
     );
 
     if (result.data[0].stock > 0) {
-      dispatch(
-        addToBasket(
-          updateQuantity({ id, title, image, price, vals, qty }, basket)
-        )
-      );
+      dispatch(addToBasket({ id, title, image, price, vals, qty }));
       history.push("/");
       notify(title);
     } else {
@@ -92,11 +88,7 @@ export const Candle = ({ title, image, price, notify, setOpen, id, stock }) => {
     );
 
     if (result.data[0].stock > 0) {
-      dispatch(
-        addToBasket(
-          updateQuantity({ id, title, image, price, vals, qty }, basket)
-        )
-      );
+      dispatch(addToBasket({ id, title, image, price, vals, qty }));
       history.push("/");
       notify(title);
     } else {
@@ -182,7 +174,7 @@ export const ToteForm = ({
     if (result.data[0].stock > 0) {
       dispatch(
         addToBasket(
-          updateQuantity({ id, title, image, price, vals, qty }, basket)
+          dispatch(addToBasket({ id, title, image, price, vals, qty }))
         )
       );
       history.push("/");

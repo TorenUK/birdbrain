@@ -56,23 +56,44 @@ export const BasketTitle = styled.h2`
   text-align: center;
 
   @media screen and (max-width: 1000px) {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     padding: 2px;
   }
 `;
 
 export const BasketPrice = styled.p`
-  margin-bottom: 1rem;
-  padding: 4px;
+  position: absolute;
+  bottom: 0.5rem;
 
-  font-size: 1.5rem;
+  padding: 3px;
+
+  font-size: 1.1rem;
   font-weight: 700;
 
-  color: black;
-  background: white;
+  color: white;
+  background: black;
   border-radius: 5px;
 
   @media screen and (max-width: 1000px) {
-    font-size: 1rem;
+    font-size: 0.7rem;
+  }
+`;
+
+export const BasketOption = styled.p`
+  position: absolute;
+  top: 15%;
+
+  padding: 3px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: white;
+  background: black;
+  border-radius: 5px;
+
+  @media screen and (max-width: 1000px) {
+    top: 15%;
+    font-size: 0.6rem;
   }
 `;

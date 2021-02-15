@@ -36,6 +36,7 @@ const Basket = () => {
             image={item.image}
             title={item.title}
             price={item.price}
+            vals={item.vals}
           />
         ))}
       </Container>
@@ -45,7 +46,11 @@ const Basket = () => {
       {basket?.length ? (
         <Container>
           <LinksLi to="/checkout">
-            <h2>subtotal: £{total(basket).toFixed(2)} 🔒 </h2>
+            <div style={{ textAlign: "center" }}>
+              <h2>subtotal: £{total(basket).toFixed(2)}</h2>
+              <h2>checkout securely</h2>
+              🔒 💳
+            </div>
           </LinksLi>
         </Container>
       ) : null}
