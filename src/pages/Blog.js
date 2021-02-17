@@ -8,6 +8,7 @@ import {
   BlogItem,
   Footer,
   BasketIcon,
+  RotatingLogo,
 } from "../components";
 
 import GlobalStyle, { PageContainer } from "../globalStyles";
@@ -41,7 +42,8 @@ const Blog = () => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Header title={loading ? 'loading blogs...' : 'Blogs'} />
+      <Header title={loading ? "loading blogs..." : "Blogs"} />
+      {loading && <RotatingLogo />}
       <PageContainer>
         {blogs.map((blog, idx) => (
           <BlogItem

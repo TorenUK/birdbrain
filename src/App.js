@@ -12,6 +12,7 @@ import {
   Footer,
   Featured,
   BasketIcon,
+  RotatingLogo,
 } from "./components";
 import { LinksLi } from "./components/Links/Links.elements";
 import GlobalStyle from "./globalStyles";
@@ -110,6 +111,7 @@ function App() {
           <Banner {...bannerData1} />
           <Featured />
           <Container title={loading ? "loading..." : "Featured"}>
+            {loading && <RotatingLogo />}
             {products.map((product, idx) => (
               <Thumbnail
                 id={product.id}
@@ -127,6 +129,7 @@ function App() {
             ))}
           </Container>
           <Container title={loading ? "loading..." : "New In"}>
+            {loading && <RotatingLogo />}
             {newProducts.map((product, idx) => (
               <Thumbnail
                 id={product.id}
@@ -146,6 +149,7 @@ function App() {
           <Container>
             <LinksLi to="/shop">shop all →</LinksLi>
           </Container>
+
           <Footer />
           <ToastContainer
             position="bottom-center"

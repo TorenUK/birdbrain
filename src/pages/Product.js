@@ -11,6 +11,7 @@ import {
   Thumbnail,
   BasketIcon,
   Form1,
+  RotatingLogo,
 } from "../components";
 import GlobalStyle from "../globalStyles";
 
@@ -97,7 +98,10 @@ const Product = ({ notify }) => {
             </>
           ))
         ) : (
-          <div style={{ textAlign: "center" }}>loading...</div>
+          <>
+            <div style={{ textAlign: "center" }}>loading...</div>
+            <RotatingLogo />
+          </>
         )}
       </PageContainer>
     </>

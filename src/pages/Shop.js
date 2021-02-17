@@ -9,6 +9,7 @@ import {
   Footer,
   Thumbnail,
   BasketIcon,
+  RotatingLogo,
 } from "../components";
 import GlobalStyle from "../globalStyles";
 
@@ -34,7 +35,7 @@ const Shop = ({ notify }) => {
       .get("https://birdbrain.herokuapp.com/products?stock_gte=1")
       .then((response) => {
         setProducts(response.data);
-        setLoading(false)
+        setLoading(false);
       });
   }, []);
 
@@ -43,7 +44,8 @@ const Shop = ({ notify }) => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Header title={loading ? 'loading products...' : 'All Products'} />
+      <Header title={loading ? "loading products..." : "All Products"} />
+      {loading && <RotatingLogo />}
       <PageContainer>
         <Container>
           {products.map((product, idx) => (

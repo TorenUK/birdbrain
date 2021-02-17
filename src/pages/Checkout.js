@@ -115,6 +115,10 @@ const Checkout = () => {
           stuff: JSON.stringify(basket, null, 2),
         })
         .then((r) => {
+          // axios.post("https://birdbrain.herokuapp.com/send-email", {
+          //   to: email,
+          //   basket: basket,
+          // });
           dispatch(emptyBasket());
           dispatch(
             addOrder({
