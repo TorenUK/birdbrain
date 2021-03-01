@@ -42,7 +42,7 @@ const Blog = () => {
       <GlobalStyle />
       <Navbar />
       <Links />
-      <Header title={loading ? "loading blogs..." : "Blogs"} />
+      <Header title={loading ? "loading blog..." : "Blog"} />
       {loading && <RotatingLogo />}
       <PageContainer>
         {blogs.map((blog, idx) => (

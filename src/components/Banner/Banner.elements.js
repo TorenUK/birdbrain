@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
+import logo from "../../assets/birdbrain-logo.jpg";
+
 export const BannerContainer = styled.div`
   width: 100%;
   min-height: 300px;
   height: 300px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
-  background: black url(${(props) => props.backgroundImg});
-  background-position: center;
-  background-size: 20%;
+  background: black;
 
   @media screen and (max-width: 1000px) {
     background-size: 100%;
@@ -49,4 +49,18 @@ export const BannerText = styled.p`
   font-size: 0.9rem;
   color: #fff;
   line-height: 1.5rem;
+`;
+
+export const BannerItem = styled.div`
+  width: 20%;
+  max-width: 240px;
+  height: 70%;
+  max-height: 240px;
+
+  background-image: url(${logo});
+  background-position: center;
+  background-size: contain;
+
+  border-radius: 5px;
+  cursor: pointer;
 `;

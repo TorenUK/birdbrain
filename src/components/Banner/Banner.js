@@ -7,28 +7,19 @@ import {
   BannerTitle,
   BannerSubtitle,
   BannerText,
+  BannerItem,
 } from "./Banner.elements";
 
-// other
-import feathers from "../../assets/feathers.png";
-import axios from "axios";
-
 const Banner = ({ title, subtitle, text }) => {
-  const [url, setUrl] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("https://birdbrain.herokuapp.com/banner")
-      .then((r) => setUrl(r.data.image.url));
-  });
-
   return (
     <BannerContainer backgroundImg="../../assets/feathers.png">
+      {/* <BannerItem /> */}
       <BannerTextContainer>
         <BannerTitle>{title}</BannerTitle>
         <BannerSubtitle>{subtitle}</BannerSubtitle>
         <BannerText>{text}</BannerText>
       </BannerTextContainer>
+      {/* <BannerItem /> */}
     </BannerContainer>
   );
 };

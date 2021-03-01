@@ -20,6 +20,7 @@ export const LogoDiv = styled.div`
 
   border-radius: 50%;
   overflow: hidden;
+  z-index: 999;
 
   @media screen and (max-width: 850px) {
     width: 100px;

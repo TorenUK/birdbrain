@@ -167,6 +167,8 @@ export const ImageContainer = styled.div`
   background-position: center;
   background-size: cover;
 
+  z-index: 100;
+
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
