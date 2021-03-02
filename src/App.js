@@ -14,6 +14,7 @@ import {
   BasketIcon,
   RotatingLogo,
   SpanBanner,
+  SmallThumbnail,
 } from "./components";
 import { LinksLi } from "./components/Links/Links.elements";
 import GlobalStyle from "./globalStyles";
@@ -149,9 +150,11 @@ function App() {
           </Container>
           <Container>
             <LinksLi to="/shop">shop all →</LinksLi>
-            <SpanBanner />
-            <SpanBanner />
-            <SpanBanner />
+            <SpanBanner>
+              <SmallThumbnail />
+            </SpanBanner>
+            <SpanBanner></SpanBanner>
+            <SpanBanner></SpanBanner>
           </Container>
 
           <Footer />

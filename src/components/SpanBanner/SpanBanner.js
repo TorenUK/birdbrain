@@ -13,7 +13,7 @@ class SpanBanner extends React.Component {
   }
 
   render() {
-    return <SpanBannerContainer>hi this a span banner</SpanBannerContainer>;
+    return <SpanBannerContainer>{this.props.children}</SpanBannerContainer>;
   }
 }
 
