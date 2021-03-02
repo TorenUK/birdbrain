@@ -3,8 +3,8 @@ import styled from "styled-components";
 import image from "../../assets/birdbrain-logo.jpg";
 
 export const LogoDiv = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   max-width: 200px;
   max-height: 200px;
 

@@ -19,22 +19,36 @@ export const SpanBannerContainer = styled.div`
     content: "";
     display: block;
     position: absolute;
-    border-radius: 100% 50%;
-    width: 100%;
-    height: 100px;
+    border-radius: 100% 80%;
+    width: 110%;
+    height: 120px;
     background-color: white;
-    right: -5px;
-    top: -25%;
+
+    top: -30%;
+
+    @media only screen and (max-width: 850px) {
+      height: 50px;
+      top: -25%;
+    }
   }
   &:after {
     content: "";
     display: block;
     position: absolute;
-    border-radius: 100% 50%;
-    width: 100%;
-    height: 100px;
+    border-radius: 100% 80%;
+    width: 110%;
+    height: 120px;
     background-color: white;
-    left: 0;
-    bottom: -25%;
+
+    bottom: -30%;
+
+    @media only screen and (max-width: 850px) {
+      height: 40px;
+      bottom: -10%;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    display: none;
   }
 `;

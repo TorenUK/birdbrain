@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const SmallThumbnailContainer = styled.div`
   width: 150px;
-  height: 150px;
+  max-height: 100%;
+  min-height: 130px;
 
   display: flex;
   justify-content: center;

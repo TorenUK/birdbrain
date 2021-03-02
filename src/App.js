@@ -15,6 +15,7 @@ import {
   RotatingLogo,
   SpanBanner,
   SmallThumbnail,
+  BannerThumbnails,
 } from "./components";
 import { LinksLi } from "./components/Links/Links.elements";
 import GlobalStyle from "./globalStyles";
@@ -110,7 +111,7 @@ function App() {
           <GlobalStyle />
           <Navbar />
           <Links />
-          <Banner {...bannerData1} />
+          <Banner {...bannerData1}></Banner>
           <Featured />
           <Container title={loading ? "loading..." : "Featured"}>
             {loading && <RotatingLogo />}
@@ -129,6 +130,11 @@ function App() {
                 description={product.description}
               />
             ))}
+          </Container>
+          <Container>
+            <SpanBanner>
+              <SmallThumbnail />
+            </SpanBanner>
           </Container>
           <Container title={loading ? "loading..." : "New In"}>
             {loading && <RotatingLogo />}
@@ -153,10 +159,7 @@ function App() {
             <SpanBanner>
               <SmallThumbnail />
             </SpanBanner>
-            <SpanBanner></SpanBanner>
-            <SpanBanner></SpanBanner>
           </Container>
-
           <Footer />
           <ToastContainer
             position="bottom-center"
