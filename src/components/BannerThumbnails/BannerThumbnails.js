@@ -4,9 +4,10 @@ import React, { Component } from "react";
 import { BannerThumbnailsContainer } from "./BannerThumnail.elements";
 
 export class BannerThumbnails extends Component {
-  constructor(props) {
-    super(props);
-  }
+  state = {
+    hello: true,
+  };
+
   render() {
     return (
       <BannerThumbnailsContainer>

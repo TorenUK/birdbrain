@@ -1,4 +1,4 @@
-import React from "react";
+import Reactk, { useState } from "react";
 
 // components
 import {
@@ -16,6 +16,8 @@ const MyInput = ({ field, form, ...props }) => {
 };
 
 const ContactForm = () => {
+  const [sent, setSent] = useState(false);
+
   return (
     <ContactFormContainer>
       <Formik
@@ -38,10 +40,11 @@ const ContactForm = () => {
                 email: values.email,
                 message: values.message,
               })
-              .then((r) => {
-                alert("message recieved");
+              .then(() => {
+                setSent(true);
               })
               .catch((e) => {
+                console.log(e);
                 alert("sorry, message service unavailable at this time");
               });
             setSubmitting(false);
@@ -57,31 +60,37 @@ const ContactForm = () => {
           handleSubmit,
           isSubmitting,
           /* and other goodies */
-        }) => (
-          <MyForm onSubmit={handleSubmit}>
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-            />
-            {errors.email && touched.email && errors.email}
+        }) =>
+          !sent ? (
+            <MyForm onSubmit={handleSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+              />
+              {errors.email && touched.email && errors.email}
 
-            <Field
-              name="message"
-              placeholder="ask us something"
-              component={MyInput}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.message && touched.message && errors.message}
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </MyForm>
-        )}
+              <Field
+                name="message"
+                placeholder="ask us something"
+                component={MyInput}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.message && touched.message && errors.message}
+              <button type="submit" disabled={isSubmitting}>
+                Submit
+              </button>
+            </MyForm>
+          ) : (
+            <div style={{ display: "grid", placeItems: "center" }}>
+              Thanks, we'll aim to get back to you within 24hrs
+            </div>
+          )
+        }
       </Formik>
     </ContactFormContainer>
   );
