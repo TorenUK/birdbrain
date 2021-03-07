@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // components
 import {
@@ -17,11 +17,15 @@ import {
 // redux
 import { useSelector } from "react-redux";
 import { selectBasket } from "../../features/basket/basketSlice";
+import { loadFromLocalStorage } from "../../utils/local.storage";
 
 const Links = () => {
   const [clicked, setClicked] = useState(false);
+  const [basket, setBasket] = useState([]);
 
-  const basket = useSelector(selectBasket);
+  useEffect(() => {
+    setBasket(loadFromLocalStorage());
+  }, []);
 
   return (
     <>

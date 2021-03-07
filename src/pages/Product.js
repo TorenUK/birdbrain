@@ -83,7 +83,10 @@ const Product = ({ notify }) => {
                   <p>{p.stock} available</p>
                 </div>
               </div>
-              <div style={{ display: "grid", placeItems: "center" }}>
+              <div
+                id={idx + 1}
+                style={{ display: "grid", placeItems: "center" }}
+              >
                 <Form1
                   id={p.id}
                   title={p.title}

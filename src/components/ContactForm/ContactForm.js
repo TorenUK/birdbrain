@@ -75,7 +75,7 @@ const ContactForm = () => {
 
               <Field
                 name="message"
-                placeholder="ask us something"
+                placeholder="ask us something..."
                 component={MyInput}
                 onChange={handleChange}
                 onBlur={handleBlur}

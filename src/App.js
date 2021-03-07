@@ -39,10 +39,16 @@ import "react-toastify/dist/ReactToastify.css";
 
 // rando
 import { updateQuantity } from "./utils/basket.qty";
+import {
+  saveToLocalStorage,
+  loadFromLocalStorage,
+} from "./utils/local.storage";
 
 // redux
 import { useSelector } from "react-redux";
-import { selectBasket } from "./features/basket/basketSlice";
+import { basketSlice, selectBasket } from "./features/basket/basketSlice";
+
+// utils
 
 // stripe
 const promise = loadStripe(
@@ -54,14 +60,18 @@ function App() {
   const [newProducts, setNewProducts] = useState([]);
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
+  const [basket, setBasket] = useState([]);
 
-  const basket = useSelector(selectBasket);
+  const reduxBasket = useSelector(selectBasket);
+
+  // saveToLocalStorage(basket);
 
   // toast
   const notify = (item) => toast.dark(`${item} added to basket!`);
 
   useEffect(() => {
     setLoading(true);
+    setBasket(loadFromLocalStorage());
     axios
       .get("https://birdbrain.herokuapp.com/products?_limit=3&stock_gte=1")
       .then((response) => {
@@ -77,6 +87,10 @@ function App() {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    setBasket(loadFromLocalStorage());
+  }, [reduxBasket]);
 
   return (
     <Router>
@@ -171,7 +185,7 @@ function App() {
             pauseOnFocusLoss
             draggable
           />
-          {basket?.length ? <BasketIcon basket={basket} /> : null}
+          {basket?.length >= 1 ? <BasketIcon basket={basket} /> : null}
         </Route>
       </Switch>
     </Router>
