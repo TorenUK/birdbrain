@@ -17,3 +17,4 @@ export { default as RotatingLogo } from "./RotatingLogo/RotatingLogo";
 export { default as SpanBanner } from "./SpanBanner/SpanBanner";
 export { default as SmallThumbnail } from "./SmallThumbnail/SmallThumbnail";
 export { default as BannerThumbnails } from "./BannerThumbnails/BannerThumbnails";
+export { default as Filter } from "./Filter/Filter";

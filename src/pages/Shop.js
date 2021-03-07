@@ -10,6 +10,7 @@ import {
   Thumbnail,
   BasketIcon,
   RotatingLogo,
+  Filter,
 } from "../components";
 import GlobalStyle from "../globalStyles";
 
@@ -46,6 +47,7 @@ const Shop = ({ notify }) => {
       <Links />
       <Header title={loading ? "loading products..." : "All Products"} />
       {loading && <RotatingLogo />}
+      <Filter />
       <PageContainer>
         <Container>
           {products.map((product, idx) => (
