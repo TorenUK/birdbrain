@@ -23,12 +23,14 @@ import "react-toastify/dist/ReactToastify.css";
 // redux
 import { useSelector } from "react-redux";
 import { selectBasket } from "../features/basket/basketSlice";
+import { selectFilter } from "../features/filter/filterSlice";
 
 const Shop = ({ notify }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const basket = useSelector(selectBasket);
+  const filter = useSelector(selectFilter);
 
   useEffect(() => {
     setLoading(true);
@@ -39,6 +41,29 @@ const Shop = ({ notify }) => {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    if (filter === "all") {
+      setLoading(true);
+      axios
+        .get("https://birdbrain.herokuapp.com/products?stock_gte=1")
+        .then((response) => {
+          setProducts(response.data);
+          setLoading(false);
+        });
+    }
+
+    setLoading(true);
+    axios
+      .get(
+        `https://birdbrain.herokuapp.com/products?stock_gte=1&title_contains=${filter}`
+      )
+      .then((response) => {
+        setProducts(response.data);
+        setLoading(false);
+      })
+      .catch((e) => console.log(e));
+  }, [filter]);
 
   return (
     <div>
