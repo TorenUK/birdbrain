@@ -22,8 +22,6 @@ const total = (basket) => {
 const Basket = () => {
   const basket = loadFromLocalStorage();
 
-  console.log(basket, "****");
-
   return (
     <>
       <GlobalStyle />

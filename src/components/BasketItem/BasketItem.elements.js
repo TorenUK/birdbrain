@@ -19,8 +19,8 @@ export const BasketItemContainer = styled.div`
   border: 1px solid black;
 
   @media screen and (max-width: 850px) {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     margin: 5px;
   }
 `;
@@ -58,6 +58,8 @@ export const BasketTitle = styled.h2`
   @media screen and (max-width: 1000px) {
     font-size: 0.6rem;
     padding: 2px;
+    color: black;
+    background: white;
   }
 `;
 
@@ -75,7 +77,7 @@ export const BasketPrice = styled.p`
   border-radius: 5px;
 
   @media screen and (max-width: 1000px) {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 `;
 
@@ -95,5 +97,7 @@ export const BasketOption = styled.p`
   @media screen and (max-width: 1000px) {
     top: 15%;
     font-size: 0.6rem;
+    color: black;
+    background: white;
   }
 `;

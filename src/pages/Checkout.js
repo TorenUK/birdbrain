@@ -24,7 +24,7 @@ import GlobalStyle, {
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import { updateStock } from "../utils/update.stock";
+import { loadFromLocalStorage } from "../utils/local.storage";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -43,7 +43,7 @@ const grandTotal = (total) => {
 };
 
 const Checkout = () => {
-  const basket = useSelector(selectBasket);
+  const basket = loadFromLocalStorage();
 
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState(null);
