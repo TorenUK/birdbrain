@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BasketItemContainer = styled.div`
   width: 300px;
-  height: 200px;
+  height: 250px;
   margin: 20px;
   position: relative;
 
@@ -50,8 +50,8 @@ export const BasketTitle = styled.h2`
 
   font-size: 1rem;
   font-weight: 700;
-  color: white;
-  background: black;
+  color: black;
+  background: white;
   border-radius: 5px;
   text-align: center;
 
@@ -90,8 +90,8 @@ export const BasketOption = styled.p`
   font-size: 1rem;
   font-weight: 700;
 
-  color: white;
-  background: black;
+  color: black;
+  background: white;
   border-radius: 5px;
 
   @media screen and (max-width: 1000px) {

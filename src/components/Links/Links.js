@@ -25,7 +25,7 @@ const Links = () => {
 
   useEffect(() => {
     setBasket(loadFromLocalStorage());
-  }, []);
+  }, [basket]);
 
   return (
     <>
@@ -39,7 +39,9 @@ const Links = () => {
            */}
           <LinksLi to="/blog">Blog</LinksLi>
           <LinksLi to="/contact">Get In Touch</LinksLi>
-          {basket?.length ? <LinksLi to="/basket">Your Basket</LinksLi> : null}
+          {basket?.length ? (
+            <LinksLi to="/basket">Your Basket {basket?.length}</LinksLi>
+          ) : null}
         </LinksUl>
         <Burger
           onClick={() => {
@@ -64,7 +66,9 @@ const Links = () => {
             <MobileLinksLi to="/blog">Blog</MobileLinksLi>
             <MobileLinksLi to="/contact">Get in Touch</MobileLinksLi>
             {basket?.length ? (
-              <MobileLinksLi to="/basket">Your Basket</MobileLinksLi>
+              <MobileLinksLi to="/basket">
+                Your Basket {basket?.length}
+              </MobileLinksLi>
             ) : null}
           </MobileUl>
         </MobileContainer>
